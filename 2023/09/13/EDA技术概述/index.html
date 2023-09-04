@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="[toc] EDA技术概述  EDA (elctronic design automation, 电子设计自动化)  EDA技术及其发展 1234graph LRA[70年代雏形] --&gt;B[80年代技术基础]B --&gt; C[90年代成熟与应用]C --&gt;D[21世纪新发展] 21世纪新发展：  电子设计成果以自主知识产权(IP)的方式得以明确表达和确认成为可能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EDA技术系列笔记：EDA技术概述">
+<meta property="og:url" content="http://example.com/2023/09/13/EDA%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Multipleriver&#39;s page">
+<meta property="og:description" content="[toc] EDA技术概述  EDA (elctronic design automation, 电子设计自动化)  EDA技术及其发展 1234graph LRA[70年代雏形] --&gt;B[80年代技术基础]B --&gt; C[90年代成熟与应用]C --&gt;D[21世纪新发展] 21世纪新发展：  电子设计成果以自主知识产权(IP)的方式得以明确表达和确认成为可能">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-09-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-04T03:35:23.615Z">
+<meta property="article:author" content="百川">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2023/09/13/EDA%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"ch","comments":true,"permalink":"http://example.com/2023/09/13/EDA%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/","path":"2023/09/13/EDA技术概述/","title":"EDA技术系列笔记：EDA技术概述"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>EDA技术系列笔记：EDA技术概述 | Multipleriver's page</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Multipleriver's page</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">0</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">0</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#eda%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">EDA技术概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#eda%E6%8A%80%E6%9C%AF%E5%8F%8A%E5%85%B6%E5%8F%91%E5%B1%95"><span class="nav-number">1.1.</span> <span class="nav-text">EDA技术及其发展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eda%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">EDA技术实现目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdl-hardware-design-language-%E7%A1%AC%E4%BB%B6%E6%8F%8F%E8%BF%B0%E8%AF%AD%E8%A8%80"><span class="nav-number">1.3.</span> <span class="nav-text">HDL (hardware design
+language, 硬件描述语言)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hdl%E7%BB%BC%E5%90%88"><span class="nav-number">1.4.</span> <span class="nav-text">HDL综合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hdl%E7%BB%BC%E5%90%88%E5%99%A8%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.4.1.</span> <span class="nav-text">HDL综合器的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text">自顶向下的设计流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eda%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">1.6.</span> <span class="nav-text">EDA的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eda%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="nav-number">1.7.</span> <span class="nav-text">EDA设计流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%BA%94%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="nav-number">1.7.1.</span> <span class="nav-text">对应开发工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asic%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="nav-number">1.8.</span> <span class="nav-text">ASIC开发流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#asic%E8%AE%BE%E8%AE%A1%E5%88%86%E7%B1%BB"><span class="nav-number">1.8.1.</span> <span class="nav-text">ASIC设计分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asic%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">1.8.2.</span> <span class="nav-text">ASIC实现方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#asic%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B"><span class="nav-number">1.8.3.</span> <span class="nav-text">ASIC设计流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ip%E6%A0%B8"><span class="nav-number">1.9.</span> <span class="nav-text">IP核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E8%B6%8B%E5%8A%BF"><span class="nav-number">1.10.</span> <span class="nav-text">发展趋势</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">百川</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ch">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/13/EDA%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="百川">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Multipleriver's page">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="EDA技术系列笔记：EDA技术概述 | Multipleriver's page">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          EDA技术系列笔记：EDA技术概述
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-09-13 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-13T00:00:00+08:00">2023-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-09-04 11:35:23" itemprop="dateModified" datetime="2023-09-04T11:35:23+08:00">2023-09-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>[toc]</p>
+<h1 id="eda技术概述">EDA技术概述</h1>
+<blockquote>
+<p>EDA (elctronic design automation, 电子设计自动化)</p>
+</blockquote>
+<h2 id="eda技术及其发展">EDA技术及其发展</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[70年代雏形] --&gt;B[80年代技术基础]</span><br><span class="line">B --&gt; C[90年代成熟与应用]</span><br><span class="line">C --&gt;D[21世纪新发展]</span><br></pre></td></tr></table></figure>
+<p>21世纪新发展：</p>
+<ul>
+<li><p>电子设计成果以自主知识产权(IP)的方式得以明确表达和确认成为可能。</p></li>
+<li><p>在仿真验证和设计两方面都支持标准硬件描述语言的功能强大的EDA软件不断推出。</p></li>
+<li><p>电子技术全方位进入EDA时代。</p></li>
+<li><p>电子领域各学科的界限更加模糊，更互为包容。</p></li>
+<li><p>更大规模的FPGA器件的不断推出。</p></li>
+<li><p>基于EDA工具的用于ASIC设计的标准单元已涵盖大规模电子系统及复杂IP核模块
+。</p></li>
+<li><p>IP核在电子行业的产业领域广泛应用。</p></li>
+<li><p>SoC高效低成本设计技术的成熟，验证趋于更加高效和简单。</p></li>
+<li><p>C综合技术开始应用于复杂EDA软件工具。</p></li>
+</ul>
+<h2 id="eda技术实现目标">EDA技术实现目标</h2>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903170451.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<blockquote>
+<p>ASIC (application specific integrated circuit, 专用集成电路) SOPC
+(system on a programmable chip, 片上可编程系统) SOPC (system on a chip,
+单片系统) FPGA (field grogrammable gate array, 现场可编程门阵列) CPLD
+(complex programming logic device, 复杂可编程逻辑器件)</p>
+</blockquote>
+<p>由于CPLD和FPGA结构上的差异，具有各自的特点：</p>
+<ul>
+<li><p>CPLD更适合完成各种算法和组合逻辑，FPGA更适合于完成时序逻辑。换句话说，FPGA更适合于触发器丰富的结构，而CPLD更适合于触发器有限而乘积项丰富的结构。</p></li>
+<li><p>CPLD的连续式布线结构决定了它的时序延迟是均匀的和可预测的，而FPGA的分段式布线结构决定了其延迟的不可预测性。</p></li>
+<li><p>在编程上FPGA比CPLD具有更大的灵活性。CPLD通过修改具有固定内连电路的逻辑功能来编程，FPGA主要通过改变内部连线的布线来编程；FPGA可在逻辑门下编程，而CPLD是在逻辑块下编程。</p></li>
+<li><p>FPGA的集成度比CPLD高，具有更复杂的布线结构和逻辑实现。</p></li>
+<li><p>CPLD比FPGA使用起来更方便。CPLD的编程采用E2PROM或FASTFLASH技术，无需外部存储器芯片，使用简单。而FPGA的编程信息需存放在外部存储器上，使用方法复杂。</p></li>
+<li><p>CPLD的速度比FPGA快，并且具有较大的时间可预测性。这是由于FPGA是门级编程，并且CLB之间采用分布式互联，而CPLD是逻辑块级编程，并且其逻辑块之间的互联是集中式的</p></li>
+<li><p>在编程方式上，CPLD主要是基于E2PROM或FLASH存储器编程，编程次数可达1万次，优点是系统断电时编程信息也不丢失。FPGA大部分是基于SRAM编程，编程信息在系统断电时丢失，每次上电时，需从器件外部将编程数据重新写入SRAM中。其优点是可以编程任意次，可在工作中快速编程，从而实现板级和系统级的动态配置。</p></li>
+<li><p>CPLD保密性好，FPGA保密性差。</p></li>
+<li><p>一般情况下，CPLD的功耗要比FPGA大，且集成度越高越明显。</p></li>
+</ul>
+<h2 id="hdl-hardware-design-language-硬件描述语言">HDL (hardware design
+language, 硬件描述语言)</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph </span><br><span class="line">A[HDL] --&gt;B[&quot;VHSIC HDL (very high speed integrated circuit HDL)&quot;]</span><br><span class="line">A --&gt; C[&quot;Verilog HDL (Verilog)&quot;]</span><br><span class="line">A --&gt;D[System Verilog]</span><br><span class="line">A --&gt;E[System C]</span><br></pre></td></tr></table></figure>
+<h2 id="hdl综合">HDL综合</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[自然语言综合] </span><br><span class="line"> --&gt;B[行为综合] </span><br><span class="line"> --&gt;C[逻辑综合] </span><br><span class="line"> --&gt;D[&quot;版图、结构综合&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="hdl综合器的流程">HDL综合器的流程</h3>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204116.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<blockquote>
+<p>*编译器和综合器的不同 <img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903203731.png"
+alt="Img" /></p>
+</blockquote>
+<h2 id="自顶向下的设计流程">自顶向下的设计流程</h2>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204212.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<h2 id="eda的优势">EDA的优势</h2>
+<ul>
+<li><p>保证设计过程的正确性，大大降低设计成本，缩短设计周期。</p></li>
+<li><p>有各类库的支持。</p></li>
+<li><p>极大地简化设计文档的管理。</p></li>
+<li><p>日益强大的逻辑设计仿真测试技术。</p></li>
+<li><p>设计者拥有完全的自主权，再无受制于人之虞。</p></li>
+<li><p>良好的可移植与可测试性，为系统开发提供了可靠的保证。</p></li>
+<li><p>能将所有设计环节纳入统一的自顶向下的设计方案中。</p></li>
+<li><p>EDA不但在整个设计流程上充分利用计算机的自动设计能力，而且在各个设计层次上利用计算机完成不同内容的仿真模拟，在系统板设计结束后仍可利用计算机对硬件系统进行完整的测试。</p></li>
+</ul>
+<h2 id="eda设计流程">EDA设计流程</h2>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204334.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<h3 id="对应开发工具">对应开发工具</h3>
+<ul>
+<li><p>设计输入编辑器</p></li>
+<li><p>HDL综合器</p></li>
+<li><p>仿真器与时序分析器</p></li>
+<li><p>适配器</p></li>
+<li><p>下载器</p></li>
+</ul>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204812.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<h2 id="asic开发流程">ASIC开发流程</h2>
+<h3 id="asic设计分类">ASIC设计分类</h3>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204527.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<h3 id="asic实现方法">ASIC实现方法</h3>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204523.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<h3 id="asic设计流程">ASIC设计流程</h3>
+<figure>
+<img
+src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20230903204517.png"
+alt="Img" />
+<figcaption aria-hidden="true">Img</figcaption>
+</figure>
+<h2 id="ip核">IP核</h2>
+<ul>
+<li><p>软IP</p></li>
+<li><p>固IP</p></li>
+<li><p>硬IP</p></li>
+</ul>
+<h2 id="发展趋势">发展趋势</h2>
+<ul>
+<li><p>在一个芯片上完成的系统级的集成已成为可能</p></li>
+<li><p>在一个芯片上完成的系统级的集成已成为可能。</p></li>
+<li><p>可编程逻辑器件开始进入传统的ASIC市场。</p></li>
+<li><p>EDA工具和P核应用更为广泛。</p></li>
+<li><p>高性能的EDA工具得到长足的发展,其自动化和智能化程度不断提高。十算机硬件平台性能大幅度提高,为复杂的SOC设计提供了物理基础。</p></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/15/enjine-test/" rel="next" title="engine-test">
+                  engine-test <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Programmed in love with -XZephyrH</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
