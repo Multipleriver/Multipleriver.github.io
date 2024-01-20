@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://Multipleriver.github.io/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-20T17:17:26+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -14,6 +14,12 @@
                 hreflang="zh-cn"
                 href="https://Multipleriver.github.io/"
                 />
+  </url><url>
+    <loc>https://Multipleriver.github.io/p/demo/</loc>
+    <lastmod>2024-01-20T17:17:26+08:00</lastmod>
+  </url><url>
+    <loc>https://Multipleriver.github.io/post/</loc>
+    <lastmod>2024-01-20T17:17:26+08:00</lastmod>
   </url><url>
     <loc>https://Multipleriver.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
