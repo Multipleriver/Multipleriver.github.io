@@ -1,1 +1,1 @@
-git status && git add . && git commit -m "提交信息" && git push origin master
+git add . && git commit -m "message commited" && git push origin master
