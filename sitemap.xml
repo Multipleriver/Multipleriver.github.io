@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://Multipleriver.github.io/en/sitemap.xml</loc>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://Multipleriver.github.io/zh-cn/sitemap.xml</loc>
-    
-      <lastmod>2024-01-20T17:17:26+08:00</lastmod>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://Multipleriver.github.io/</loc>
+    <lastmod>2024-01-20T17:17:26+08:00</lastmod>
+  </url><url>
+    <loc>https://Multipleriver.github.io/post/</loc>
+    <lastmod>2024-01-20T17:17:26+08:00</lastmod>
+  </url><url>
+    <loc>https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2024-01-20T17:17:26+08:00</lastmod>
+  </url><url>
+    <loc>https://Multipleriver.github.io/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Multipleriver.github.io/page/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://Multipleriver.github.io/categories/</loc>
+  </url><url>
+    <loc>https://Multipleriver.github.io/links/</loc>
+  </url><url>
+    <loc>https://Multipleriver.github.io/search/</loc>
+  </url><url>
+    <loc>https://Multipleriver.github.io/tags/</loc>
+  </url><url>
+    <loc>https://Multipleriver.github.io/categories/test/</loc>
+  </url><url>
+    <loc>https://Multipleriver.github.io/%E5%85%B3%E4%BA%8E/</loc>
+  </url>
+</urlset>

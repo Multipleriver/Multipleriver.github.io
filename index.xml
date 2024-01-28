@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>演示站点</title>
+        <title>百川 的小站</title>
         <link>https://Multipleriver.github.io/</link>
-        <description>Recent content on 演示站点</description>
+        <description>Recent content on 百川 的小站</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Example Person</copyright>
+        <copyright>rivers@hhu.edu.cn</copyright>
         <lastBuildDate>Sat, 20 Jan 2024 17:17:26 +0800</lastBuildDate><atom:link href="https://Multipleriver.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Demo</title>
-        <link>https://Multipleriver.github.io/p/demo/</link>
+        <title>单片机课程设计</title>
+        <link>https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sat, 20 Jan 2024 17:17:26 +0800</pubDate>
         
-        <guid>https://Multipleriver.github.io/p/demo/</guid>
+        <guid>https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;h2 id=&#34;实验1简单-io-实验&#34;&gt;实验1：简单 IO 实验&lt;/h2&gt;
 &lt;h3 id=&#34;任务&#34;&gt;任务&lt;/h3&gt;
 &lt;ol&gt;
