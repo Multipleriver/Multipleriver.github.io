@@ -1,40 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>百川 的小站</title>
+        <title>夜来风雨声</title>
         <link>https://Multipleriver.github.io/</link>
-        <description>Recent content on 百川 的小站</description>
+        <description>Recent content on 夜来风雨声</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>rivers@hhu.edu.cn</copyright>
         <lastBuildDate>Tue, 13 Feb 2024 10:11:26 +0800</lastBuildDate><atom:link href="https://Multipleriver.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>毛泽东思想和中国特色社会主义理论体系概论学习记录</title>
-        <link>https://Multipleriver.github.io/p/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+        <title>学习记录 | 毛泽东思想和中国特色社会主义理论体系概论</title>
+        <link>https://Multipleriver.github.io/p/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/</link>
         <pubDate>Tue, 13 Feb 2024 10:11:26 +0800</pubDate>
         
-        <guid>https://Multipleriver.github.io/p/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-        <description>&lt;!--中心排版，结束后添加分页符--&gt;
-&lt;div align=center STYLE=&#34;page-break-after: always;&#34;&gt;
-&lt;!--敲几个回车--&gt;
-    &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-&lt;!--标题调整，在这里选择你想要的字号和字体--&gt;
-    &lt;font size=15 face=&#34;黑体&#34;&gt;
-        毛泽东思想和中国特色社会主义理论&lt;br/&gt;
-        体系概论&lt;br/&gt;
-        学习记录&lt;!--内容自己改--&gt;
-    &lt;/font&gt;
-&lt;!--敲几个回车--&gt;
-    &lt;br/&gt;&lt;br/&gt;
-    &lt;font size=6 face=&#34;BankGothic Lt BT&#34;&gt;
-&lt;!--内容自己改--&gt;
-    &lt;/font&gt;
-&lt;!--敲几个回车--&gt;
-    &lt;font size = 4&gt;
-        Rivers@srhaze.com&lt;!--内容自己改--&gt;&lt;br/&gt;
-        2023年11月15日&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    &lt;/font&gt;
-&lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <guid>https://Multipleriver.github.io/p/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png" alt="Featured image of post 学习记录 | 毛泽东思想和中国特色社会主义理论体系概论" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -142,7 +121,7 @@ C--&gt; G[习近平新时代中国特色社会主义思想]&lt;/div&gt;
 &lt;/ul&gt;
 &lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
 &lt;h3 id=&#34;形成过程&#34;&gt;形成过程&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20231027151224.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164359.png&#34;
 	
 	
 	
@@ -167,9 +146,8 @@ C--&gt; G[习近平新时代中国特色社会主义思想]&lt;/div&gt;
 &lt;li&gt;《中国红色政权为什么能够存在》&lt;/li&gt;
 &lt;li&gt;《井冈山的斗争》&lt;/li&gt;
 &lt;li&gt;1929.12 古田会议 思想建党，政治建军&lt;/li&gt;
-&lt;li&gt;《星星之火可以燎原》1930&lt;/li&gt;
-&lt;li&gt;《反对本本主义》1930
-毛泽东思想形成的标志！&lt;/li&gt;
+&lt;li&gt;1930《星星之火可以燎原》&lt;/li&gt;
+&lt;li&gt;1930《反对本本主义》：毛泽东思想形成的标志&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;成熟
@@ -532,7 +510,7 @@ A --&gt; |辅助的、不可缺少的| C[&#34;工人阶级和非劳动者的联�
 &lt;li&gt;统一战线只有以武装斗争为支柱，才能存在和发展&lt;/li&gt;
 &lt;li&gt;武装斗争只有以统一战线为基础，特别是以工农联盟为基础，才能发展壮大和不断胜利&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;新民主主义理论意义&#34;&gt;新民主主义理论意义&lt;/h3&gt;
+&lt;h3 id=&#34;意义&#34;&gt;意义&lt;/h3&gt;
 &lt;p&gt;只有社会主义才能救中国&lt;/p&gt;
 &lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
 &lt;h2 id=&#34;社会主义改造理论&#34;&gt;社会主义改造理论&lt;/h2&gt;
@@ -804,15 +782,14 @@ G--&gt;H&lt;/div&gt;
 &lt;li&gt;进一步改变了世界政治经济格局，增强了社会主义的力量， 对维护世界和平产生了积极影响。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;社会主义建设道路初步探索&#34;&gt;社会主义建设道路初步探索&lt;/h2&gt;
-&lt;p&gt;《论十大关系》
-《关于正确处理人民内部矛盾的问题》&lt;/p&gt;
+&lt;p&gt;《论十大关系》、《关于正确处理人民内部矛盾的问题》&lt;/p&gt;
 &lt;h3 id=&#34;初步探索的理论成果&#34;&gt;初步探索的理论成果&lt;/h3&gt;
 &lt;h4 id=&#34;调动一切积极因素为社会主义事业服务&#34;&gt;调动一切积极因素为社会主义事业服务&lt;/h4&gt;
 &lt;p&gt;如何在中国这样一个经济文化比较落后的东方大国建设和巩固社会主义，是党面临的一个崭新课题&lt;/p&gt;
 &lt;p&gt;1956.2.24，苏共二十大赫鲁晓夫全盘否定斯大林&lt;/p&gt;
 &lt;p&gt;照搬苏联模式不符合国情，需要积极探索合适的社会主义建设道路&lt;/p&gt;
 &lt;p&gt;1956.4-5，毛泽东先后在中央政治局扩大会议和最高国务会议上，作了《论十大关系》的报告，明确提出要以苏为鉴，独立自主地探索适合中国情况的社会主义建设道路。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;ndash;论十大关系》&amp;ndash;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ndash;《论十大关系》&amp;ndash;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;《论十大关系》的主要内容：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;中国工业化道路问题
@@ -871,33 +848,33 @@ A --&gt; |非对抗性矛盾 | C[人民内部矛盾]
 C--&gt; E(要民主)&lt;/div&gt;
 
 &lt;h4 id=&#34;中国工业化道路的思想&#34;&gt;中国工业化道路的思想&lt;/h4&gt;
-&lt;p&gt;《论十大关系》中的第一大关系：重工业和轻工业、农业的关系
-《关于正确处理人民内部矛盾的问题》：提出了中国工业化道路的问题&lt;/p&gt;
+&lt;p&gt;《论十大关系》中的第一大关系：重工业和轻工业、农业的关系&lt;/p&gt;
+&lt;p&gt;《关于正确处理人民内部矛盾的问题》：提出了中国工业化道路的问题&lt;/p&gt;
 &lt;p&gt;1962 八届之中全会：以农业为基础、工业为主导，发展国民经济的方针和“两条腿走路”工业化发展思路&lt;/p&gt;
-&lt;h4 id=&#34;初步探索的其他理论成果&#34;&gt;初步探索的其他理论成果&lt;/h4&gt;
+&lt;h4 id=&#34;其他理论成果&#34;&gt;其他理论成果&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;战略目标：四个现代化 农，工，国防，科技（关键）
+&lt;li&gt;战略目标：四个现代化 农，工，国防，科技（关键）&lt;/li&gt;
+&lt;li&gt;科学技术：
 &lt;ul&gt;
-&lt;li&gt;科学技术
-1956年党中央提出了“向科学进军”的口号，
-强调实现四个现代化关键在于科学技术现代化。
-1960.11.05，中国仿制的第一枚导弹发射成功;
-1964.10.16，中国成功地试爆了第一颗原子弹；
-1967.06.17，中国氢弹试验成功；
-1971.09.10，成功发射第一枚洲际火箭。
-中国发展核武器和远程运载能力的巨大成就打破了
-核大国的核垄断和核讹诈。&lt;/li&gt;
+&lt;li&gt;1956年党中央提出了“向科学进军”的口号，强调实现四个现代化关键在于科学技术现代化&lt;/li&gt;
+&lt;li&gt;1960.11.05，中国仿制的第一枚导弹发射成功&lt;/li&gt;
+&lt;li&gt;1964.10.16，中国成功地试爆了第一颗原子弹&lt;/li&gt;
+&lt;li&gt;1967.06.17，中国氢弹试验成功&lt;/li&gt;
+&lt;li&gt;1971.09.10，成功发射第一枚洲际火箭&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;重视知识分子工作
-1965.1 定论：知识分子是工人阶级的一部分——《论知识分子问题》&lt;/li&gt;
+&lt;li&gt;重视知识分子工作：
+&lt;ul&gt;
+&lt;li&gt;1965.1 定论：知识分子是工人阶级的一部分——《论知识分子问题》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;国防建设：三线建设&lt;/li&gt;
 &lt;li&gt;祖国统一：一纲四目&lt;/li&gt;
-&lt;li&gt;国际战略：和平共处，“三个世界划分””&lt;/li&gt;
+&lt;li&gt;国际战略：和平共处，“三个世界划分”&lt;/li&gt;
 &lt;li&gt;执政党建设：中国共产党领导、民主集中制、集体领导制&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;初步探索的意义和经验教训&#34;&gt;初步探索的意义和经验教训&lt;/h3&gt;
-&lt;h4 id=&#34;意义&#34;&gt;意义&lt;/h4&gt;
+&lt;h4 id=&#34;意义-1&#34;&gt;意义&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;巩固和发展了我国的社会主义制度&lt;/li&gt;
 &lt;li&gt;为开创中国特色社会主义理论体系提供经验、理论准备、物质基础&lt;/li&gt;
@@ -905,39 +882,8 @@ C--&gt; E(要民主)&lt;/div&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;教训&#34;&gt;教训&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;教训：
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;经济建设方面的教训&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1&lt;/li&gt;
-&lt;li&gt;3&lt;/li&gt;
-&lt;li&gt;6
-总路线：
-基本路线：
-&lt;a class=&#34;link&#34; href=&#34;http://dangshi.people.com.cn/n/2014/0504/c384616-24971905.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;http://dangshi.people.com.cn/n/2014/0504/c384616-24971905.html&lt;/a&gt;
-一五计划结束后，1957年底：生产上大的跃进，多快好省的总路线
-批评反冒进
-1958.5.28 八届二中全会：鼓足干劲、力争上游、多快好省地建设社会主义
-浮夸风共产风，人民公社，全民炼钢
-忽视，盲目
-1960年冬基本停止&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;政治建设方面的教训
-文化大革命
-三家村
-文革小组隶属于政治局常委
-江青逐步取代中央政治局和书记处
-左倾，破四旧，大字报，
-党政财文大权，
-夺权新阶段，
-1981.6《若干历史问题》内乱&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;经济建设&lt;/li&gt;
+&lt;li&gt;政治建设&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;探索中国特色社会主义建设道路：开始于毛泽东，成功于邓小平&lt;/p&gt;
 &lt;p&gt;“文革”结束后，邓小平在领导全党正确评价毛泽东的历史功过、确立毛泽东思想历史地位的同时，继续探索中国实现社会主义现代化的道路，终于找到了一条具有中国特色的社会主义建设道路。&lt;/p&gt;
@@ -948,19 +894,30 @@ C--&gt; E(要民主)&lt;/div&gt;
 &lt;p&gt;中国特色社会主义主题词：中国特色社会主义理论体系&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;邓小平理论
-解放思想、实事求是的思想路线
-社会主义初级阶段理论；
-党的基本路线；
-社会主义的根本任务；
-“三步走”战略；
-改革开放理论；
-社会主义市场经济理论；
-“两手抓，两手都要硬”的思想；
-“一国两制”的构想以及坚持、加强和改善党的领导的思想&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;解放思想、实事求是的思想路线&lt;/li&gt;
+&lt;li&gt;社会主义初级阶段理论&lt;/li&gt;
+&lt;li&gt;党的基本路线&lt;/li&gt;
+&lt;li&gt;社会主义的根本任务&lt;/li&gt;
+&lt;li&gt;“三步走”战略&lt;/li&gt;
+&lt;li&gt;改革开放理论&lt;/li&gt;
+&lt;li&gt;社会主义市场经济理论&lt;/li&gt;
+&lt;li&gt;“两手抓，两手都要硬”的思想&lt;/li&gt;
+&lt;li&gt;“一国两制”的构想以及坚持、加强和改善党的领导的思想&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;“三个代表重要思想”
-中国共产党始终代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;中国共产党始终代表中国先进生产力的发展要求，&lt;/li&gt;
+&lt;li&gt;代表中国先进文化的前进方向，&lt;/li&gt;
+&lt;li&gt;代表中国最广大人民的根本利益。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;科学发展观
-以人为本，全面、协调、可持续发展&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;以人为本，全面、协调、可持续发展&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;中国特色社会主义理论体系形成发展的社会历史条件&#34;&gt;中国特色社会主义理论体系形成发展的社会历史条件&lt;/h3&gt;
 &lt;ul&gt;
@@ -977,15 +934,13 @@ C--&gt; E(要民主)&lt;/div&gt;
 &lt;/ul&gt;
 &lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
 &lt;h2 id=&#34;邓小平理论中国特色社会主义理论体系的形成&#34;&gt;邓小平理论：中国特色社会主义理论体系的形成&lt;/h2&gt;
-&lt;p&gt;邓小平是中共第二代领导核心，中国改革开放和现代化建设的总设计师
-1984.1 经济特区题词
-1985 提河海大学校名
-1992.1.23 南方谈话&lt;/p&gt;
-&lt;h3 id=&#34;邓小平理论的形成背景&#34;&gt;邓小平理论的形成背景&lt;/h3&gt;
-&lt;p&gt;时代主题：和平（东西）发展（南北）&lt;/p&gt;
-&lt;p&gt;历史依据：社会主义建设的经验教训&lt;/p&gt;
-&lt;p&gt;现实依据：改革开放和现代化建设的摸索、实践&lt;/p&gt;
-&lt;p&gt;主观条件：长期从事革命实践活动的经历和崇高的精神境界&lt;/p&gt;
+&lt;p&gt;邓小平是中共第二代领导核心，中国改革开放和现代化建设的总设计师&lt;/p&gt;
+&lt;h3 id=&#34;形成背景&#34;&gt;形成背景&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;时代主题：和平（东西）发展（南北）&lt;/li&gt;
+&lt;li&gt;历史依据：社会主义建设的经验教训&lt;/li&gt;
+&lt;li&gt;现实依据：改革开放和现代化建设的摸索、实践&lt;/li&gt;
+&lt;li&gt;主观条件：长期从事革命实践活动的经历和崇高的精神境界
 &lt;ul&gt;
 &lt;li&gt;一落
 &lt;ul&gt;
@@ -1019,29 +974,37 @@ C--&gt; E(要民主)&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4 id=&#34;六种革命精神&#34;&gt;六种革命精神&lt;/h4&gt;
-&lt;h3 id=&#34;邓小平理论的发展过程&#34;&gt;邓小平理论的发展过程&lt;/h3&gt;
+&lt;h3 id=&#34;发展过程&#34;&gt;发展过程&lt;/h3&gt;
 &lt;p&gt;早在1920年11月，毛泽东同志就形象地指出：“主义譬如一面旗子，旗子立起了，大家才有所指望，才知所趋赴。”&lt;/p&gt;
 &lt;p&gt;从中国共产党成立那天起，我们党就把马克思列宁主义写在自己的旗帜上。&lt;/p&gt;
-&lt;p&gt;中国特色社会主义就是毛泽东同志所说的这样一面旗子。
-从1987年党的十三大到2022年党的二十大，八次党的代表大会的主题随着时代发展侧重点有所变化，但在大会主题中“中国特色社会主义”这个主题词是一以贯之的。&lt;/p&gt;
+&lt;p&gt;中国特色社会主义就是毛泽东同志所说的这样一面旗子。&lt;/p&gt;
+&lt;p&gt;从1987年党的十三大到2022年党的二十大，八次党的代表大会的主题随着时代发展侧重点有所变化，但在大会主题中“中国特色社会主义”这个主题词是一以贯之的。&lt;/p&gt;
+&lt;div class=&#34;mermaid&#34;&gt;timeline
+    title 邓小平理论的发展过程
+    1978.12 : 十一届三中全会
+    1982.9 : 十二大
+    1987.10 : 十三大
+    1992.1~2 : 南方谈话
+    1992.10 : 十四大
+    1997.9 : 十五大
+    1999.3 : 载入宪法&lt;/div&gt;
+
 &lt;h4 id=&#34;197812-十一届三中全会&#34;&gt;1978.12 十一届三中全会&lt;/h4&gt;
-&lt;p&gt;重新确立了实事求是的思想路线，
-彻底否定了 “以阶级斗争为纲”的错误理论和实践，
-确定把全党工作重点转移到社会主义现代化建设上来，
-作出实行改革开放的重大决策。&lt;/p&gt;
-&lt;h4 id=&#34;1982-十二大&#34;&gt;1982 十二大&lt;/h4&gt;
-&lt;p&gt;邓小平在开幕词中明确指出：
-“走自己的道路，建设有中国特色的社会主义，这就是我们总结长期历史经验得出的基本结论。”
-“中国特色社会主义”成为党全部理论和实践创新的主题
-这是中国共产党人对科学社会主义发展的开创性贡献&lt;/p&gt;
-&lt;h4 id=&#34;1987-十三大&#34;&gt;1987 十三大&lt;/h4&gt;
-&lt;p&gt;理论轮廓形成，
-初级阶段理论：一个中心、两个基本点的基本路线
-第一次对中国特色社会主义理论的主要内容作了系统概括&lt;/p&gt;
-&lt;h4 id=&#34;1992-南方谈话&#34;&gt;1992 南方谈话&lt;/h4&gt;
-&lt;p&gt;三年整顿
-党的基本路线100年动摇不得&lt;/p&gt;
+&lt;p&gt;重新确立了实事求是的思想路线，彻底否定了 “以阶级斗争为纲”的错误理论和实践，确定把全党工作重点转移到社会主义现代化建设上来，作出实行改革开放的重大决策。&lt;/p&gt;
+&lt;h4 id=&#34;19829-十二大&#34;&gt;1982.9 十二大&lt;/h4&gt;
+&lt;p&gt;邓小平在开幕词中明确指出：&lt;/p&gt;
+&lt;p&gt;“走自己的道路，建设有中国特色的社会主义，这就是我们总结长期历史经验得出的基本结论。”&lt;/p&gt;
+&lt;p&gt;“中国特色社会主义”成为党全部理论和实践创新的主题。这是中国共产党人对科学社会主义发展的开创性贡献。&lt;/p&gt;
+&lt;h4 id=&#34;198710-十三大&#34;&gt;1987.10 十三大&lt;/h4&gt;
+&lt;p&gt;理论轮廓形成&lt;/p&gt;
+&lt;p&gt;初级阶段理论：一个中心、两个基本点的基本路线&lt;/p&gt;
+&lt;p&gt;第一次对中国特色社会主义理论的主要内容作了系统概括&lt;/p&gt;
+&lt;h4 id=&#34;199212-南方谈话&#34;&gt;1992.1~2 南方谈话&lt;/h4&gt;
+&lt;p&gt;三年整顿&lt;/p&gt;
+&lt;p&gt;党的基本路线100年动摇不得&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;领导和团结全国各族人民，以经济建设为中心，坚持四项基本原则，坚持改革开放，自力更生，艰苦创业，为把我国建设成为富强民主文明和谐美丽的社会主义现代化强国而奋斗。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1055,26 +1018,29 @@ C--&gt; E(要民主)&lt;/div&gt;
 &lt;blockquote&gt;
 &lt;p&gt;社会主义的本质是解放生产力，发展生产力，消灭剥削 ，消除两极分化，最终达到共同富裕&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;发展和完善中国特色社会主义社会
-重申了深化改革、加速发展的必要性和重要性，
-并从中国实际出发，站在时代的高度，深刻地总结了十多年改革开放经验教训，
-是邓小平理论的集大成之作，标志着邓小平理论逐步走向成熟。&lt;/p&gt;
-&lt;h4 id=&#34;1992-十四大&#34;&gt;1992 十四大&lt;/h4&gt;
-&lt;p&gt;背景：粉碎四人帮之后的思想动乱（资产阶级自由化）
-总结开革开放以来十四年取得的巨大成就，
-第一次比较系统地初步回答了
-如何建设社会主义，
-如何巩固和发展社会主义的一系列基本问题，
-把对社会主义的认识提高到新的科学水平，
-是中国特色社会主义理论体系的开篇之作
-明确指出邓小平同志是我国社会主义改革开放和现代化建设的总设计师。
-高度评价了邓小平对开创中国特色社会主义理论的杰出贡献。&lt;/p&gt;
-&lt;h4 id=&#34;1997-十五大&#34;&gt;1997 十五大&lt;/h4&gt;
-&lt;p&gt;正式提出“邓小平理论”这一概念，
-深刻阐述了邓小平理论的历史地位和指导意义。
-同马克思列宁主义、毛泽东思想一起，
-确立为党的指导思想并写入党章。&lt;/p&gt;
-&lt;h4 id=&#34;1999-宪法修正案&#34;&gt;1999 宪法修正案&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;发展和完善中国特色社会主义社会&lt;/li&gt;
+&lt;li&gt;重申了深化改革、加速发展的必要性和重要性&lt;/li&gt;
+&lt;li&gt;从中国实际出发，站在时代的高度，深刻地总结了十多年改革开放经验教训&lt;/li&gt;
+&lt;li&gt;是邓小平理论的集大成之作，标志着邓小平理论逐步走向成熟&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;199210-十四大&#34;&gt;1992.10 十四大&lt;/h4&gt;
+&lt;p&gt;背景：粉碎四人帮之后的思想动乱（资产阶级自由化）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;总结开革开放以来十四年取得的巨大成就&lt;/li&gt;
+&lt;li&gt;第一次比较系统地初步回答了如何建设社会主义，如何巩固和发展社会主义的一系列基本问题&lt;/li&gt;
+&lt;li&gt;把对社会主义的认识提高到新的科学水平&lt;/li&gt;
+&lt;li&gt;是中国特色社会主义理论体系的开篇之作&lt;/li&gt;
+&lt;li&gt;明确指出邓小平同志是我国社会主义改革开放和现代化建设的总设计师&lt;/li&gt;
+&lt;li&gt;高度评价了邓小平对开创中国特色社会主义理论的杰出贡献&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;19979-十五大&#34;&gt;1997.9 十五大&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;正式提出“邓小平理论”这一概念&lt;/li&gt;
+&lt;li&gt;深刻阐述了邓小平理论的历史地位和指导意义&lt;/li&gt;
+&lt;li&gt;确立邓小平理论为党的指导思想并写入党章。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;19993-宪法修正案&#34;&gt;1999.3 宪法修正案&lt;/h4&gt;
 &lt;p&gt;载入宪法&lt;/p&gt;
 &lt;h3 id=&#34;邓小平理论的首要的基本的理论问题&#34;&gt;邓小平理论的首要的基本的理论问题&lt;/h3&gt;
 &lt;p&gt;社会主义的本质是什么（什么是社会主义，怎么建设社会主义）&lt;/p&gt;
@@ -1226,15 +1192,14 @@ C--&gt; 祖国统一论&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;文化多元发展&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;国情实践基础改革开放以来建设中国特色社会主义的伟大探索&#34;&gt;国情（实践基础）：改革开放以来建设中国特色社会主义的伟大探索&lt;/h5&gt;
 &lt;p&gt;已实现现代化建设“三步走”战略 前两步目标，
 进入全面建设“小康水平”新的发展阶段。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;邓小平“三步走”战略
-第一步，从1981年到1990年，国民生产总值翻一番，实现温饱；
-第二步，从1991年到20世纪末，再翻一番，达到小康；
+&lt;p&gt;邓小平“三步走”战略：&lt;br&gt;
+第一步，从1981年到1990年，国民生产总值翻一番，实现温饱；&lt;br&gt;
+第二步，从1991年到20世纪末，再翻一番，达到小康；&lt;br&gt;
 第三步，到21世纪中叶，再翻两番，达到中等发达国家水平。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;存在问题：&lt;/p&gt;
@@ -1248,8 +1213,7 @@ C--&gt; 祖国统一论&lt;/div&gt;
 &lt;li&gt;外交情况&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;党情现实依据科学判断党的历史方位和总结经验教训&#34;&gt;党情（现实依据）：科学判断党的历史方位和总结经验教训&lt;/h5&gt;
-&lt;p&gt;从领导人民为夺取全国政权而奋斗的党，
-成为领导人民掌握全国政权并长期执政的党&lt;/p&gt;
+&lt;p&gt;从领导人民为夺取全国政权而奋斗的党，成为领导人民掌握全国政权并长期执政的党。&lt;/p&gt;
 &lt;p&gt;党在各个历史时期的实践正是体现了“三个代表”&lt;/p&gt;
 &lt;p&gt;所处环境与自身状况&lt;/p&gt;
 &lt;div class=&#34;mermaid&#34;&gt;graph LR
@@ -1260,16 +1224,14 @@ C--&gt;E[党应该始终成为坚强的领导核心]
 D--&gt;E&lt;/div&gt;
 
 &lt;h4 id=&#34;三个代表重要思想的形成过程&#34;&gt;“三个代表”重要思想的形成过程&lt;/h4&gt;
-&lt;p&gt;第一阶段： 2000年2月正式提出
-第二阶段： 2001年7月全面阐述
-第三阶段： 2002年11月确定内容&lt;/p&gt;
-&lt;p&gt;党的十六大把“三个代表”重要思想同马克思列宁主义、毛泽东思想、邓小平理论一道作为我们党必须长期坚持的指导思想写进了党章。&lt;/p&gt;
-&lt;p&gt;2004年写进了国家宪法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一阶段： 2000年2月正式提出&lt;/li&gt;
+&lt;li&gt;第二阶段： 2001年7月全面阐述&lt;/li&gt;
+&lt;li&gt;第三阶段： 2002年11月确定内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;党的十六大把“三个代表”重要思想同马克思列宁主义、毛泽东思想、邓小平理论一道作为我们党必须长期坚持的指导思想写进了党章（2004年被写进了国家宪法）。&lt;/p&gt;
 &lt;h4 id=&#34;三个代表重要思想的核心观点&#34;&gt;“三个代表”重要思想的核心观点&lt;/h4&gt;
-&lt;p&gt;中国共产党
-始终代表中国先进生产力的发展要求，
-代表中国先进文化的前进方向，
-代表中国最广大人民的根本利益。&lt;/p&gt;
+&lt;p&gt;中国共产党始终代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20231105165749.png&#34;
 	
 	
@@ -1281,9 +1243,10 @@ D--&gt;E&lt;/div&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;始终代表中国先进生产力的发展要求&#34;&gt;始终代表中国先进生产力的发展要求&lt;/h5&gt;
-&lt;p&gt;就是党的理论、路线、纲领、方针、政策和各项工作，
-必须努力符合生产力发展的规律，
-体现不断推进社会生产力的解放和发展的要求，
+&lt;p&gt;始终代表中国先进生产力的发展要求&lt;br&gt;
+就是党的理论、路线、纲领、方针、政策和各项工作，&lt;br&gt;
+必须努力符合生产力发展的规律，&lt;br&gt;
+体现不断推进社会生产力的解放和发展的要求，&lt;br&gt;
 通过发展生产力不断 提高人民权群众的生活水平。&lt;/p&gt;
 &lt;p&gt;围绕着生产力的问题：&lt;/p&gt;
 &lt;ul&gt;
@@ -1293,16 +1256,18 @@ D--&gt;E&lt;/div&gt;
 &lt;/ul&gt;
 &lt;p&gt;人才强国、 科技兴国、 创新中国&lt;/p&gt;
 &lt;h5 id=&#34;始终代表中国先进文化的前进方向&#34;&gt;始终代表中国先进文化的前进方向&lt;/h5&gt;
-&lt;p&gt;建设社会主义精神文明，
-不断满足人民群众日益增长的精神文化需求。
-促进全民族思想道德素质和科学文化素质的不断提高，
+&lt;p&gt;始终代表中国先进文化的前进方向&lt;br&gt;
+建设社会主义精神文明，&lt;br&gt;
+不断满足人民群众日益增长的精神文化需求，&lt;br&gt;
+促进全民族思想道德素质和科学文化素质的不断提高，&lt;br&gt;
 为我国经济发展和社会进步提供精神动力和智力支持。&lt;/p&gt;
 &lt;p&gt;物质的（生产力问题） &amp;ndash;&amp;gt; 精神的（文化问题）&lt;/p&gt;
 &lt;h5 id=&#34;始终代表中国最广大人民的根本利益&#34;&gt;始终代表中国最广大人民的根本利益&lt;/h5&gt;
-&lt;p&gt;党的全部工作的出发点和落脚点，
-就是不断实现好维护好发展好最广大人民的根本利益，
-充分发挥人民群众的积极性、主动性、创造性，
-在社会不断发展进步的基础上，
+&lt;p&gt;始终代表中国最广大人民的根本利益&lt;br&gt;
+作为党的全部工作的出发点和落脚点，&lt;br&gt;
+就是不断实现好维护好发展好最广大人民的根本利益，&lt;br&gt;
+充分发挥人民群众的积极性、主动性、创造性，&lt;br&gt;
+在社会不断发展进步的基础上，&lt;br&gt;
 使人民群众不断获得切实的经济、政治、文化利益。&lt;/p&gt;
 &lt;h5 id=&#34;主要内容-1&#34;&gt;主要内容&lt;/h5&gt;
 &lt;ul&gt;
@@ -1312,14 +1277,14 @@ D--&gt;E&lt;/div&gt;
 &lt;li&gt;建设社会主义政治文明&lt;/li&gt;
 &lt;li&gt;推进党的建设新的伟大工程&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;联系：
-戈尔巴乔夫改革的民主化改革的性质、
+&lt;p&gt;联系：&lt;br&gt;
+戈尔巴乔夫改革的民主化改革的性质、&lt;br&gt;
 民主社会主义和科学社会主义的区别&lt;/p&gt;
 &lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
 &lt;h2 id=&#34;科学发展观中国特色社会主义理论体系在新世纪新阶段的新发展&#34;&gt;科学发展观：中国特色社会主义理论体系在新世纪新阶段的新发展&lt;/h2&gt;
 &lt;h3 id=&#34;科学发展观的主要内容&#34;&gt;科学发展观的主要内容&lt;/h3&gt;
 &lt;p&gt;坚持以人为本，树立全面、协调、可持续的发展观，促进经济社会和人的全面发展&lt;/p&gt;
-&lt;p&gt;发展什么：生产力
+&lt;p&gt;发展什么：生产力&lt;br&gt;
 怎么发展：科学性地&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;加快转变经济发展方式&lt;/li&gt;
@@ -1350,8 +1315,7 @@ D --&gt;C[90-以人为中心的发展]&lt;/div&gt;
 &lt;h4 id=&#34;基尼系数&#34;&gt;基尼系数&lt;/h4&gt;
 &lt;h4 id=&#34;拉美化陷阱&#34;&gt;拉美化陷阱&lt;/h4&gt;
 &lt;p&gt;拉美国家遵循“先经济增长，后收入分配”的发展思路，其认为：“重要的是发展，社会不公将会在强大的发展动力中逐步消除”。&lt;/p&gt;
-&lt;p&gt;拉美成为全球贫富差距最严重的地区。
-目前平均基尼系数已达0.522。&lt;/p&gt;
+&lt;p&gt;拉美成为全球贫富差距最严重的地区，目前平均基尼系数已达0.522。&lt;/p&gt;
 &lt;h4 id=&#34;发达国家的发展经验&#34;&gt;发达国家的发展经验&lt;/h4&gt;
 &lt;p&gt;经济发展需要与社会公平正义协同推进&lt;/p&gt;
 &lt;p&gt;西欧，包括福利程度最高的北欧国家，在经济起飞之前和经济发展过程中，把实现社会公平确定为发展经济的重要目的，从而建立了比较完善的社会保护体系，这反过来又促进了经济的发展。&lt;/p&gt;
@@ -1382,30 +1346,32 @@ D --&gt;C[90-以人为中心的发展]&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h5 id=&#34;去工业化&#34;&gt;去工业化&lt;/h5&gt;
-&lt;p&gt;发展金融旅游业
-巴西：反面教材
-80-工业比重下降，第三产业发展迅速
-没有健全的工业化支撑，服务和质量得不到保障
-资源空心化，拿资源换外汇
-2008金融海啸
-不能去工业化
-缩小资源浪费，发展高科技产业&lt;/p&gt;
+&lt;p&gt;发展金融旅游业&lt;br&gt;
+巴西：反面教材&lt;br&gt;
+80-工业比重下降，第三产业发展迅速&lt;br&gt;
+没有健全的工业化支撑，服务和质量得不到保障&lt;br&gt;
+资源空心化，拿资源换外汇&lt;br&gt;
+2008金融海啸&lt;br&gt;
+不能去工业化&lt;br&gt;
+缩小资源浪费，发展高科技产业&lt;br&gt;&lt;/p&gt;
 &lt;h5 id=&#34;城市化&#34;&gt;城市化&lt;/h5&gt;
-&lt;p&gt;发达国家一般都是75%以上
-虚假城市化（城市化&amp;gt;区域经济发展）、滞后城市化&lt;/p&gt;
+&lt;p&gt;发达国家一般都是75%以上&lt;/p&gt;
+&lt;p&gt;虚假城市化（城市化&amp;gt;区域经济发展）、滞后城市化&lt;/p&gt;
 &lt;p&gt;我国是一个发展中的庞大经济体，正处在工业化、城市化的进程当中，规模是迄今城市发展史上罕见的。&lt;/p&gt;
 &lt;p&gt;从工业化角度来说，把发达国家用200年甚至更长时间完成的工业化要通过几十年来完成，这种速度也是历史上罕见的。&lt;/p&gt;
 &lt;p&gt;从城市化角度来说，我国正经历大规模的农村人口向城市转移，这也是世界史上罕见的。&lt;/p&gt;
 &lt;p&gt;农村向城市的社会转型，农业社会向工业社会的转型，必然带来资源消耗大量增加。&lt;/p&gt;
 &lt;h5 id=&#34;能源紧缺时代&#34;&gt;能源紧缺时代&lt;/h5&gt;
-&lt;p&gt;城乡差距地区差距巨大
-教育投资、就业压力最大&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;城乡差距地区差距巨大&lt;/li&gt;
+&lt;li&gt;教育投资、就业压力最大&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
 &lt;h2 id=&#34;习近平新时代中国特色社会主义思想中国特色社会主义理论体系在新时代的新篇章&#34;&gt;习近平新时代中国特色社会主义思想：中国特色社会主义理论体系在新时代的新篇章&lt;/h2&gt;
-&lt;p&gt;以习近平同志为核心的党中央
-统筹把握 中华民族伟大复兴战略全局和世界百年未有之大变局，
-坚持把马克思主义基本原理同中国具体实际相结合、同中华优秀传统文化相结合，
-坚持毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观，深刻总结并充分运用党成立以来的历史经验，
+&lt;p&gt;以习近平同志为核心的党中央&lt;br&gt;
+统筹把握 中华民族伟大复兴战略全局和世界百年未有之大变局，&lt;br&gt;
+坚持把马克思主义基本原理同中国具体实际相结合、同中华优秀传统文化相结合，&lt;br&gt;
+坚持毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观，深刻总结并充分运用党成立以来的历史经验，&lt;br&gt;
 从新的实际出发， 创立了习近平新时代中国特色社会主义思想。&lt;/p&gt;
 &lt;h3 id=&#34;习近平新时代中国特色社会主义思想的主要内容&#34;&gt;习近平新时代中国特色社会主义思想的主要内容&lt;/h3&gt;
 &lt;p&gt;党的十九大、十九届六中全会提出的“十个明确”“十四个坚持”“十三个方面成就”概括了习近平新时代中国特色社会主义思想的主要内容。&lt;/p&gt;
@@ -2632,7 +2598,7 @@ return res
         <pubDate>Fri, 19 Jan 2024 17:17:26 +0800</pubDate>
         
         <guid>https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
-        <description>&lt;h2 id=&#34;实验1简单-io-实验&#34;&gt;实验1：简单 IO 实验&lt;/h2&gt;
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214163720.png" alt="Featured image of post 单片机课程设计" /&gt;&lt;h2 id=&#34;实验1简单-io-实验&#34;&gt;实验1：简单 IO 实验&lt;/h2&gt;
 &lt;h3 id=&#34;任务&#34;&gt;任务&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;控制 8 个 LED 依次点亮，模拟流水灯试验。&lt;/li&gt;
@@ -3976,14 +3942,6 @@ return res
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
         <guid>https://Multipleriver.github.io/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://Multipleriver.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://Multipleriver.github.io/p/</guid>
         <description></description>
         </item>
         <item>
