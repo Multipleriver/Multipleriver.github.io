@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1 微机原理课后写着玩玩系列 CPU和GPU的区别 简介 CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。 GPU是图形系统结构的重要元件'>
+<title>硬件杂谈 | CPU和GPU</title>
+
+<link rel='canonical' href='https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/'>
+
+<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='硬件杂谈 | CPU和GPU'>
+<meta property='og:description' content='1 微机原理课后写着玩玩系列 CPU和GPU的区别 简介 CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。 GPU是图形系统结构的重要元件'>
+<meta property='og:url' content='https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/'>
+<meta property='og:site_name' content='夜来风雨声'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-12-10T16:37:06&#43;08:00'/><meta property='article:modified_time' content='2023-12-10T16:37:06&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png' />
+<meta name="twitter:title" content="硬件杂谈 | CPU和GPU">
+<meta name="twitter:description" content="1 微机原理课后写着玩玩系列 CPU和GPU的区别 简介 CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。 GPU是图形系统结构的重要元件"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/DEER2_hu9c801967a7dbef95c53b8f80334b82ee_178426_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💘</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">夜来风雨声</a></h1>
+            <h2 class="site-description">静下心来，做读书人。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Multipleriver/Multipleriver.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#cpu和gpu的区别">CPU和GPU的区别</a>
+      <ol>
+        <li><a href="#简介">简介</a></li>
+        <li><a href="#gpu的发展">GPU的发展</a></li>
+        <li><a href="#主要区别列表">主要区别列表</a></li>
+      </ol>
+    </li>
+    <li><a href="#为什么gpu适合炼丹">为什么GPU适合炼丹</a>
+      <ol>
+        <li><a href="#一并行处理优势">一、并行处理优势</a></li>
+        <li><a href="#二浮点计算优势">二、浮点计算优势</a>
+          <ol>
+            <li><a href="#计算单元位宽">计算单元位宽</a></li>
+            <li><a href="#cpu和gpu浮点运算性能比较">CPU和GPU浮点运算性能比较</a></li>
+          </ol>
+        </li>
+        <li><a href="#三nvidia的努力">三、Nvidia的努力</a></li>
+        <li><a href="#四生态支持">四、生态支持</a></li>
+      </ol>
+    </li>
+    <li><a href="#总结什么类型的程序适合在gpu上运行">总结：什么类型的程序适合在GPU上运行？</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" loading="lazy" alt="Featured image of post 硬件杂谈 | CPU和GPU" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/">硬件杂谈 | CPU和GPU</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 10, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">微机原理课后写着玩玩系列
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div STYLE="page-break-after: always;"></div>
+<h2 id="cpu和gpu的区别">CPU和GPU的区别</h2>
+<h3 id="简介">简介</h3>
+<p>CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。</p>
+<p>GPU是图形系统结构的重要元件，是连接计算机和显示终端的纽带。</p>
+<h3 id="gpu的发展">GPU的发展</h3>
+<p>光栅化显示系统离不开图形处理器。早期的显卡只包含简单的存储器和帧缓冲区，它们实际上只起了一个图形的存储和传递作用，一切操作都必须由CPU来控制。</p>
+<p>这对于文本和一些简单的图形来说是足够的，但是当要处理复杂场景特别是一些真实感的三维场景，单靠这种系统是无法完成任务的。
+所以后来发展的显卡都有图形处理的功能。它不单单存储图形，而且能完成大部分图形功能，这样就大大减轻了CPU的负担，提高了显示能力和显示速度。</p>
+<h3 id="主要区别列表">主要区别列表</h3>
+<p>|参数| CPU | GPU |
+| &ndash; | &ndash; |
+|通用性|通用|专用|
+|核心数|少|超级多|
+| 线程数 | 少 | 多 |
+| reg数 | 少 | 多 |
+| cache容量 | 大 | 小（计算卡的也不小）|
+| SIMD | 小 | 大 |
+| 时钟频率 | 较高 | 较低 |
+| 运算延迟 | 相对较小 | 相对较大 |
+| 数据吞吐量 | 相对较小 | 相对较大 |
+|功耗|相对较低|相对较高|
+|单核心任务复杂程度|复杂|简单|
+| 任务调度 | 通过操作系统调度 | 无复杂调度 |
+| 控制逻辑 | 复杂 | 简单 |
+| 优化电路 | 相对复杂 | 相对简单 |</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163839.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<ul>
+<li>CPU需要很强的通用性来处理各种不同的数据类型，同时又要逻辑判断又会引入大量的分支跳转和中断的处理。这些都使得CPU的内部结构异常复杂。</li>
+<li>GPU面对的则是类型高度统一的、相互无依赖的大规模数据和不需要被打断的纯净的计算环境。</li>
+</ul>
+<p>综上所述：</p>
+<ol>
+<li>CPU被设计用于执行各种不同类型和级别的串行任务，包括操作系统运行、应用程序执行、数据处理等，适用于广泛的计算任务。</li>
+<li>GPU包含大量小而高效、能同时处理多个相似任务的核心，最初设计用于图形渲染，在不断发展的过程中向着并行处理而优化。这种并行性使GPU适合处理大规模数据集，执行相同计算的多个任务。</li>
+<li>GPU的计算速度比CPU快得多？emm，GPU相对于CPU的速度取决于执行的计算类型。</li>
+</ol>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="为什么gpu适合炼丹">为什么GPU适合炼丹</h2>
+<h3 id="一并行处理优势">一、并行处理优势</h3>
+<p>图形卷积计算的filter是一个接一个地依次进行、每次计算独立于其他计算的。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163906.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>因此卷积神经网络的许多计算都可以分解成更小的计算单元，且小的计算集不会相互依赖，它是高度并行的。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163917.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>GPU在机器学习领域大展身手的原因也是跟他们的特点有关。机器学习任务通常牵涉到大规模数据并行计算，而GPU高并行性使得它们在处理并行计算任务时表现卓越。</p>
+<h3 id="二浮点计算优势">二、浮点计算优势</h3>
+<p>浮点运算的结果不是准确值，它的精度取决于数据位宽。
+要解决精度问题，也只能提高位宽。</p>
+<h4 id="计算单元位宽">计算单元位宽</h4>
+<p>实际使用的单精度浮点是32位，双精度是64位。
+CPU的FPU率先支持了更高宽度的数据。英特尔的CPU计算浮点的时候内部精度是80位，输出输入还是64位；但很多GPU（一般Nvidia非专业卡现在都给蔽了双精度）都是单精度32位的，专业计算卡现在一般都是64位。</p>
+<h4 id="cpu和gpu浮点运算性能比较">CPU和GPU浮点运算性能比较</h4>
+<p>CPU的FPU和逻辑单元、核心数量和频率都是同步的。每个FPU必须配对全套的逻辑和编解码单元以保证编程方面的兼容性。这也许也是就限制了CPU的核心做不了太多的一个因素。
+反正核心就那么几个，只能把CPU单核频率上升到很高的水平，支持各种超级宽的数据格式。</p>
+<p>而相比之下，GPU就是大批大批的小型FPU，其他的东西能少就少。
+GPU擅长的是数值计算，不擅长处理分支和随机读写。</p>
+<p>如果只做一道浮点运算，其实是CPU更快（频率更高嘛）。</p>
+<p>但问题的关键是，通常来说浮点运算都是大批量的任务且互相之间没有关联。这种情况下，复杂的浮点运算就变成一个并行问题了（和第一个原因有所重合），GPU大批量低频小FPU就有显著优势了（一言以蔽之，堆料也）。</p>
+<p>综上所述，GPU浮点运算能力得到充分发挥的前提是：</p>
+<ol>
+<li>任务向量化</li>
+<li>连续读写</li>
+<li>任务分支少</li>
+</ol>
+<p>而神经网络就是一个这样的模型。</p>
+<h3 id="三nvidia的努力">三、Nvidia的努力</h3>
+<p>是的没错，Nvidia的不断努力也是GPU适合神经网络的重要原因。
+Nvidia想方设法让GPU突破传统，装载更多先进的单元以应对更复杂的任务。没有Nivida，GPU最起码不会这么适配神经网络计算。</p>
+<p>其中比较有代表性的就是张量计算核心TC。
+矩阵运算和张量运算是TC加速的主要对象，</p>
+<ul>
+<li><strong>硬件加速</strong>：与传统的GPU相比，TC是专门设计用于数学计算的硬件，因此在执行矩阵和张量运算时具有显著的加速效果。这使得GPU成为深度学习任务的理想选择。</li>
+<li><strong>资源优化</strong>：GPU中的资源分配对性能至关重要。在一个流式多处理器（SM）中，拥有TC能大大降低共享内存访问和FFMA操作的成本，让每个线程专注于更多的计算，而不是计算索引。</li>
+</ul>
+<p>在深度学习中的应用在深度学习中，TC的应用广泛，包括矩阵乘法、卷积运算、元素级操作以及其他数学运算。这些操作构成了深度学习模型的基础，而TC的高性能和并行计算能力有助于加速训练和推理过程。</p>
+<h3 id="四生态支持">四、生态支持</h3>
+<p>GPU得到了TensorFlow、PyTorch等主流深度学习框架的良好支持，这使得开发者可以很方便地使用GPU进行深度学习的开发。</p>
+<p>这确实很重要。之前苹果联盟了Pytorch，然后发现M3芯片的笔记本跑Stable Difussion比以前快的不是一个档次，比大部分显卡都快。。。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="总结什么类型的程序适合在gpu上运行">总结：什么类型的程序适合在GPU上运行？</h2>
+<ol>
+<li>易映射并行</li>
+<li>计算密集型</li>
+<li>任务向量化</li>
+<li>随机读写少</li>
+<li>任务分支少</li>
+</ol>
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%80%9D%E6%94%BF%E7%AC%94%E8%AE%B0-%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">思政笔记 | 毛泽东思想和中国特色社会主义理论体系概论</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170254.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170254.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">单片机课程设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">硬件杂谈 | CPU发展史</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E8%AF%BE%E7%A8%8B%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165822.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165822.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">课程思考 | 关于拉普拉斯变换的积分区间</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170449.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170449.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">测试页面</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="Multipleriver/Multipleriver.github.io"
+    data-repo-id="R_kgDOLHRgTw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLHRgT84Ccjuf"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 rivers@hhu.edu.cn
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+# /layouts/partials/footer/custom.html
+
+
+<a href="#" id="back-to-top" title="返回顶部"></a>
+
+
+<style>
+  #back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 7px;
+    background-color: rgba(64, 158, 255, 0.5);
+    box-shadow: var(--shadow-l2);
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+
+  #back-to-top:before {
+    content: ' ';
+    display: inline-block;
+    position: relative;
+    top: 0;
+    transform: rotate(135deg);
+    height: 10px;
+    width: 10px;
+    border-width: 0 0 2px 2px;
+    border-color: var(--back-to-top-color);
+    border-style: solid;
+  }
+
+  #back-to-top:hover:before {
+    border-color: #2674e0;
+  }
+
+   
+  @media screen and (max-width: 768px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 10px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1024px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 40px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1280px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 55px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1536px) {
+    #back-to-top {
+      visibility: hidden;
+    }
+  }
+</style>
+
+
+<script>
+  function backToTop() {
+    document.documentElement.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
+  window.onload = function () {
+    let scrollTop =
+      this.document.documentElement.scrollTop || this.document.body.scrollTop
+    let totopBtn = this.document.getElementById('back-to-top')
+    if (scrollTop > 0) {
+      totopBtn.style.display = 'inline'
+    } else {
+      totopBtn.style.display = 'none'
+    }
+  }
+
+  window.onscroll = function () {
+    let scrollTop =
+      this.document.documentElement.scrollTop || this.document.body.scrollTop
+    let totopBtn = this.document.getElementById('back-to-top')
+    if (scrollTop < 200) {
+      totopBtn.style.display = 'none'
+    } else {
+      totopBtn.style.display = 'inline'
+      totopBtn.addEventListener('click', backToTop, false)
+    }
+  }
+</script>
+
+    </body>
+    <script type="text/javascript" src="https://demo.hellozwh.com/source/canvas-nest.min.js"></script>
+</html>

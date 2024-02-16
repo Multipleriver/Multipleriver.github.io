@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1 2 3 微机原理课后写着玩玩系列 封面放一只 Celeron300A 镇楼 经老师推荐，重新阅读《乔布斯传》和《硅谷之火》 20世纪40年代-50年代：电子计算机技术的起源'>
+<title>硬件杂谈 | CPU发展史</title>
+
+<link rel='canonical' href='https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/'>
+
+<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='硬件杂谈 | CPU发展史'>
+<meta property='og:description' content='1 2 3 微机原理课后写着玩玩系列 封面放一只 Celeron300A 镇楼 经老师推荐，重新阅读《乔布斯传》和《硅谷之火》 20世纪40年代-50年代：电子计算机技术的起源'>
+<meta property='og:url' content='https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/'>
+<meta property='og:site_name' content='夜来风雨声'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-12-12T10:11:26&#43;08:00'/><meta property='article:modified_time' content='2023-12-12T10:11:26&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png' />
+<meta name="twitter:title" content="硬件杂谈 | CPU发展史">
+<meta name="twitter:description" content="1 2 3 微机原理课后写着玩玩系列 封面放一只 Celeron300A 镇楼 经老师推荐，重新阅读《乔布斯传》和《硅谷之火》 20世纪40年代-50年代：电子计算机技术的起源"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/DEER2_hu9c801967a7dbef95c53b8f80334b82ee_178426_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💘</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">夜来风雨声</a></h1>
+            <h2 class="site-description">静下心来，做读书人。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Multipleriver/Multipleriver.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#20世纪40年代-50年代电子计算机技术的起源">20世纪40年代-50年代：电子计算机技术的起源</a>
+      <ol>
+        <li><a href="#电子计算机概念的形成">电子计算机概念的形成</a></li>
+        <li><a href="#eniac及早期计算机的使用">ENIAC及早期计算机的使用</a></li>
+        <li><a href="#真空管技术的应用">真空管技术的应用</a></li>
+      </ol>
+    </li>
+    <li><a href="#20世纪50年代-60年代晶体管时代">20世纪50年代-60年代：晶体管时代</a>
+      <ol>
+        <li><a href="#晶体管取代真空管">晶体管取代真空管</a></li>
+        <li><a href="#微程序设计的出现">微程序设计的出现</a></li>
+        <li><a href="#集成电路的发展">集成电路的发展</a></li>
+      </ol>
+    </li>
+    <li><a href="#20世纪70年代现代意义的处理器的诞生">20世纪70年代:（现代意义的）处理器的诞生</a>
+      <ol>
+        <li><a href="#1971年第一款微处理器intel-4004的发布">1971年:第一款微处理器Intel 4004的发布</a></li>
+        <li><a href="#微处理器功能和影响">微处理器功能和影响</a></li>
+        <li><a href="#早期微处理器的竞争">早期微处理器的竞争</a></li>
+      </ol>
+    </li>
+    <li><a href="#20世纪70年代-80年代微处理器革命">20世纪70年代-80年代:微处理器革命</a>
+      <ol>
+        <li><a href="#intel-8080和8086">Intel 8080和8086</a></li>
+        <li><a href="#motorola和zilog的竞争对手">Motorola和Zilog的竞争对手</a></li>
+        <li><a href="#80x86架构的确立">80x86架构的确立</a></li>
+      </ol>
+    </li>
+    <li><a href="#80年代-90年代计算架构的多样化">80年代-90年代:计算架构的多样化</a>
+      <ol>
+        <li><a href="#精简指令集计算risc的兴起">精简指令集计算(RISC)的兴起</a></li>
+        <li><a href="#mips和sparc等risc架构的影响">MIPS和SPARC等RISC架构的影响</a></li>
+        <li><a href="#x86架构在个人计算机中的主导地位">x86架构在个人计算机中的主导地位</a></li>
+      </ol>
+    </li>
+    <li><a href="#90年代-2000年代性能时代">90年代-2000年代:性能时代</a>
+      <ol>
+        <li><a href="#时钟速度和性能的不断提高">时钟速度和性能的不断提高</a></li>
+        <li><a href="#2000年代初多核心处理器的引入">2000年代初:多核心处理器的引入</a></li>
+        <li><a href="#并行处理和多线程技术的应用">并行处理和多线程技术的应用</a></li>
+      </ol>
+    </li>
+    <li><a href="#21世纪移动计算和专用处理器">21世纪：移动计算和专用处理器</a>
+      <ol>
+        <li><a href="#移动计算的崛起与处理器需求">移动计算的崛起与处理器需求</a></li>
+        <li><a href="#高效处理器在智能手机和平板电脑中的应用">高效处理器在智能手机和平板电脑中的应用</a></li>
+      </ol>
+    </li>
+    <li><a href="#-英特尔xeon系列处理器的关键技术">* 英特尔Xeon系列处理器的关键技术</a>
+      <ol>
+        <li><a href="#多核心与超线程技术">多核心与超线程技术</a></li>
+        <li><a href="#高速互连与内存技术">高速互连与内存技术</a></li>
+      </ol>
+    </li>
+    <li><a href="#-amd-epyc系列处理器的关键技术">* AMD EPYC系列处理器的关键技术</a>
+      <ol>
+        <li><a href="#多核心设计">多核心设计</a></li>
+        <li><a href="#能效比优化">能效比优化</a></li>
+        <li><a href="#高速互连技术">高速互连技术</a></li>
+      </ol>
+    </li>
+    <li><a href="#-苹果m系列芯片的关键技术">* 苹果M系列芯片的关键技术</a>
+      <ol>
+        <li><a href="#arm架构">ARM架构</a></li>
+        <li><a href="#统一内存架构">统一内存架构</a></li>
+        <li><a href="#集成gpu">集成GPU</a></li>
+      </ol>
+    </li>
+    <li><a href="#未来的处理器技术展望">未来的处理器技术展望</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png" loading="lazy" alt="Featured image of post 硬件杂谈 | CPU发展史" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/">硬件杂谈 | CPU发展史</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Dec 12, 2023</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 12 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">微机原理课后写着玩玩系列
+</span></span><span class="line"><span class="cl">封面放一只 Celeron300A 镇楼
+</span></span><span class="line"><span class="cl">经老师推荐，重新阅读《乔布斯传》和《硅谷之火》
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div STYLE="page-break-after: always;"></div>
+<h2 id="20世纪40年代-50年代电子计算机技术的起源">20世纪40年代-50年代：电子计算机技术的起源</h2>
+<h3 id="电子计算机概念的形成">电子计算机概念的形成</h3>
+<p>20世纪40年代，在第二次世界大战的背景下，为了满足军事计算的需求，电子计算机的概念开始形成。当时人们设计了一些模拟计算设备来计算炮弹的弹道表，这就是是电子计算机雏形。</p>
+<p>著名的Z3计算机就是在这个时期诞生的。它是由德国工程师Konrad Zuse在1941年设计，利用电磁元件实现二进制计算的机器。这标志着电子计算机时代的开始。</p>
+<h3 id="eniac及早期计算机的使用">ENIAC及早期计算机的使用</h3>
+<p>1946年2月，世界上第一台通用电子计算机ENIAC (Electronic Numerical Integrator and Computer)在美国宾夕法尼亚大学摩尔学院问世。这台计算机由John Mauchly和J. Presper Eckert领导设计，采含有18000个真空管，可编程，能在200微秒的时间内完成一次乘法运算。它的出现标志着着电子计算机技术从理论研究走向实践和商业应用。</p>
+<p>在此后的数年里，先进的计算机技术首先主要应用于科研领域，帮助科学家求解复杂科学问题。这一时期诞生的计算机包括EDVAC、BINAC、UNIVAC等。它们的运算速度不断提高，内存容量不断增大，为更广泛的应用奠定了基础。</p>
+<h3 id="真空管技术的应用">真空管技术的应用</h3>
+<p>这一时期设计的计算机大量采用了真空管技术。真空管具有功耗大、散热量大、寿命短等缺点，但由于体积小、可实现计算机内各模块间的逻辑控制，成为这时期计算机的核心部件。</p>
+<p>真空管的使用代表着利用电子技术来代替机械开关进行数据处理和运算的全新模式，推动了计算机发展速度。随着晶体管的出现和集成电路技术的发展，真空管技术逐渐被淘汰。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="20世纪50年代-60年代晶体管时代">20世纪50年代-60年代：晶体管时代</h2>
+<p>这一时期，晶体管逐渐取代了真空管，微程序设计应运而生，集成电路也取得了重大发展。</p>
+<h3 id="晶体管取代真空管">晶体管取代真空管</h3>
+<p>20世纪50年代起，晶体管开始大规模取代真空管。相比体积庞大的真空管，晶体管小巧轻便，工作电压低，寿命长，抗震动能力强，不易损坏。这大大促进了计算机和计算机处理器的小型化进程。</p>
+<p>1953年，IBM发布世界上第一台全晶体管商业计算机IBM 608，此后又推出了晶体管化的中型机IBM 7090和IBM 7094。晶体管计算机逐渐成为主流，真空管计算机退出历史舞台。</p>
+<h3 id="微程序设计的出现">微程序设计的出现</h3>
+<p>20世纪50年代末，英国计算机专家Wilkinson提出“微程序”的概念。微程序将计算机指令集解耦为二层架构:体系结构层和微程序层。程序员使用高层指令，这些指令会调用预先设计好的微子程序来完成工作。</p>
+<p>微程序为指令执行提供了更大灵活性，因为对指令集的修改只涉及到微程序调整而无需改动计算机硬件。这大大降低了计算机升级改造的难度。微程序设计开创了固件这个全新领域，并在60年代成为主流计算机体系结构的标准配置。</p>
+<h3 id="集成电路的发展">集成电路的发展</h3>
+<p>1958年，TI的Jack Kilby发明了第一个集成电路。他在一块硅片上集成了多个晶体管，使其在体积不变的情况下拥有更多的功能。这一发明奠定了集成电路技术的基础。</p>
+<p>60年代是集成电路飞速发展的十年。每个芯片中的晶体管数量呈指数增长，性能提升也越来越迅猛。</p>
+<p>1965年时摩尔提出著名的“摩尔定律”，指出集成电路中的晶体管数量约每隔2年就会增长一倍。这成为集成电路产业发展的重要定律（诅咒qwq）。</p>
+<p>到1968年，美国英特尔公司由罗伯特·诺伊斯和高登·摩尔创立。他们是商业微处理器和随机存取存储器(RAM)技术的先驱者。英特尔的产品极大地加速并扩大了集成电路的实际应用，打开了信息时代的大门。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="20世纪70年代现代意义的处理器的诞生">20世纪70年代:（现代意义的）处理器的诞生</h2>
+<h3 id="1971年第一款微处理器intel-4004的发布">1971年:第一款微处理器Intel 4004的发布</h3>
+<p>1971年11月15日是信息技术发展史上一个重要的时间点，因为美国著名半导体公司Intel宣发了世界上第一款4位微处理器Intel 4004。这款仅有12.75平方毫米的微型集成电路集成了高达2300个晶体管，具有每秒约92，000次的运算速度!</p>
+<p>Intel 4004微处理器的发布引起了业内的轰动，因为在此之前计算机系统的核心运算功能离不开大量运算器件的有线连接。线连接结构使计算机体积庞大、运算速度缓慢；而Intel 4004实现了在单个芯片上制造完整的中央处理器(CPU)，开创了微处理器这个全新的概念。</p>
+<h3 id="微处理器功能和影响">微处理器功能和影响</h3>
+<p>微处理器深刻改变了计算机系统的设计。微处理器具有体积小、重量轻、耗电量低以及计算速度快等突出优点。主要功能和影响体现在:</p>
+<ol>
+<li>实现小型化</li>
+</ol>
+<p>微处理器取代了原来笨重的分立电路，使得计算机的核心部件能以轻巧和省电的形式存在。计算机因此能做得非常小，并能够放置在普通办公桌上，这让个人计算机(PC)成为现实。</p>
+<ol start="2">
+<li>实现高性能</li>
+</ol>
+<p>在同样体积空间内，微处理器集成度更高，运算速度更快，从而能在有限空间内提供强大的计算能力。这为软件功能的扩展升级提供了硬件基础，推动了当代信息技术革命。</p>
+<h3 id="早期微处理器的竞争">早期微处理器的竞争</h3>
+<p>Intel 4004并非当时唯一的微处理器。TI公司也在同一时期发布了4位TMS 1000系列微处理器。这两大公司在微处理器领域展开激烈竞争。</p>
+<p>在此后的16位和32位微处理器时代，Intel发展出x86系列，成为个人计算机CPU的最大厂商。而AMD则从仿效对手，转向挑战对手，最终也成长为和Intel一决高下的另一计算机处理器巨头。2022年开始，这对竞争多年的老对手，决定联合起来开发崭新的芯片架构。(不过AMD的U用Windows就是感觉不爽)</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="20世纪70年代-80年代微处理器革命">20世纪70年代-80年代:微处理器革命</h2>
+<p>20世纪70年代初，以Intel产品为代表的微处理器得到快速发展，极大地推动了信息技术革命。几款划时代的微处理器问世，奠定了x86架构的基础，使微处理器从简单的控制芯片演变为可以支持软件应用的通用计算芯片。</p>
+<h3 id="intel-8080和8086">Intel 8080和8086</h3>
+<p>1971年，Intel推出了第一款4位微处理器Intel 4004。之后在1974年，Intel研发了8位微处理器Intel 8080。该处理器采用了高速的N沟道MOS工艺制造，时钟频率达2MHz，是当时最快的微处理器，性能相比之前的4004和8008有了质的飞跃。它拥有16KB的寻址空间，使得程序和数据可以被很好地区分开来，成为当时功能强大的通用微处理器。在1978年，Zilog公司推出了完全兼容Intel 8080指令集的Z80处理器，形成了广泛的应用生态。这两款微处理器的成功，开启了微处理器在嵌入式系统中的大规模应用。</p>
+<p>1980年，Intel发布了另一款划时代产品Intel 8086微处理器。这是Intel的第一款16位微处理器，它提供了更大的寄存器位宽，直接寻址空间达到1MB。Intel 8086的浮点运算速度是当时其他微处理器的10倍，完全超越了竞争对手。该处理器具备了支持高级软件和操作系统的全新计算架构，为后来的x86体系奠定了基础。（但是现在已经买不到了，好想收藏一只&hellip;&hellip;）</p>
+<p>在设计上，Intel 8086采用了EU和BIU的体系结构，及时隔离执行核心和外部总线；段址+偏移地址的寻址机制也成为此后x86架构的重要特性。</p>
+<h3 id="motorola和zilog的竞争对手">Motorola和Zilog的竞争对手</h3>
+<p>在微处理器快速发展的70年代，Intel并非唯一的参与者。Motorola、Zilog等公司都推出了有影响力的微处理器产品，形成了激烈的技术竞争。</p>
+<p>Motorola是Intel早期的主要竞争对手。1974年，Motorola发布了8位微处理器MC6800。这款产品在当时也属于高性能设计，最大时钟频率达到1MHz。它提供了更多的寄存器，在某些应用场景下性能超过了Intel的产品。基于MC6800，Motorola后续推出了大量周边芯片，构成完整的微计算机系统，在工业控制和嵌入式领域得到广泛应用。至80年代，该680x系列产品生态已相当成完整。</p>
+<p>Zilog公司是第一款微处理器4004的设计师Federico Faggin创建的公司。在1976年，Zilog推出了Z80微处理器，这款处理器直接兼容Intel 8080的指令系统，因而能运行丰富的软件资源。它的制造工艺更先进，性能超过了8080。</p>
+<h3 id="80x86架构的确立">80x86架构的确立</h3>
+<p>在Intel 8086问世后，Intel公司开始重点推动x86架构的演进。凭借良好的软件兼容性和不断加大的性能提升，x86架构的8080和8086产品在全球获得了大量的用户群。在IBM公司选用Intel 8088为其IBM PC的CPU后，x86架构获得了进一步推广。这是x86成为个人计算机的主流架构和产业标准的重要一步。</p>
+<p>进入80年代中后期，Intel公司开始发布大名鼎鼎的80x86系列32位微处理器，如80286、80386和80486。其中80386成为当时世界上最强大的微处理器。这些产品不仅性能大幅提升，而且向下兼容旧软件。x86架构的软件和生态积累为这些新品带来了绝大的优势，它们很快在个人计算机市场占据主导，多年来80x86系列在桌面平台上的地位无可撼动，其架构原理和设计理念也对后世影响深远。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="80年代-90年代计算架构的多样化">80年代-90年代:计算架构的多样化</h2>
+<h3 id="精简指令集计算risc的兴起">精简指令集计算(RISC)的兴起</h3>
+<p>20世纪80年代，为追求更高的处理性能，精简指令集计算(RISC)架构应运而生。RISC通过简化指令集，减少冗余复杂指令，从而大大提高单条指令的运行效率。</p>
+<p>1981年，IBM的John Cocke明确提出并证明了RISC设计理念的优越性，开启了这一架构设计新的方向。1985年，首款商用RISC处理器MIPS R2000面市，采用流水线设计，单周期内可发出一条指令，指令吞吐率大幅提升。与CISC相比，MIPS综合性能提高3-5倍，功耗下降90%，获得巨大成功，开启了RISC商用化的先河。</p>
+<h3 id="mips和sparc等risc架构的影响">MIPS和SPARC等RISC架构的影响</h3>
+<p>在众多RISC设计中，MIPS和SPARC是商业上最成功的两个案例。MIPS专注追求最优性能，在工作站和嵌入式系统市场成功占据一席之地;SPARC标准化程度高，可移植性好，被广泛使用在服务器领域。这两款RISC CPU的单线程性能突出，很快在高速计算市场取得主导地位。</p>
+<h3 id="x86架构在个人计算机中的主导地位">x86架构在个人计算机中的主导地位</h3>
+<p>在个人计算机上，Intel的x86 CISC系列不断推出新品配合指令流水线、缓存等技术创新，在性能和软件兼容性上长期保持领先。1990年面市的Pentium处理器性能大幅提升，奠定了x86体系在个人计算机市场的霸主地位。在Windows系统全面推广的助力下，x86成为这个时期PC领域的基准。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="90年代-2000年代性能时代">90年代-2000年代:性能时代</h2>
+<h3 id="时钟速度和性能的不断提高">时钟速度和性能的不断提高</h3>
+<p>20世纪90年代，CPU的时钟频率开始了大幅度的提高。英特尔的奔腾处理器的主频从1993年的60MHz提高到2000年的1.5GHz，增长了25倍，性能也相应大大提高。制造工艺的进步是主要原因，制程的提升允许更高集成度的芯片设计和更低的工作电压；而时钟频率的提高直接带来单线程执行性能的增强。这一时期个人计算机的运算速度开始大幅提升。</p>
+<h3 id="2000年代初多核心处理器的引入">2000年代初:多核心处理器的引入</h3>
+<p>进入21世纪后，因为继续提高时钟频率面临工艺和散热的双重瓶颈，所以CPU开始向多核方向发展。2005年，英特尔推出首款商用双核奔腾处理器。此后核心数量持续增加。相比单核CPU，多核可以并行运行多个程序线程，指令执行吞吐量大幅提升。这标志着计算性能增强进入并行计算新阶段。</p>
+<p><strong>&ndash;关于超频&ndash;</strong>
+如果我没记错的话应该也就是这个时候，Intel他妈的开始锁倍频吧；
+但是也就是这个时候超频在DIY爱好者里面开始流行起来。
+几年后我出生了。我的房间里有一台不用的电脑，那是我舅舅上大学时用的电脑，里面有一件他超频的杰作，也是那个时代DIY爱好者耳熟能详的神器，它的名字叫赛扬300A。
+我还是赶上了全民狂热超频的末班车：我自己超频的第一颗CPU是经典的i7-7700K（AMD CPU崛起之前英特尔桌面级最强），时脉4.95GHz。我买不起水冷，如果有水冷的话可能就能上5GHz了。</p>
+<h3 id="并行处理和多线程技术的应用">并行处理和多线程技术的应用</h3>
+<p>与多核CPU配套使用的，是各类并行编程技术。操作系统和编程语言广泛支持多线程。例如使用OpenMP等技术进行任务分解，以线程和进程为单位并行执行。这减少线程间同步开销，可有效提高CPU利用率。此外，通用GPU也成为重要的并行加速手段。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="21世纪移动计算和专用处理器">21世纪：移动计算和专用处理器</h2>
+<h3 id="移动计算的崛起与处理器需求">移动计算的崛起与处理器需求</h3>
+<p>2000年以后，随着智能手机和平板电脑的兴起，移动计算获得了前所未有的发展。移动设备处理器需要兼顾性能和电池寿命，芯片制造商积极采用更先进的制程来满足这一需求。</p>
+<h3 id="高效处理器在智能手机和平板电脑中的应用">高效处理器在智能手机和平板电脑中的应用</h3>
+<p>Qualcomm、苹果、三星等厂商针对移动设备推出了专门优化的高性能处理器系列，如Snapdragon、苹果A系列、三星Exynos等。这些处理器采用了先进的工艺制程，集成了多核心CPU、图形处理器GPU、人工智能加速器、模式识别处理器等子系统。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="-英特尔xeon系列处理器的关键技术">* 英特尔Xeon系列处理器的关键技术</h2>
+<h3 id="多核心与超线程技术">多核心与超线程技术</h3>
+<p>Xeon多核心设计和超线程技术使得单个处理器能够同时处理更多的任务，显著提高了计算效率和响应速度，提高了处理器的整体性能。</p>
+<h3 id="高速互连与内存技术">高速互连与内存技术</h3>
+<p>Xeon采用了先进的高速互连技术，如英特尔的QuickPath Interconnect (QPI) 和 Ultra Path Interconnect (UPI)。此外，Xeon系列在内存技术方面也取得了进步，支持更大的内存容量、内存位宽和更快的内存速度，这对于数据密集型应用尤为重要。</p>
+<h2 id="-amd-epyc系列处理器的关键技术">* AMD EPYC系列处理器的关键技术</h2>
+<h3 id="多核心设计">多核心设计</h3>
+<p>EPYC以其多核心（堆料）设计著称。目前最强的EPYC处理器拥有高达128个核心，这对于运行大规模虚拟化环境和高性能计算应用尤为重要。</p>
+<h3 id="能效比优化">能效比优化</h3>
+<p>EPYC处理器在能效比方面也取得了显著成就。AMD通过优化芯片架构和制程技术，实现了高性能与低能耗的平衡。这对于构建能效更高的数据中心和降低运营成本至关重要。</p>
+<h3 id="高速互连技术">高速互连技术</h3>
+<p>AMD的Infinity Fabric技术为EPYC系列带来了高速的互连能力。</p>
+<h2 id="-苹果m系列芯片的关键技术">* 苹果M系列芯片的关键技术</h2>
+<h3 id="arm架构">ARM架构</h3>
+<p>苹果M系列芯片基于ARM架构，这使得它们在能效和性能方面都非常出色，很适合搭载在移动设备和轻薄笔记本电脑上。</p>
+<h3 id="统一内存架构">统一内存架构</h3>
+<p>苹果M系列芯片采用了统一内存架构，允许CPU和GPU共享同一内存池，从而提高了数据处理速度和效率。</p>
+<h3 id="集成gpu">集成GPU</h3>
+<p>苹果M系列芯片集成了强大的GPU，为图形密集型应用和游戏提供了优异的性能，有助于减少功耗和提高系统的整体能效。</p>
+<div STYLE="page-break-after: always;"></div>
+<h2 id="未来的处理器技术展望">未来的处理器技术展望</h2>
+<p>在处理器技术的未来发展中，可能有以下关键趋势：</p>
+<ol>
+<li>
+<p><strong>AI和机器学习的深入集成</strong></p>
+</li>
+<li>
+<p><strong>跨架构软件兼容性的提升</strong></p>
+</li>
+<li>
+<p><strong>更先进的制程技术</strong></p>
+</li>
+<li>
+<p><strong>量子计算的探索</strong></p>
+</li>
+<li>
+<p><strong>异构计算的进一步发展</strong></p>
+</li>
+</ol>
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%80%9D%E6%94%BF%E7%AC%94%E8%AE%B0-%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">思政笔记 | 毛泽东思想和中国特色社会主义理论体系概论</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170254.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170254.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">单片机课程设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">硬件杂谈 | CPU和GPU</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E8%AF%BE%E7%A8%8B%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165822.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165822.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">课程思考 | 关于拉普拉斯变换的积分区间</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170449.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170449.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">测试页面</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="Multipleriver/Multipleriver.github.io"
+    data-repo-id="R_kgDOLHRgTw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLHRgT84Ccjuf"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 rivers@hhu.edu.cn
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+# /layouts/partials/footer/custom.html
+
+
+<a href="#" id="back-to-top" title="返回顶部"></a>
+
+
+<style>
+  #back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 7px;
+    background-color: rgba(64, 158, 255, 0.5);
+    box-shadow: var(--shadow-l2);
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+
+  #back-to-top:before {
+    content: ' ';
+    display: inline-block;
+    position: relative;
+    top: 0;
+    transform: rotate(135deg);
+    height: 10px;
+    width: 10px;
+    border-width: 0 0 2px 2px;
+    border-color: var(--back-to-top-color);
+    border-style: solid;
+  }
+
+  #back-to-top:hover:before {
+    border-color: #2674e0;
+  }
+
+   
+  @media screen and (max-width: 768px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 10px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1024px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 40px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1280px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 55px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1536px) {
+    #back-to-top {
+      visibility: hidden;
+    }
+  }
+</style>
+
+
+<script>
+  function backToTop() {
+    document.documentElement.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
+  window.onload = function () {
+    let scrollTop =
+      this.document.documentElement.scrollTop || this.document.body.scrollTop
+    let totopBtn = this.document.getElementById('back-to-top')
+    if (scrollTop > 0) {
+      totopBtn.style.display = 'inline'
+    } else {
+      totopBtn.style.display = 'none'
+    }
+  }
+
+  window.onscroll = function () {
+    let scrollTop =
+      this.document.documentElement.scrollTop || this.document.body.scrollTop
+    let totopBtn = this.document.getElementById('back-to-top')
+    if (scrollTop < 200) {
+      totopBtn.style.display = 'none'
+    } else {
+      totopBtn.style.display = 'inline'
+      totopBtn.addEventListener('click', backToTop, false)
+    }
+  }
+</script>
+
+    </body>
+    <script type="text/javascript" src="https://demo.hellozwh.com/source/canvas-nest.min.js"></script>
+</html>
