@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>硬件杂谈 on 夜来风雨声</title>
+        <link>https://Multipleriver.github.io/categories/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88/</link>
+        <description>Recent content in 硬件杂谈 on 夜来风雨声</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>rivers@hhu.edu.cn</copyright>
+        <lastBuildDate>Tue, 12 Dec 2023 10:11:26 +0800</lastBuildDate><atom:link href="https://Multipleriver.github.io/categories/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>CPU发展史</title>
+        <link>https://Multipleriver.github.io/p/cpu%E5%8F%91%E5%B1%95%E5%8F%B2/</link>
+        <pubDate>Tue, 12 Dec 2023 10:11:26 +0800</pubDate>
+        
+        <guid>https://Multipleriver.github.io/p/cpu%E5%8F%91%E5%B1%95%E5%8F%B2/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png" alt="Featured image of post CPU发展史" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;微机原理课后写着玩玩系列
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;封面放一只 Celeron300A 镇楼
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;经老师推荐，重新阅读《乔布斯传》和《硅谷之火》
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;20世纪40年代-50年代电子计算机技术的起源&#34;&gt;20世纪40年代-50年代：电子计算机技术的起源&lt;/h2&gt;
+&lt;h3 id=&#34;电子计算机概念的形成&#34;&gt;电子计算机概念的形成&lt;/h3&gt;
+&lt;p&gt;20世纪40年代，在第二次世界大战的背景下，为了满足军事计算的需求，电子计算机的概念开始形成。当时人们设计了一些模拟计算设备来计算炮弹的弹道表，这就是是电子计算机雏形。&lt;/p&gt;
+&lt;p&gt;著名的Z3计算机就是在这个时期诞生的。它是由德国工程师Konrad Zuse在1941年设计，利用电磁元件实现二进制计算的机器。这标志着电子计算机时代的开始。&lt;/p&gt;
+&lt;h3 id=&#34;eniac及早期计算机的使用&#34;&gt;ENIAC及早期计算机的使用&lt;/h3&gt;
+&lt;p&gt;1946年2月，世界上第一台通用电子计算机ENIAC (Electronic Numerical Integrator and Computer)在美国宾夕法尼亚大学摩尔学院问世。这台计算机由John Mauchly和J. Presper Eckert领导设计，采含有18000个真空管，可编程，能在200微秒的时间内完成一次乘法运算。它的出现标志着着电子计算机技术从理论研究走向实践和商业应用。&lt;/p&gt;
+&lt;p&gt;在此后的数年里，先进的计算机技术首先主要应用于科研领域，帮助科学家求解复杂科学问题。这一时期诞生的计算机包括EDVAC、BINAC、UNIVAC等。它们的运算速度不断提高，内存容量不断增大，为更广泛的应用奠定了基础。&lt;/p&gt;
+&lt;h3 id=&#34;真空管技术的应用&#34;&gt;真空管技术的应用&lt;/h3&gt;
+&lt;p&gt;这一时期设计的计算机大量采用了真空管技术。真空管具有功耗大、散热量大、寿命短等缺点，但由于体积小、可实现计算机内各模块间的逻辑控制，成为这时期计算机的核心部件。&lt;/p&gt;
+&lt;p&gt;真空管的使用代表着利用电子技术来代替机械开关进行数据处理和运算的全新模式，推动了计算机发展速度。随着晶体管的出现和集成电路技术的发展，真空管技术逐渐被淘汰。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;20世纪50年代-60年代晶体管时代&#34;&gt;20世纪50年代-60年代：晶体管时代&lt;/h2&gt;
+&lt;p&gt;这一时期，晶体管逐渐取代了真空管，微程序设计应运而生，集成电路也取得了重大发展。&lt;/p&gt;
+&lt;h3 id=&#34;晶体管取代真空管&#34;&gt;晶体管取代真空管&lt;/h3&gt;
+&lt;p&gt;20世纪50年代起，晶体管开始大规模取代真空管。相比体积庞大的真空管，晶体管小巧轻便，工作电压低，寿命长，抗震动能力强，不易损坏。这大大促进了计算机和计算机处理器的小型化进程。&lt;/p&gt;
+&lt;p&gt;1953年，IBM发布世界上第一台全晶体管商业计算机IBM 608，此后又推出了晶体管化的中型机IBM 7090和IBM 7094。晶体管计算机逐渐成为主流，真空管计算机退出历史舞台。&lt;/p&gt;
+&lt;h3 id=&#34;微程序设计的出现&#34;&gt;微程序设计的出现&lt;/h3&gt;
+&lt;p&gt;20世纪50年代末，英国计算机专家Wilkinson提出“微程序”的概念。微程序将计算机指令集解耦为二层架构:体系结构层和微程序层。程序员使用高层指令，这些指令会调用预先设计好的微子程序来完成工作。&lt;/p&gt;
+&lt;p&gt;微程序为指令执行提供了更大灵活性，因为对指令集的修改只涉及到微程序调整而无需改动计算机硬件。这大大降低了计算机升级改造的难度。微程序设计开创了固件这个全新领域，并在60年代成为主流计算机体系结构的标准配置。&lt;/p&gt;
+&lt;h3 id=&#34;集成电路的发展&#34;&gt;集成电路的发展&lt;/h3&gt;
+&lt;p&gt;1958年，TI的Jack Kilby发明了第一个集成电路。他在一块硅片上集成了多个晶体管，使其在体积不变的情况下拥有更多的功能。这一发明奠定了集成电路技术的基础。&lt;/p&gt;
+&lt;p&gt;60年代是集成电路飞速发展的十年。每个芯片中的晶体管数量呈指数增长，性能提升也越来越迅猛。&lt;/p&gt;
+&lt;p&gt;1965年时摩尔提出著名的“摩尔定律”，指出集成电路中的晶体管数量约每隔2年就会增长一倍。这成为集成电路产业发展的重要定律（诅咒qwq）。&lt;/p&gt;
+&lt;p&gt;到1968年，美国英特尔公司由罗伯特·诺伊斯和高登·摩尔创立。他们是商业微处理器和随机存取存储器(RAM)技术的先驱者。英特尔的产品极大地加速并扩大了集成电路的实际应用，打开了信息时代的大门。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;20世纪70年代现代意义的处理器的诞生&#34;&gt;20世纪70年代:（现代意义的）处理器的诞生&lt;/h2&gt;
+&lt;h3 id=&#34;1971年第一款微处理器intel-4004的发布&#34;&gt;1971年:第一款微处理器Intel 4004的发布&lt;/h3&gt;
+&lt;p&gt;1971年11月15日是信息技术发展史上一个重要的时间点，因为美国著名半导体公司Intel宣发了世界上第一款4位微处理器Intel 4004。这款仅有12.75平方毫米的微型集成电路集成了高达2300个晶体管，具有每秒约92，000次的运算速度!&lt;/p&gt;
+&lt;p&gt;Intel 4004微处理器的发布引起了业内的轰动，因为在此之前计算机系统的核心运算功能离不开大量运算器件的有线连接。线连接结构使计算机体积庞大、运算速度缓慢；而Intel 4004实现了在单个芯片上制造完整的中央处理器(CPU)，开创了微处理器这个全新的概念。&lt;/p&gt;
+&lt;h3 id=&#34;微处理器功能和影响&#34;&gt;微处理器功能和影响&lt;/h3&gt;
+&lt;p&gt;微处理器深刻改变了计算机系统的设计。微处理器具有体积小、重量轻、耗电量低以及计算速度快等突出优点。主要功能和影响体现在:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实现小型化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;微处理器取代了原来笨重的分立电路，使得计算机的核心部件能以轻巧和省电的形式存在。计算机因此能做得非常小，并能够放置在普通办公桌上，这让个人计算机(PC)成为现实。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;实现高性能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在同样体积空间内，微处理器集成度更高，运算速度更快，从而能在有限空间内提供强大的计算能力。这为软件功能的扩展升级提供了硬件基础，推动了当代信息技术革命。&lt;/p&gt;
+&lt;h3 id=&#34;早期微处理器的竞争&#34;&gt;早期微处理器的竞争&lt;/h3&gt;
+&lt;p&gt;Intel 4004并非当时唯一的微处理器。TI公司也在同一时期发布了4位TMS 1000系列微处理器。这两大公司在微处理器领域展开激烈竞争。&lt;/p&gt;
+&lt;p&gt;在此后的16位和32位微处理器时代，Intel发展出x86系列，成为个人计算机CPU的最大厂商。而AMD则从仿效对手，转向挑战对手，最终也成长为和Intel一决高下的另一计算机处理器巨头。2022年开始，这对竞争多年的老对手，决定联合起来开发崭新的芯片架构。(不过AMD的U用Windows就是感觉不爽)&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;20世纪70年代-80年代微处理器革命&#34;&gt;20世纪70年代-80年代:微处理器革命&lt;/h2&gt;
+&lt;p&gt;20世纪70年代初，以Intel产品为代表的微处理器得到快速发展，极大地推动了信息技术革命。几款划时代的微处理器问世，奠定了x86架构的基础，使微处理器从简单的控制芯片演变为可以支持软件应用的通用计算芯片。&lt;/p&gt;
+&lt;h3 id=&#34;intel-8080和8086&#34;&gt;Intel 8080和8086&lt;/h3&gt;
+&lt;p&gt;1971年，Intel推出了第一款4位微处理器Intel 4004。之后在1974年，Intel研发了8位微处理器Intel 8080。该处理器采用了高速的N沟道MOS工艺制造，时钟频率达2MHz，是当时最快的微处理器，性能相比之前的4004和8008有了质的飞跃。它拥有16KB的寻址空间，使得程序和数据可以被很好地区分开来，成为当时功能强大的通用微处理器。在1978年，Zilog公司推出了完全兼容Intel 8080指令集的Z80处理器，形成了广泛的应用生态。这两款微处理器的成功，开启了微处理器在嵌入式系统中的大规模应用。&lt;/p&gt;
+&lt;p&gt;1980年，Intel发布了另一款划时代产品Intel 8086微处理器。这是Intel的第一款16位微处理器，它提供了更大的寄存器位宽，直接寻址空间达到1MB。Intel 8086的浮点运算速度是当时其他微处理器的10倍，完全超越了竞争对手。该处理器具备了支持高级软件和操作系统的全新计算架构，为后来的x86体系奠定了基础。（但是现在已经买不到了，好想收藏一只&amp;hellip;&amp;hellip;）&lt;/p&gt;
+&lt;p&gt;在设计上，Intel 8086采用了EU和BIU的体系结构，及时隔离执行核心和外部总线；段址+偏移地址的寻址机制也成为此后x86架构的重要特性。&lt;/p&gt;
+&lt;h3 id=&#34;motorola和zilog的竞争对手&#34;&gt;Motorola和Zilog的竞争对手&lt;/h3&gt;
+&lt;p&gt;在微处理器快速发展的70年代，Intel并非唯一的参与者。Motorola、Zilog等公司都推出了有影响力的微处理器产品，形成了激烈的技术竞争。&lt;/p&gt;
+&lt;p&gt;Motorola是Intel早期的主要竞争对手。1974年，Motorola发布了8位微处理器MC6800。这款产品在当时也属于高性能设计，最大时钟频率达到1MHz。它提供了更多的寄存器，在某些应用场景下性能超过了Intel的产品。基于MC6800，Motorola后续推出了大量周边芯片，构成完整的微计算机系统，在工业控制和嵌入式领域得到广泛应用。至80年代，该680x系列产品生态已相当成完整。&lt;/p&gt;
+&lt;p&gt;Zilog公司是第一款微处理器4004的设计师Federico Faggin创建的公司。在1976年，Zilog推出了Z80微处理器，这款处理器直接兼容Intel 8080的指令系统，因而能运行丰富的软件资源。它的制造工艺更先进，性能超过了8080。&lt;/p&gt;
+&lt;h3 id=&#34;80x86架构的确立&#34;&gt;80x86架构的确立&lt;/h3&gt;
+&lt;p&gt;在Intel 8086问世后，Intel公司开始重点推动x86架构的演进。凭借良好的软件兼容性和不断加大的性能提升，x86架构的8080和8086产品在全球获得了大量的用户群。在IBM公司选用Intel 8088为其IBM PC的CPU后，x86架构获得了进一步推广。这是x86成为个人计算机的主流架构和产业标准的重要一步。&lt;/p&gt;
+&lt;p&gt;进入80年代中后期，Intel公司开始发布大名鼎鼎的80x86系列32位微处理器，如80286、80386和80486。其中80386成为当时世界上最强大的微处理器。这些产品不仅性能大幅提升，而且向下兼容旧软件。x86架构的软件和生态积累为这些新品带来了绝大的优势，它们很快在个人计算机市场占据主导，多年来80x86系列在桌面平台上的地位无可撼动，其架构原理和设计理念也对后世影响深远。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;80年代-90年代计算架构的多样化&#34;&gt;80年代-90年代:计算架构的多样化&lt;/h2&gt;
+&lt;h3 id=&#34;精简指令集计算risc的兴起&#34;&gt;精简指令集计算(RISC)的兴起&lt;/h3&gt;
+&lt;p&gt;20世纪80年代，为追求更高的处理性能，精简指令集计算(RISC)架构应运而生。RISC通过简化指令集，减少冗余复杂指令，从而大大提高单条指令的运行效率。&lt;/p&gt;
+&lt;p&gt;1981年，IBM的John Cocke明确提出并证明了RISC设计理念的优越性，开启了这一架构设计新的方向。1985年，首款商用RISC处理器MIPS R2000面市，采用流水线设计，单周期内可发出一条指令，指令吞吐率大幅提升。与CISC相比，MIPS综合性能提高3-5倍，功耗下降90%，获得巨大成功，开启了RISC商用化的先河。&lt;/p&gt;
+&lt;h3 id=&#34;mips和sparc等risc架构的影响&#34;&gt;MIPS和SPARC等RISC架构的影响&lt;/h3&gt;
+&lt;p&gt;在众多RISC设计中，MIPS和SPARC是商业上最成功的两个案例。MIPS专注追求最优性能，在工作站和嵌入式系统市场成功占据一席之地;SPARC标准化程度高，可移植性好，被广泛使用在服务器领域。这两款RISC CPU的单线程性能突出，很快在高速计算市场取得主导地位。&lt;/p&gt;
+&lt;h3 id=&#34;x86架构在个人计算机中的主导地位&#34;&gt;x86架构在个人计算机中的主导地位&lt;/h3&gt;
+&lt;p&gt;在个人计算机上，Intel的x86 CISC系列不断推出新品配合指令流水线、缓存等技术创新，在性能和软件兼容性上长期保持领先。1990年面市的Pentium处理器性能大幅提升，奠定了x86体系在个人计算机市场的霸主地位。在Windows系统全面推广的助力下，x86成为这个时期PC领域的基准。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;90年代-2000年代性能时代&#34;&gt;90年代-2000年代:性能时代&lt;/h2&gt;
+&lt;h3 id=&#34;时钟速度和性能的不断提高&#34;&gt;时钟速度和性能的不断提高&lt;/h3&gt;
+&lt;p&gt;20世纪90年代，CPU的时钟频率开始了大幅度的提高。英特尔的奔腾处理器的主频从1993年的60MHz提高到2000年的1.5GHz，增长了25倍，性能也相应大大提高。制造工艺的进步是主要原因，制程的提升允许更高集成度的芯片设计和更低的工作电压；而时钟频率的提高直接带来单线程执行性能的增强。这一时期个人计算机的运算速度开始大幅提升。&lt;/p&gt;
+&lt;h3 id=&#34;2000年代初多核心处理器的引入&#34;&gt;2000年代初:多核心处理器的引入&lt;/h3&gt;
+&lt;p&gt;进入21世纪后，因为继续提高时钟频率面临工艺和散热的双重瓶颈，所以CPU开始向多核方向发展。2005年，英特尔推出首款商用双核奔腾处理器。此后核心数量持续增加。相比单核CPU，多核可以并行运行多个程序线程，指令执行吞吐量大幅提升。这标志着计算性能增强进入并行计算新阶段。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;ndash;关于超频&amp;ndash;&lt;/strong&gt;
+如果我没记错的话应该也就是这个时候，Intel他妈的开始锁倍频吧；
+但是也就是这个时候超频在DIY爱好者里面开始流行起来。
+几年后我出生了。我的房间里有一台不用的电脑，那是我舅舅上大学时用的电脑，里面有一件他超频的杰作，也是那个时代DIY爱好者耳熟能详的神器，它的名字叫赛扬300A。
+我还是赶上了全民狂热超频的末班车：我自己超频的第一颗CPU是经典的i7-7700K（AMD CPU崛起之前英特尔桌面级最强），时脉4.95GHz。我买不起水冷，如果有水冷的话可能就能上5GHz了。&lt;/p&gt;
+&lt;h3 id=&#34;并行处理和多线程技术的应用&#34;&gt;并行处理和多线程技术的应用&lt;/h3&gt;
+&lt;p&gt;与多核CPU配套使用的，是各类并行编程技术。操作系统和编程语言广泛支持多线程。例如使用OpenMP等技术进行任务分解，以线程和进程为单位并行执行。这减少线程间同步开销，可有效提高CPU利用率。此外，通用GPU也成为重要的并行加速手段。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;21世纪移动计算和专用处理器&#34;&gt;21世纪：移动计算和专用处理器&lt;/h2&gt;
+&lt;h3 id=&#34;移动计算的崛起与处理器需求&#34;&gt;移动计算的崛起与处理器需求&lt;/h3&gt;
+&lt;p&gt;2000年以后，随着智能手机和平板电脑的兴起，移动计算获得了前所未有的发展。移动设备处理器需要兼顾性能和电池寿命，芯片制造商积极采用更先进的制程来满足这一需求。&lt;/p&gt;
+&lt;h3 id=&#34;高效处理器在智能手机和平板电脑中的应用&#34;&gt;高效处理器在智能手机和平板电脑中的应用&lt;/h3&gt;
+&lt;p&gt;Qualcomm、苹果、三星等厂商针对移动设备推出了专门优化的高性能处理器系列，如Snapdragon、苹果A系列、三星Exynos等。这些处理器采用了先进的工艺制程，集成了多核心CPU、图形处理器GPU、人工智能加速器、模式识别处理器等子系统。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;-英特尔xeon系列处理器的关键技术&#34;&gt;* 英特尔Xeon系列处理器的关键技术&lt;/h2&gt;
+&lt;h3 id=&#34;多核心与超线程技术&#34;&gt;多核心与超线程技术&lt;/h3&gt;
+&lt;p&gt;Xeon多核心设计和超线程技术使得单个处理器能够同时处理更多的任务，显著提高了计算效率和响应速度，提高了处理器的整体性能。&lt;/p&gt;
+&lt;h3 id=&#34;高速互连与内存技术&#34;&gt;高速互连与内存技术&lt;/h3&gt;
+&lt;p&gt;Xeon采用了先进的高速互连技术，如英特尔的QuickPath Interconnect (QPI) 和 Ultra Path Interconnect (UPI)。此外，Xeon系列在内存技术方面也取得了进步，支持更大的内存容量、内存位宽和更快的内存速度，这对于数据密集型应用尤为重要。&lt;/p&gt;
+&lt;h2 id=&#34;-amd-epyc系列处理器的关键技术&#34;&gt;* AMD EPYC系列处理器的关键技术&lt;/h2&gt;
+&lt;h3 id=&#34;多核心设计&#34;&gt;多核心设计&lt;/h3&gt;
+&lt;p&gt;EPYC以其多核心（堆料）设计著称。目前最强的EPYC处理器拥有高达128个核心，这对于运行大规模虚拟化环境和高性能计算应用尤为重要。&lt;/p&gt;
+&lt;h3 id=&#34;能效比优化&#34;&gt;能效比优化&lt;/h3&gt;
+&lt;p&gt;EPYC处理器在能效比方面也取得了显著成就。AMD通过优化芯片架构和制程技术，实现了高性能与低能耗的平衡。这对于构建能效更高的数据中心和降低运营成本至关重要。&lt;/p&gt;
+&lt;h3 id=&#34;高速互连技术&#34;&gt;高速互连技术&lt;/h3&gt;
+&lt;p&gt;AMD的Infinity Fabric技术为EPYC系列带来了高速的互连能力。&lt;/p&gt;
+&lt;h2 id=&#34;-苹果m系列芯片的关键技术&#34;&gt;* 苹果M系列芯片的关键技术&lt;/h2&gt;
+&lt;h3 id=&#34;arm架构&#34;&gt;ARM架构&lt;/h3&gt;
+&lt;p&gt;苹果M系列芯片基于ARM架构，这使得它们在能效和性能方面都非常出色，很适合搭载在移动设备和轻薄笔记本电脑上。&lt;/p&gt;
+&lt;h3 id=&#34;统一内存架构&#34;&gt;统一内存架构&lt;/h3&gt;
+&lt;p&gt;苹果M系列芯片采用了统一内存架构，允许CPU和GPU共享同一内存池，从而提高了数据处理速度和效率。&lt;/p&gt;
+&lt;h3 id=&#34;集成gpu&#34;&gt;集成GPU&lt;/h3&gt;
+&lt;p&gt;苹果M系列芯片集成了强大的GPU，为图形密集型应用和游戏提供了优异的性能，有助于减少功耗和提高系统的整体能效。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;未来的处理器技术展望&#34;&gt;未来的处理器技术展望&lt;/h2&gt;
+&lt;p&gt;在处理器技术的未来发展中，可能有以下关键趋势：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;AI和机器学习的深入集成&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;跨架构软件兼容性的提升&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;更先进的制程技术&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;量子计算的探索&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;异构计算的进一步发展&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
+        <title>CPU和GPU</title>
+        <link>https://Multipleriver.github.io/p/cpu%E5%92%8Cgpu/</link>
+        <pubDate>Sun, 10 Dec 2023 16:37:06 +0800</pubDate>
+        
+        <guid>https://Multipleriver.github.io/p/cpu%E5%92%8Cgpu/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" alt="Featured image of post CPU和GPU" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;微机原理课后写着玩玩系列
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;cpu和gpu的区别&#34;&gt;CPU和GPU的区别&lt;/h2&gt;
+&lt;h3 id=&#34;简介&#34;&gt;简介&lt;/h3&gt;
+&lt;p&gt;CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。&lt;/p&gt;
+&lt;p&gt;GPU是图形系统结构的重要元件，是连接计算机和显示终端的纽带。&lt;/p&gt;
+&lt;h3 id=&#34;gpu的发展&#34;&gt;GPU的发展&lt;/h3&gt;
+&lt;p&gt;光栅化显示系统离不开图形处理器。早期的显卡只包含简单的存储器和帧缓冲区，它们实际上只起了一个图形的存储和传递作用，一切操作都必须由CPU来控制。&lt;/p&gt;
+&lt;p&gt;这对于文本和一些简单的图形来说是足够的，但是当要处理复杂场景特别是一些真实感的三维场景，单靠这种系统是无法完成任务的。
+所以后来发展的显卡都有图形处理的功能。它不单单存储图形，而且能完成大部分图形功能，这样就大大减轻了CPU的负担，提高了显示能力和显示速度。&lt;/p&gt;
+&lt;h3 id=&#34;主要区别列表&#34;&gt;主要区别列表&lt;/h3&gt;
+&lt;p&gt;|参数| CPU | GPU |
+| &amp;ndash; | &amp;ndash; |
+|通用性|通用|专用|
+|核心数|少|超级多|
+| 线程数 | 少 | 多 |
+| reg数 | 少 | 多 |
+| cache容量 | 大 | 小（计算卡的也不小）|
+| SIMD | 小 | 大 |
+| 时钟频率 | 较高 | 较低 |
+| 运算延迟 | 相对较小 | 相对较大 |
+| 数据吞吐量 | 相对较小 | 相对较大 |
+|功耗|相对较低|相对较高|
+|单核心任务复杂程度|复杂|简单|
+| 任务调度 | 通过操作系统调度 | 无复杂调度 |
+| 控制逻辑 | 复杂 | 简单 |
+| 优化电路 | 相对复杂 | 相对简单 |&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163839.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CPU需要很强的通用性来处理各种不同的数据类型，同时又要逻辑判断又会引入大量的分支跳转和中断的处理。这些都使得CPU的内部结构异常复杂。&lt;/li&gt;
+&lt;li&gt;GPU面对的则是类型高度统一的、相互无依赖的大规模数据和不需要被打断的纯净的计算环境。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;综上所述：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;CPU被设计用于执行各种不同类型和级别的串行任务，包括操作系统运行、应用程序执行、数据处理等，适用于广泛的计算任务。&lt;/li&gt;
+&lt;li&gt;GPU包含大量小而高效、能同时处理多个相似任务的核心，最初设计用于图形渲染，在不断发展的过程中向着并行处理而优化。这种并行性使GPU适合处理大规模数据集，执行相同计算的多个任务。&lt;/li&gt;
+&lt;li&gt;GPU的计算速度比CPU快得多？emm，GPU相对于CPU的速度取决于执行的计算类型。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;为什么gpu适合炼丹&#34;&gt;为什么GPU适合炼丹&lt;/h2&gt;
+&lt;h3 id=&#34;一并行处理优势&#34;&gt;一、并行处理优势&lt;/h3&gt;
+&lt;p&gt;图形卷积计算的filter是一个接一个地依次进行、每次计算独立于其他计算的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163906.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;因此卷积神经网络的许多计算都可以分解成更小的计算单元，且小的计算集不会相互依赖，它是高度并行的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163917.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Img&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;GPU在机器学习领域大展身手的原因也是跟他们的特点有关。机器学习任务通常牵涉到大规模数据并行计算，而GPU高并行性使得它们在处理并行计算任务时表现卓越。&lt;/p&gt;
+&lt;h3 id=&#34;二浮点计算优势&#34;&gt;二、浮点计算优势&lt;/h3&gt;
+&lt;p&gt;浮点运算的结果不是准确值，它的精度取决于数据位宽。
+要解决精度问题，也只能提高位宽。&lt;/p&gt;
+&lt;h4 id=&#34;计算单元位宽&#34;&gt;计算单元位宽&lt;/h4&gt;
+&lt;p&gt;实际使用的单精度浮点是32位，双精度是64位。
+CPU的FPU率先支持了更高宽度的数据。英特尔的CPU计算浮点的时候内部精度是80位，输出输入还是64位；但很多GPU（一般Nvidia非专业卡现在都给蔽了双精度）都是单精度32位的，专业计算卡现在一般都是64位。&lt;/p&gt;
+&lt;h4 id=&#34;cpu和gpu浮点运算性能比较&#34;&gt;CPU和GPU浮点运算性能比较&lt;/h4&gt;
+&lt;p&gt;CPU的FPU和逻辑单元、核心数量和频率都是同步的。每个FPU必须配对全套的逻辑和编解码单元以保证编程方面的兼容性。这也许也是就限制了CPU的核心做不了太多的一个因素。
+反正核心就那么几个，只能把CPU单核频率上升到很高的水平，支持各种超级宽的数据格式。&lt;/p&gt;
+&lt;p&gt;而相比之下，GPU就是大批大批的小型FPU，其他的东西能少就少。
+GPU擅长的是数值计算，不擅长处理分支和随机读写。&lt;/p&gt;
+&lt;p&gt;如果只做一道浮点运算，其实是CPU更快（频率更高嘛）。&lt;/p&gt;
+&lt;p&gt;但问题的关键是，通常来说浮点运算都是大批量的任务且互相之间没有关联。这种情况下，复杂的浮点运算就变成一个并行问题了（和第一个原因有所重合），GPU大批量低频小FPU就有显著优势了（一言以蔽之，堆料也）。&lt;/p&gt;
+&lt;p&gt;综上所述，GPU浮点运算能力得到充分发挥的前提是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;任务向量化&lt;/li&gt;
+&lt;li&gt;连续读写&lt;/li&gt;
+&lt;li&gt;任务分支少&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;而神经网络就是一个这样的模型。&lt;/p&gt;
+&lt;h3 id=&#34;三nvidia的努力&#34;&gt;三、Nvidia的努力&lt;/h3&gt;
+&lt;p&gt;是的没错，Nvidia的不断努力也是GPU适合神经网络的重要原因。
+Nvidia想方设法让GPU突破传统，装载更多先进的单元以应对更复杂的任务。没有Nivida，GPU最起码不会这么适配神经网络计算。&lt;/p&gt;
+&lt;p&gt;其中比较有代表性的就是张量计算核心TC。
+矩阵运算和张量运算是TC加速的主要对象，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬件加速&lt;/strong&gt;：与传统的GPU相比，TC是专门设计用于数学计算的硬件，因此在执行矩阵和张量运算时具有显著的加速效果。这使得GPU成为深度学习任务的理想选择。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源优化&lt;/strong&gt;：GPU中的资源分配对性能至关重要。在一个流式多处理器（SM）中，拥有TC能大大降低共享内存访问和FFMA操作的成本，让每个线程专注于更多的计算，而不是计算索引。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在深度学习中的应用在深度学习中，TC的应用广泛，包括矩阵乘法、卷积运算、元素级操作以及其他数学运算。这些操作构成了深度学习模型的基础，而TC的高性能和并行计算能力有助于加速训练和推理过程。&lt;/p&gt;
+&lt;h3 id=&#34;四生态支持&#34;&gt;四、生态支持&lt;/h3&gt;
+&lt;p&gt;GPU得到了TensorFlow、PyTorch等主流深度学习框架的良好支持，这使得开发者可以很方便地使用GPU进行深度学习的开发。&lt;/p&gt;
+&lt;p&gt;这确实很重要。之前苹果联盟了Pytorch，然后发现M3芯片的笔记本跑Stable Difussion比以前快的不是一个档次，比大部分显卡都快。。。&lt;/p&gt;
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h2 id=&#34;总结什么类型的程序适合在gpu上运行&#34;&gt;总结：什么类型的程序适合在GPU上运行？&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;易映射并行&lt;/li&gt;
+&lt;li&gt;计算密集型&lt;/li&gt;
+&lt;li&gt;任务向量化&lt;/li&gt;
+&lt;li&gt;随机读写少&lt;/li&gt;
+&lt;li&gt;任务分支少&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

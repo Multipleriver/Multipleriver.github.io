@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>rivers@hhu.edu.cn</copyright>
         <lastBuildDate>Tue, 13 Feb 2024 10:11:26 +0800</lastBuildDate><atom:link href="https://Multipleriver.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>思政笔记 | 毛泽东思想和中国特色社会主义理论体系概论</title>
-        <link>https://Multipleriver.github.io/p/%E6%80%9D%E6%94%BF%E7%AC%94%E8%AE%B0-%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/</link>
+        <title>毛泽东思想和中国特色社会主义理论体系概论</title>
+        <link>https://Multipleriver.github.io/p/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/</link>
         <pubDate>Tue, 13 Feb 2024 10:11:26 +0800</pubDate>
         
-        <guid>https://Multipleriver.github.io/p/%E6%80%9D%E6%94%BF%E7%AC%94%E8%AE%B0-%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/</guid>
-        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png" alt="Featured image of post 思政笔记 | 毛泽东思想和中国特色社会主义理论体系概论" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <guid>https://Multipleriver.github.io/p/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png" alt="Featured image of post 毛泽东思想和中国特色社会主义理论体系概论" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -1388,7 +1388,7 @@ D --&gt;C[90-以人为中心的发展]&lt;/div&gt;
         <pubDate>Fri, 19 Jan 2024 17:17:26 +0800</pubDate>
         
         <guid>https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</guid>
-        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170254.png" alt="Featured image of post 单片机课程设计" /&gt;&lt;h2 id=&#34;实验1简单-io-实验&#34;&gt;实验1：简单 IO 实验&lt;/h2&gt;
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216220400.png" alt="Featured image of post 单片机课程设计" /&gt;&lt;h2 id=&#34;实验1简单-io-实验&#34;&gt;实验1：简单 IO 实验&lt;/h2&gt;
 &lt;h3 id=&#34;任务&#34;&gt;任务&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;控制 8 个 LED 依次点亮，模拟流水灯试验。&lt;/li&gt;
@@ -2727,12 +2727,12 @@ D --&gt;C[90-以人为中心的发展]&lt;/div&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>硬件杂谈 | CPU发展史</title>
-        <link>https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/</link>
+        <title>CPU发展史</title>
+        <link>https://Multipleriver.github.io/p/cpu%E5%8F%91%E5%B1%95%E5%8F%B2/</link>
         <pubDate>Tue, 12 Dec 2023 10:11:26 +0800</pubDate>
         
-        <guid>https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%8F%91%E5%B1%95%E5%8F%B2/</guid>
-        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png" alt="Featured image of post 硬件杂谈 | CPU发展史" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <guid>https://Multipleriver.github.io/p/cpu%E5%8F%91%E5%B1%95%E5%8F%B2/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png" alt="Featured image of post CPU发展史" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -2872,12 +2872,12 @@ D --&gt;C[90-以人为中心的发展]&lt;/div&gt;
 </description>
         </item>
         <item>
-        <title>硬件杂谈 | CPU和GPU</title>
-        <link>https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/</link>
+        <title>CPU和GPU</title>
+        <link>https://Multipleriver.github.io/p/cpu%E5%92%8Cgpu/</link>
         <pubDate>Sun, 10 Dec 2023 16:37:06 +0800</pubDate>
         
-        <guid>https://Multipleriver.github.io/p/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88-cpu%E5%92%8Cgpu/</guid>
-        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" alt="Featured image of post 硬件杂谈 | CPU和GPU" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <guid>https://Multipleriver.github.io/p/cpu%E5%92%8Cgpu/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" alt="Featured image of post CPU和GPU" /&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -3002,12 +3002,12 @@ Nvidia想方设法让GPU突破传统，装载更多先进的单元以应对更�
 </description>
         </item>
         <item>
-        <title>课程思考 | 关于拉普拉斯变换的积分区间</title>
-        <link>https://Multipleriver.github.io/p/%E8%AF%BE%E7%A8%8B%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4/</link>
+        <title>关于拉普拉斯变换的积分区间</title>
+        <link>https://Multipleriver.github.io/p/%E5%85%B3%E4%BA%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4/</link>
         <pubDate>Thu, 01 Jun 2023 12:30:01 +0800</pubDate>
         
-        <guid>https://Multipleriver.github.io/p/%E8%AF%BE%E7%A8%8B%E6%80%9D%E8%80%83-%E5%85%B3%E4%BA%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4/</guid>
-        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165822.png" alt="Featured image of post 课程思考 | 关于拉普拉斯变换的积分区间" /&gt;&lt;h1 id=&#34;为什么laplace变换lt的积分区间是0-到infty&#34;&gt;为什么Laplace变换（LT）的积分区间是$0-$到$+\infty$&lt;/h1&gt;
+        <guid>https://Multipleriver.github.io/p/%E5%85%B3%E4%BA%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E5%8C%BA%E9%97%B4/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165822.png" alt="Featured image of post 关于拉普拉斯变换的积分区间" /&gt;&lt;h1 id=&#34;为什么laplace变换lt的积分区间是0-到infty&#34;&gt;为什么Laplace变换（LT）的积分区间是$0-$到$+\infty$&lt;/h1&gt;
 &lt;p&gt;连续时域的系统分析需要确定$0+$状态（初始状态）的值，某些时候需要通过$0-$状态（起始状态）的值，结合具体电路推断初始状态值；但是Laplace变换为什么可以跳过求解初始状态这一阶段，直接将起始状态和所求状态联系起来呢？&lt;/p&gt;
 &lt;p&gt;我学复变函数的时候，也接触过FT,LT的相关性质，当时LT的微分性质中可不是写的$0-$，而是直接写的$0$。为什么到信号系统分析里面就不一样了？&lt;/p&gt;
 &lt;p&gt;信号与系统教案：&lt;/p&gt;
@@ -4324,6 +4324,38 @@ return res
         <guid>https://Multipleriver.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>课程思考</title>
+        <link>https://Multipleriver.github.io/categories/%E8%AF%BE%E7%A8%8B%E6%80%9D%E8%80%83/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://Multipleriver.github.io/categories/%E8%AF%BE%E7%A8%8B%E6%80%9D%E8%80%83/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>思政笔记</title>
+        <link>https://Multipleriver.github.io/categories/%E6%80%9D%E6%94%BF%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://Multipleriver.github.io/categories/%E6%80%9D%E6%94%BF%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216230819.png" alt="Featured image of post 思政笔记" /&gt;</description>
+        </item>
+        <item>
+        <title>硬件杂谈</title>
+        <link>https://Multipleriver.github.io/categories/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://Multipleriver.github.io/categories/%E7%A1%AC%E4%BB%B6%E6%9D%82%E8%B0%88/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>专业课设</title>
+        <link>https://Multipleriver.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E8%AE%BE/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://Multipleriver.github.io/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E8%AE%BE/</guid>
+        <description></description>
         </item>
         
     </channel>
