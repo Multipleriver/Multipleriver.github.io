@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='一、实验名称 定时信号指示系统 二、实验目的 复习和进一步理解课堂所学理论知识 掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法 熟悉 Vivado 软件的基本使用'>
+<title>EDA 课程设计——手搓一个计时器</title>
+
+<link rel='canonical' href='https://Multipleriver.github.io/p/eda-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8/'>
+
+<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='EDA 课程设计——手搓一个计时器'>
+<meta property='og:description' content='一、实验名称 定时信号指示系统 二、实验目的 复习和进一步理解课堂所学理论知识 掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法 熟悉 Vivado 软件的基本使用'>
+<meta property='og:url' content='https://Multipleriver.github.io/p/eda-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8/'>
+<meta property='og:site_name' content='夜来风雨声'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-01-10T15:32:06&#43;08:00'/><meta property='article:modified_time' content='2024-01-10T15:32:06&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216232456.png' />
+<meta name="twitter:title" content="EDA 课程设计——手搓一个计时器">
+<meta name="twitter:description" content="一、实验名称 定时信号指示系统 二、实验目的 复习和进一步理解课堂所学理论知识 掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法 熟悉 Vivado 软件的基本使用"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216232456.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/DEER2_hu9c801967a7dbef95c53b8f80334b82ee_178426_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">💘</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">夜来风雨声</a></h1>
+            <h2 class="site-description">静下心来，做读书人。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Multipleriver/Multipleriver.github.io'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#一实验名称">一、实验名称</a></li>
+    <li><a href="#二实验目的">二、实验目的</a></li>
+    <li><a href="#三实验任务">三、实验任务</a></li>
+    <li><a href="#四实验过程">四、实验过程</a>
+      <ol>
+        <li><a href="#一总体思路">（一）总体思路</a>
+          <ol>
+            <li><a href="#1分频器">1、分频器</a></li>
+            <li><a href="#2计数器">2、计数器</a></li>
+            <li><a href="#3判断逻辑">3、判断逻辑</a></li>
+          </ol>
+        </li>
+        <li><a href="#二代码实现">（二）代码实现</a>
+          <ol>
+            <li><a href="#1分频器已修改">1、分频器（已修改）</a></li>
+            <li><a href="#2计数器-1">2、计数器</a></li>
+            <li><a href="#3判断逻辑-1">3、判断逻辑</a></li>
+            <li><a href="#4顶层设计">4、顶层设计</a></li>
+          </ol>
+        </li>
+        <li><a href="#三纯代码仿真及优化">（三）纯代码仿真及优化</a>
+          <ol>
+            <li><a href="#1timescale问题">1、timescale问题</a></li>
+            <li><a href="#2进位对齐问题">2、进位对齐问题</a></li>
+            <li><a href="#3类似越沿采样的问题">3、类似越沿采样的问题</a></li>
+          </ol>
+        </li>
+        <li><a href="#四纯代码仿真最终测试">（四）纯代码仿真最终测试</a></li>
+        <li><a href="#五纯代码仿真结果集中展示">（五）纯代码仿真结果集中展示</a>
+          <ol>
+            <li><a href="#1simulation">1、Simulation</a></li>
+            <li><a href="#2schematic">2、Schematic</a></li>
+            <li><a href="#3io-planning">3、I/O Planning</a></li>
+            <li><a href="#4flooorplanning">4、Flooorplanning</a></li>
+          </ol>
+        </li>
+        <li><a href="#六开发板配置">（六）开发板配置</a></li>
+        <li><a href="#七板载时钟降频">（七）板载时钟降频</a>
+          <ol>
+            <li><a href="#150-250分频模块">1、50% 250分频模块</a></li>
+            <li><a href="#250-10分频模块">2、50% 10分频模块</a></li>
+          </ol>
+        </li>
+        <li><a href="#八constant-ip-核约束常数管脚">（八）Constant IP 核约束常数管脚</a></li>
+        <li><a href="#九接线图">（九）接线图</a></li>
+        <li><a href="#十输出端口管脚约束">（十）输出端口管脚约束</a></li>
+        <li><a href="#十一generate-block-design-diagram-到代码">（十一）Generate Block Design Diagram 到代码</a></li>
+        <li><a href="#十二第二阶段仿真">（十二）第二阶段仿真</a></li>
+      </ol>
+    </li>
+    <li><a href="#六实验感想">六、实验感想</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/eda-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8/">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216232456.png" loading="lazy" alt="Featured image of post EDA 课程设计——手搓一个计时器" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E4%B8%93%E4%B8%9A%E8%AF%BE%E8%AE%BE/" >
+                专业课设
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/eda-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8/">EDA 课程设计——手搓一个计时器</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jan 10, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="一实验名称">一、实验名称</h2>
+<p>定时信号指示系统</p>
+<h2 id="二实验目的">二、实验目的</h2>
+<ul>
+<li>复习和进一步理解课堂所学理论知识</li>
+<li>掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法</li>
+<li>熟悉 Vivado 软件的基本使用</li>
+<li>提高电路设计、代码调试和时序仿真的能力</li>
+</ul>
+<h2 id="三实验任务">三、实验任务</h2>
+<p>设计一个定时信号指示系统，该系统有三个设备，每个设备上有红、绿、蓝三个指示灯，用 VerilogHDL 语言设计一个定时控制系统，要求:
+按时钟时间，
+00时03分15秒：设备1绿灯亮    设备2红灯亮    设备3红灯亮
+02时09分29秒：设备1蓝灯亮    设备2红灯亮    设备3红灯亮
+04时20分33秒：设备1红灯亮    设备2绿灯亮    设备3红灯亮
+06时19分14秒：设备1红灯亮    设备2蓝灯亮    设备3红灯亮
+08时25分50秒：设备1红灯亮    设备2红灯亮    设备3绿灯亮
+10时13分17秒：设备1红灯亮    设备2红灯亮    设备3蓝灯亮
+00时03分15秒：设备1绿灯亮    设备2红灯亮    设备3红灯亮
+这样依次循环。</p>
+<p>FPGA 外输入时钟为8Hz,在 FPGA 分频为1Hz后，设计数字时钟，然后根据时间向外发不同的控制信号，控制三个设备灯的亮灭如下图所示：</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240108110814.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h2 id="四实验过程">四、实验过程</h2>
+<h3 id="一总体思路">（一）总体思路</h3>
+<p>该实验任务实现思路较为清晰，主要分为分频器、计数器、判断逻辑等模块。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107210556.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h4 id="1分频器">1、分频器</h4>
+<p>显而易见，我们需要一个50% 8分频模块。</p>
+<h4 id="2计数器">2、计数器</h4>
+<p>在计数器模块中，如何平衡好时分秒的计数输出是关键。级联计数器每个单元模值太小会使引脚过于繁琐不直观，太大则会耗费太多系统资源。</p>
+<p>这里我构造了模12同步计数器和模5同步计数器，分别使用1组模12同步计数器和模5同步计数器完成秒的计数，使用一组模12同步计数器和模5同步计数器完成分的计数，最后使用一个模12同步计数器完成时的计数。</p>
+<p>计数器分别输出 s0, s1, m0, m1, h0 五个 4bit 信号送入判断逻辑。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107205938.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h4 id="3判断逻辑">3、判断逻辑</h4>
+<p>该模块接收来自 s0, s1, m0, m1, h0 等5个 4bit 信号，并在对应时刻输出对应的 R1, G1, B1, R2, G2, B2, R3, G3, B3 等9个RGB信号。设定 RGB 信号低电平点亮对应颜色 LED。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107210352.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="二代码实现">（二）代码实现</h3>
+<h4 id="1分频器已修改">1、分频器（已修改）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">clk_div8</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">clk</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">rst_n</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="kt">reg</span> <span class="n">clk_div</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>    
+</span></span><span class="line"><span class="cl">    <span class="k">parameter</span> <span class="n">NUM_DIV</span> <span class="o">=</span> <span class="mh">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span>     <span class="o">&lt;=</span> <span class="mh">1</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">clk_div</span> <span class="o">&lt;=</span> <span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;</span> <span class="n">NUM_DIV</span> <span class="o">/</span> <span class="mh">2</span> <span class="o">-</span> <span class="mh">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt</span>     <span class="o">&lt;=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clk_div</span> <span class="o">&lt;=</span> <span class="n">clk_div</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt</span>     <span class="o">&lt;=</span> <span class="mh">1</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clk_div</span> <span class="o">&lt;=</span> <span class="o">~</span><span class="n">clk_div</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2计数器-1">2、计数器</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="c1">//模5计数器模块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">module</span> <span class="n">cnt5</span><span class="p">(</span><span class="n">clk</span><span class="p">,</span> <span class="n">rst_n</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">dout</span><span class="p">,</span> <span class="n">co</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">set_flag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">clk</span><span class="p">,</span> <span class="n">rst_n</span><span class="p">,</span> <span class="n">en</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">set_flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="n">set</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">dout</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">dout</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="n">co</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span><span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   	    <span class="k">if</span><span class="p">(</span><span class="n">set_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   		<span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">set</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">   	    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">   		<span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">dout</span><span class="p">;</span>              <span class="c1">//系统置位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">en</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   	    <span class="k">if</span><span class="p">(</span><span class="n">dout</span> <span class="o">==</span> <span class="mh">4</span><span class="mb">&#39;b0100</span><span class="p">)</span>        <span class="c1">//计数值达到5时，计数器清零
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   		    <span class="n">dout</span> <span class="o">&lt;=</span> <span class="mh">4</span><span class="mb">&#39;b0000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   	    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">   		    <span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">dout</span> <span class="o">+</span> <span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>   <span class="c1">//否则，计数器加1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">   	        <span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">dout</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assign</span> <span class="n">co</span> <span class="o">=</span> <span class="n">dout</span><span class="p">[</span><span class="mh">0</span><span class="p">];</span>               <span class="c1">//当计数达到4(4&#39;b0100)时，进位为1，计数值为其他，都没有进位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="c1">//模12计数器模块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">module</span> <span class="n">cnt12</span><span class="p">(</span><span class="n">clk</span><span class="p">,</span> <span class="n">rst_n</span><span class="p">,</span> <span class="n">en</span><span class="p">,</span> <span class="n">dout</span><span class="p">,</span> <span class="n">co</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">set_flag</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">clk</span><span class="p">,</span> <span class="n">rst_n</span><span class="p">,</span> <span class="n">en</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">set_flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="n">set</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">dout</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">dout</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="n">co</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span><span class="p">@(</span><span class="k">posedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   	    <span class="k">if</span><span class="p">(</span><span class="n">set_flag</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   		<span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">set</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">   	    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">   		<span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">dout</span><span class="p">;</span>                <span class="c1">//系统置位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">en</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   	        <span class="k">if</span><span class="p">(</span><span class="n">dout</span> <span class="o">==</span> <span class="mh">4</span><span class="mb">&#39;b1011</span><span class="p">)</span>      <span class="c1">//计数值达到9时，计数器清零
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>   		        <span class="n">dout</span> <span class="o">&lt;=</span> <span class="mh">4</span><span class="mb">&#39;b0000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   	        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">   		        <span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">dout</span> <span class="o">+</span> <span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="c1">//否则，计数器加1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">   	        <span class="n">dout</span> <span class="o">&lt;=</span> <span class="n">dout</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">assign</span> <span class="n">co</span> <span class="o">=</span> <span class="n">dout</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="o">&amp;</span><span class="n">dout</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="o">&amp;</span><span class="n">dout</span><span class="p">[</span><span class="mh">3</span><span class="p">];</span> <span class="c1">//当计数达到11(4&#39;b1011)时，进位为1，计数值为其他，都没有进位
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3判断逻辑-1">3、判断逻辑</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="c1">//共阳极接发，低电平点亮LED
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">module</span> <span class="n">fsm</span><span class="p">(</span><span class="n">s0</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">m0</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">h0</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">b3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">s0</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">m0</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">h0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="kt">reg</span> <span class="n">r1</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">r3</span><span class="p">,</span> <span class="n">g3</span><span class="p">,</span> <span class="n">b3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span><span class="p">@(</span><span class="n">s0</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">m0</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="n">h0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">begin</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">5</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">9</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">9</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">8</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">4</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">7</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">6</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">4</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">8</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">5</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4顶层设计">4、顶层设计</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">module</span> <span class="n">top</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="n">CLK</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">RST</span><span class="p">,</span> <span class="n">EN</span><span class="p">,</span> <span class="n">SET</span><span class="p">,</span> <span class="n">SET_FLAG</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">R1</span><span class="p">,</span> <span class="n">G1</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">B2</span><span class="p">,</span> <span class="n">R3</span><span class="p">,</span> <span class="n">G3</span><span class="p">,</span> <span class="n">B3</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">CLK</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="n">RST</span><span class="p">,</span> <span class="n">EN</span><span class="p">,</span> <span class="n">SET_FLAG</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">SET</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">output</span> <span class="kt">wire</span> <span class="n">R1</span><span class="p">,</span> <span class="n">G1</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">B2</span><span class="p">,</span> <span class="n">R3</span><span class="p">,</span> <span class="n">G3</span><span class="p">,</span> <span class="n">B3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="n">line_clk_div</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="n">line_s0_s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">line_s0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="n">line_s1_m0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">line_s1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="n">line_m0_m1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">line_m0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="n">line_m1_h0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">line_m1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">wire</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">line_h0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">clk_div8</span> <span class="n">DIVIDER</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">CLK</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk_div</span><span class="p">(</span><span class="n">line_clk_div</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cnt12</span> <span class="n">COUNTER_S0</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">line_clk_div</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">en</span><span class="p">(</span><span class="n">EN</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">SET</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set_flag</span><span class="p">(</span><span class="n">SET_FLAG</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">dout</span><span class="p">(</span><span class="n">line_s0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">co</span><span class="p">(</span><span class="n">line_s0_s1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cnt5</span> <span class="n">COUNTER_S1</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">line_s0_s1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">en</span><span class="p">(</span><span class="n">EN</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">SET</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set_flag</span><span class="p">(</span><span class="n">SET_FLAG</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">dout</span><span class="p">(</span><span class="n">line_s1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">co</span><span class="p">(</span><span class="n">line_s1_m0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cnt12</span> <span class="n">COUNTER_M0</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">line_s1_m0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">en</span><span class="p">(</span><span class="n">EN</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">SET</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set_flag</span><span class="p">(</span><span class="n">SET_FLAG</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">dout</span><span class="p">(</span><span class="n">line_m0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">co</span><span class="p">(</span><span class="n">line_m0_m1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cnt5</span> <span class="n">COUNTER_M1</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">line_m0_m1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">en</span><span class="p">(</span><span class="n">EN</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">SET</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set_flag</span><span class="p">(</span><span class="n">SET_FLAG</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">dout</span><span class="p">(</span><span class="n">line_m1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">co</span><span class="p">(</span><span class="n">line_m1_h0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cnt12</span> <span class="n">COUNTER_H0</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">line_m1_h0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">en</span><span class="p">(</span><span class="n">EN</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="n">SET</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">set_flag</span><span class="p">(</span><span class="n">SET_FLAG</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">dout</span><span class="p">(</span><span class="n">line_h0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fsm</span> <span class="n">FSM</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">s0</span><span class="p">(</span><span class="n">line_s0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">s1</span><span class="p">(</span><span class="n">line_s1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">m0</span><span class="p">(</span><span class="n">line_m0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">m1</span><span class="p">(</span><span class="n">line_m1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">h0</span><span class="p">(</span><span class="n">line_h0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">r1</span><span class="p">(</span><span class="n">R1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">g1</span><span class="p">(</span><span class="n">G1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">b1</span><span class="p">(</span><span class="n">B1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">r2</span><span class="p">(</span><span class="n">R2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">g2</span><span class="p">(</span><span class="n">G2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">b2</span><span class="p">(</span><span class="n">B2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">r3</span><span class="p">(</span><span class="n">R3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">g3</span><span class="p">(</span><span class="n">G3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">b3</span><span class="p">(</span><span class="n">B3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="三纯代码仿真及优化">（三）纯代码仿真及优化</h3>
+<p>缩短仿真时间长度，提前判断逻辑对应的时间点，进行初步仿真。</p>
+<p>testbench（已修改）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`timescale</span> <span class="mh">1</span><span class="n">us</span> <span class="o">/</span> <span class="mh">1</span><span class="n">us</span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">test_top</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    Ports
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//Inputs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span> <span class="n">CLK</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="n">RST</span><span class="p">,</span> <span class="n">EN</span><span class="p">,</span> <span class="n">SET_FLAG</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">SET</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//Outputs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">wire</span> <span class="n">R1</span><span class="p">,</span> <span class="n">G1</span><span class="p">,</span> <span class="n">B1</span><span class="p">,</span> <span class="n">R2</span><span class="p">,</span> <span class="n">G2</span><span class="p">,</span> <span class="n">B2</span><span class="p">,</span> <span class="n">R3</span><span class="p">,</span> <span class="n">G3</span><span class="p">,</span> <span class="n">B3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    Instantiation
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">top</span> <span class="n">uut</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">CLK</span><span class="p">(</span><span class="n">CLK</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">RST</span><span class="p">(</span><span class="n">RST</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">EN</span><span class="p">(</span><span class="n">EN</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">SET</span><span class="p">(</span><span class="n">SET</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">SET_FLAG</span><span class="p">(</span><span class="n">SET_FLAG</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">R1</span><span class="p">(</span><span class="n">R1</span><span class="p">),</span> <span class="p">.</span><span class="n">G1</span><span class="p">(</span><span class="n">G1</span><span class="p">),</span> <span class="p">.</span><span class="n">B1</span><span class="p">(</span><span class="n">B1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">R2</span><span class="p">(</span><span class="n">R2</span><span class="p">),</span> <span class="p">.</span><span class="n">G2</span><span class="p">(</span><span class="n">G2</span><span class="p">),</span> <span class="p">.</span><span class="n">B2</span><span class="p">(</span><span class="n">B2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">R3</span><span class="p">(</span><span class="n">R3</span><span class="p">),</span> <span class="p">.</span><span class="n">G3</span><span class="p">(</span><span class="n">G3</span><span class="p">),</span> <span class="p">.</span><span class="n">B3</span><span class="p">(</span><span class="n">B3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    CLK
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">initial</span>
+</span></span><span class="line"><span class="cl">	<span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="n">CLK</span><span class="o">=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">forever</span>
+</span></span><span class="line"><span class="cl">	<span class="p">#</span><span class="mh">62500</span> <span class="n">CLK</span><span class="o">=~</span><span class="n">CLK</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    RST, EN, SET, SET_FLAG
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">initial</span>
+</span></span><span class="line"><span class="cl">    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RST</span><span class="o">=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">EN</span><span class="o">=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">#</span> <span class="mh">10000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">EN</span><span class="o">=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">SET</span><span class="o">=</span><span class="mh">4</span><span class="mb">&#39;b0000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">SET_FLAG</span><span class="o">=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在仿真过程中，大部分功能基本能实现，但也存在一些问题：</p>
+<h4 id="1timescale问题">1、timescale问题</h4>
+<p>在 testbench 若使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`timescale</span> <span class="mh">1</span><span class="n">s</span> <span class="o">/</span> <span class="mh">1</span><span class="n">us</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搭配时钟翻转</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">forever</span> <span class="p">#</span><span class="mf">0.0625</span> <span class="n">CLK</span><span class="o">=~</span><span class="n">CLK</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会出现无报错，但是 clk 跑不起来的情况</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104080137.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>网上查找诸多资料无解后，将时钟翻转改为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">forever</span> <span class="p">#</span><span class="mh">1</span> <span class="n">CLK</span><span class="o">=~</span><span class="n">CLK</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>发现默认时间单位是ps，也就是说0.0625 * 1s没有生效</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104080613.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`timescale</span> <span class="mh">1</span><span class="n">us</span> <span class="o">/</span> <span class="mh">1</span><span class="n">us</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搭配时钟翻转</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">forever</span> <span class="p">#</span><span class="mh">62500</span> <span class="n">CLK</span><span class="o">=~</span><span class="n">CLK</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>则可以正常运行clk</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104080320.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>怀疑并不是代码不规范，而是 Vivado 自身 bug</p>
+<h4 id="2进位对齐问题">2、进位对齐问题</h4>
+<p>因在光标处进位出现提前，故改为采用下降沿触发进位</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104105223.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>现在clk是低电平先行，故所有时钟、进位都应改为下降沿标准</p>
+<h4 id="3类似越沿采样的问题">3、类似越沿采样的问题</h4>
+<p>进位对齐的问题解决了，开头还是有提前采样（反越沿采样？）：
+此时不能再改下降沿逻辑了，只能用延时控制使能信号，使程序不要一开始就进入工作状态，即EN端不要直接置1。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104104052.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>延缓使能后，该问题得到解决：</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104110920.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104110906.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="四纯代码仿真最终测试">（四）纯代码仿真最终测试</h3>
+<p>仿真时间长度恢复到12小时、模拟实际判定条件，观察仿真结果。</p>
+<p>需要注意的是，使能端因延缓启动会有10ms的手动延时</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104113838.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>抽取 36797s 看一下对应是否是 10:13:17</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104111418.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>确实是对应（但由于延时使能，该仿真时间线会有10ms滞后，可计算进去）</p>
+<h3 id="五纯代码仿真结果集中展示">（五）纯代码仿真结果集中展示</h3>
+<h4 id="1simulation">1、Simulation</h4>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104113654.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h4 id="2schematic">2、Schematic</h4>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240111194558.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240106221728.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h4 id="3io-planning">3、I/O Planning</h4>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240106215210.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h4 id="4flooorplanning">4、Flooorplanning</h4>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240106220541.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240106220641.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="六开发板配置">（六）开发板配置</h3>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104114006.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104115725.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112092748.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112092842.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>目前我已在本次课设基础上，完成了开发板时钟分频降频、I/O管脚约束等后续工作，对所设计的模块进行了 IP 核封装，并基于全 IP 的架构完成了电路综合和实现。</p>
+<p>后续我将继续在 zynq7010 上实现相关功能。</p>
+<hr>
+<p>ok考试考完了，课设的内容也只是要求到仿真。</p>
+<p>如果要迁移到板子上，我需要解决以下2个问题：</p>
+<ul>
+<li>板载时钟降频（50MHz &ndash;&gt; 8Hz）</li>
+<li>合理管脚约束（常数引脚不悬空）</li>
+</ul>
+<h3 id="七板载时钟降频">（七）板载时钟降频</h3>
+<p>50MHz &ndash;&gt; 8Hz 这个分频率实在是有点大，肯定是采用多级分频。需要注意：</p>
+<ul>
+<li>高频区段的时钟精度要保证</li>
+<li>考虑到资源问题，每一级分频数不能太大</li>
+<li>为设计简单，可以复用模块</li>
+</ul>
+<p>下面的设计步骤就是基于 IP 核的组合了。使用 IP 核的首要原因是我当时并没有想到什么在板上锁定常数引脚的方法，但是 IP 核中有一个常数 IP，可以接上引脚，于是便想用那个试一试。</p>
+<p>因此在考虑时钟问题的时候我也准备使用基于 IP 核组合的设计流程。</p>
+<p>综上所述，我选择了 Clocking Wizard 做一级分频以保证精度。
+Clocking Wizard 的输出范围约为 5MHz ~ 800Mhz，所以能降则降，一级分频结果为 5MHz。
+次级分频使用的是1个10分频和2个250分频。我也将之前纯代码仿真的那部分整体封装成 IP，最后一起连接。</p>
+<h4 id="150-250分频模块">1、50% 250分频模块</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`timescale</span> <span class="mh">1</span><span class="n">us</span> <span class="o">/</span> <span class="mh">1</span><span class="n">us</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//////////////////////////////////////////////////////////////////////////////////
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">freq_divider_250</span><span class="p">(</span><span class="n">clk</span><span class="p">,</span> <span class="n">rst_n</span><span class="p">,</span> <span class="n">clk_div</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">clk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">input</span> <span class="n">rst_n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">output</span> <span class="kt">reg</span> <span class="n">clk_div</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">    <span class="k">parameter</span> <span class="n">NUM_DIV</span> <span class="o">=</span> <span class="mh">250</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">always</span> <span class="p">@(</span><span class="k">negedge</span> <span class="n">clk</span> <span class="k">or</span> <span class="k">negedge</span> <span class="n">rst_n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">rst_n</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cnt</span>     <span class="o">&lt;=</span> <span class="mh">1</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">clk_div</span> <span class="o">&lt;=</span> <span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">cnt</span> <span class="o">&lt;</span> <span class="n">NUM_DIV</span> <span class="o">/</span> <span class="mh">2</span> <span class="o">-</span> <span class="mh">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt</span>     <span class="o">&lt;=</span> <span class="n">cnt</span> <span class="o">+</span> <span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clk_div</span> <span class="o">&lt;=</span> <span class="n">clk_div</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cnt</span>     <span class="o">&lt;=</span> <span class="mh">1</span><span class="mi">&#39;d0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">clk_div</span> <span class="o">&lt;=</span> <span class="o">~</span><span class="n">clk_div</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>testbench</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`timescale</span> <span class="mh">1</span><span class="n">us</span> <span class="o">/</span> <span class="mh">1</span><span class="n">us</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//////////////////////////////////////////////////////////////////////////////////
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">module</span> <span class="n">test_freq_divider_250</span><span class="p">(</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    Ports
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//Inputs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span> <span class="n">clk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">reg</span> <span class="n">rst_n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//Outputs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">wire</span> <span class="n">clk_div</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    Instantiation
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">freq_divider_250</span> <span class="n">test_freq_divider_250</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk</span><span class="p">(</span><span class="n">clk</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">rst_n</span><span class="p">(</span><span class="n">rst_n</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk_div</span><span class="p">(</span><span class="n">clk_div</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    CLK
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">initial</span>
+</span></span><span class="line"><span class="cl">	<span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="n">clk</span><span class="o">=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">forever</span>
+</span></span><span class="line"><span class="cl">	<span class="p">#</span><span class="mh">250</span> <span class="n">clk</span><span class="o">=~</span><span class="n">clk</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--     RST, EN, SET, SET_FLAG
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">initial</span>
+</span></span><span class="line"><span class="cl">    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rst_n</span><span class="o">=</span><span class="mh">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>仿真</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107103504.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>封装</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107104610.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h4 id="250-10分频模块">2、50% 10分频模块</h4>
+<p>照葫芦画瓢，仿真</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107113212.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>封装</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107114200.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>最终2个分频模块都能在 IP Catalog 中查询到</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112102839.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="八constant-ip-核约束常数管脚">（八）Constant IP 核约束常数管脚</h3>
+<p>直接在 IP Catalog 中调用已经封装好的 Constant IP 核。</p>
+<p>Clocking Wizard 也是一样调用</p>
+<h3 id="九接线图">（九）接线图</h3>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107123110.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="十输出端口管脚约束">（十）输出端口管脚约束</h3>
+<p>CLK 输入接 H16，所有 I/O 端口采用 LVCMOS33 电平标准。</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112102406.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="十一generate-block-design-diagram-到代码">（十一）Generate Block Design Diagram 到代码</h3>
+<p>block design contains locked ips</p>
+<p>更新IP核状态</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107121317.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>Create HDL Wrapper</p>
+<p>最终的 Sources 目录为：</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112103527.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<h3 id="十二第二阶段仿真">（十二）第二阶段仿真</h3>
+<p>testbench</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="no">`timescale</span> <span class="mh">1</span><span class="n">ps</span> <span class="o">/</span> <span class="mh">1</span><span class="n">ps</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//////////////////////////////////////////////////////////////////////////////////
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">module</span> <span class="n">test_design_1</span><span class="p">(</span>  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    Ports
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//Inputs
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">reg</span> <span class="n">clk_in_50M</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    Instantiation
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">design_1</span> <span class="n">test_design_1</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="n">clk_in_50M</span><span class="p">(</span><span class="n">clk_in_50M</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--    clk_in_50M
+</span></span></span><span class="line"><span class="cl"><span class="c1">//--------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">initial</span>
+</span></span><span class="line"><span class="cl">	<span class="k">begin</span>
+</span></span><span class="line"><span class="cl">	<span class="n">clk_in_50M</span><span class="o">=</span><span class="mh">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">forever</span>
+</span></span><span class="line"><span class="cl">	<span class="p">#</span><span class="mh">10000</span> <span class="n">clk_in_50M</span><span class="o">=~</span><span class="n">clk_in_50M</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">endmodule</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>波形</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107124207.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107124314.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107124311.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>但是似乎仿真不了太长时间，毕竟 50MHz 的时钟和 1ps 的精度让我本就不富裕的 CPU 计算能力更显捉襟见肘</p>
+<p>于是乎，我把那几个判断时间改短一点，象征性地在板子上验证一下。</p>
+<p>核心代码修改：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-verilog" data-lang="verilog"><span class="line"><span class="cl"><span class="k">begin</span><span class="c1">//--------------------------------------if_else判断的条件改简单了，每1秒变一下信号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">3</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">4</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">end</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">5</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">((</span><span class="n">s0</span><span class="o">==</span><span class="mh">6</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">s1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m0</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">m1</span><span class="o">==</span><span class="mh">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">h0</span><span class="o">==</span><span class="mh">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">begin</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b1</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b2</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">r3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">g3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span> <span class="n">b3</span><span class="o">=</span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span> <span class="c1">//------------------------------------------------------------------------------
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>仿真波形（象征性的搞了几秒）</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107194235.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>封装好，替换原来的main0</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107194505.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>连上新的IP核</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107194824.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>引出输出端口</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107195903.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>重新generate一下，重新create wrapper</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107200146.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>可以看到.v文件更新了</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240107200351.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>简单仿真2s康康
+emm失败了</p>
+<p>实现</p>
+<p>I/O Planning</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240108094306.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>Floorplanning</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240108094331.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>生成比特流</p>
+<p>[DRC UCIO-1] Unconstrained Logical Port: 1 out of 10 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected.</p>
+<p>管脚约束不恰当，修改之</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112200418.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>Auto Connect 之后 Pragram 一下，完美点亮</p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112202041.JPG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112202045.JPG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112202051.JPG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112202056.JPG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112202059.JPG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112202113.JPG"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Img"
+	
+	
+></p>
+<p>但是最后一个状态好像没出来，不知道为什么呜呜呜&hellip;&hellip;</p>
+<p>未完待续&hellip;&hellip;</p>
+<h2 id="六实验感想">六、实验感想</h2>
+<p>本次实践感想颇多，主要分为以下几个方面。</p>
+<p>首先我十分感谢老师的教学和指导，这让我掌握了 FPGA 基本的基本理论知识和 VerilogHDL 的基本编程、调试方法。在本次实践过程中我遇到了一些问题，没有老师的指导，这些问题就不会被顺利解决。</p>
+<p>其次，这此实践锻炼了我创建并实施项目的能力。我克服畏惧，独立完成了从总体设计、模块设计到 debug、仿真、综合等全部环节。面对一个个 error，我没有灰心丧气，而是一个一个排查错误，积极上网查找资料、找大佬沟通交流。这些对于一年前怕写代码、怕 debug、怕跟人沟通的我来说是一种进步。</p>
+<p>最后，我深刻地认识到，在课程体系落后于其他以电子信息为专长的学校的情况下，只有自力更生，学会理解迁移经典代码，学会合理运用网络，学会与更强的人沟通，才能在短时间内上手一份自己并不熟悉的工程。</p>
+
+    
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css"integrity="sha256-J&#43;iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s="crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js"integrity="sha256-InsNdER1b2xUewP&#43;pKCUJpkhiqwHgqiPXDlIk7GzBu4="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js"integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI="crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216220400.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216220400.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">单片机课程设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170449.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170449.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">测试页面</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/%E6%AF%9B%E6%B3%BD%E4%B8%9C%E6%80%9D%E6%83%B3%E5%92%8C%E4%B8%AD%E5%9B%BD%E7%89%B9%E8%89%B2%E7%A4%BE%E4%BC%9A%E4%B8%BB%E4%B9%89%E7%90%86%E8%AE%BA%E4%BD%93%E7%B3%BB%E6%A6%82%E8%AE%BA/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240214164854.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">毛泽东思想和中国特色社会主义理论体系概论</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/cpu%E5%8F%91%E5%B1%95%E5%8F%B2/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216165213.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CPU发展史</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/cpu%E5%92%8Cgpu/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CPU和GPU</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="Multipleriver/Multipleriver.github.io"
+    data-repo-id="R_kgDOLHRgTw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLHRgT84Ccjuf"
+    data-mapping="title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 rivers@hhu.edu.cn
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.21.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+# /layouts/partials/footer/custom.html
+
+
+<a href="#" id="back-to-top" title="返回顶部"></a>
+
+
+<style>
+  #back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 7px;
+    background-color: rgba(64, 158, 255, 0.5);
+    box-shadow: var(--shadow-l2);
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+
+  #back-to-top:before {
+    content: ' ';
+    display: inline-block;
+    position: relative;
+    top: 0;
+    transform: rotate(135deg);
+    height: 10px;
+    width: 10px;
+    border-width: 0 0 2px 2px;
+    border-color: var(--back-to-top-color);
+    border-style: solid;
+  }
+
+  #back-to-top:hover:before {
+    border-color: #2674e0;
+  }
+
+   
+  @media screen and (max-width: 768px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      font-size: 10px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1024px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 40px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1280px) {
+    #back-to-top {
+      bottom: 20px;
+      right: 55px;
+    }
+  }
+
+   
+  @media screen and (min-width: 1536px) {
+    #back-to-top {
+      visibility: hidden;
+    }
+  }
+</style>
+
+
+<script>
+  function backToTop() {
+    document.documentElement.scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
+  window.onload = function () {
+    let scrollTop =
+      this.document.documentElement.scrollTop || this.document.body.scrollTop
+    let totopBtn = this.document.getElementById('back-to-top')
+    if (scrollTop > 0) {
+      totopBtn.style.display = 'inline'
+    } else {
+      totopBtn.style.display = 'none'
+    }
+  }
+
+  window.onscroll = function () {
+    let scrollTop =
+      this.document.documentElement.scrollTop || this.document.body.scrollTop
+    let totopBtn = this.document.getElementById('back-to-top')
+    if (scrollTop < 200) {
+      totopBtn.style.display = 'none'
+    } else {
+      totopBtn.style.display = 'inline'
+      totopBtn.addEventListener('click', backToTop, false)
+    }
+  }
+</script>
+
+    </body>
+    <script type="text/javascript" src="https://demo.hellozwh.com/source/canvas-nest.min.js"></script>
+</html>
