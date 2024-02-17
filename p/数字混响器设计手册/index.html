@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1 微机原理课后写着玩玩系列 CPU和GPU的区别 简介 CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。 GPU是图形系统结构的重要元件'>
-<title>CPU和GPU</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='混响器简介 混响的概念 混响：是一种主要发生在封闭空间，由点声源按照球形向各个方向传播，经过墙面、地板、天花板等多次反射所形成的全部声音的统称。'>
+<title>数字混响器设计手册</title>
 
-<link rel='canonical' href='https://Multipleriver.github.io/p/cpu%E5%92%8Cgpu/'>
+<link rel='canonical' href='https://Multipleriver.github.io/p/%E6%95%B0%E5%AD%97%E6%B7%B7%E5%93%8D%E5%99%A8%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C/'>
 
-<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='CPU和GPU'>
-<meta property='og:description' content='1 微机原理课后写着玩玩系列 CPU和GPU的区别 简介 CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。 GPU是图形系统结构的重要元件'>
-<meta property='og:url' content='https://Multipleriver.github.io/p/cpu%E5%92%8Cgpu/'>
+<link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='数字混响器设计手册'>
+<meta property='og:description' content='混响器简介 混响的概念 混响：是一种主要发生在封闭空间，由点声源按照球形向各个方向传播，经过墙面、地板、天花板等多次反射所形成的全部声音的统称。'>
+<meta property='og:url' content='https://Multipleriver.github.io/p/%E6%95%B0%E5%AD%97%E6%B7%B7%E5%93%8D%E5%99%A8%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C/'>
 <meta property='og:site_name' content='夜来风雨声'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-12-10T16:37:06&#43;08:00'/><meta property='article:modified_time' content='2023-12-10T16:37:06&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png' />
-<meta name="twitter:title" content="CPU和GPU">
-<meta name="twitter:description" content="1 微机原理课后写着玩玩系列 CPU和GPU的区别 简介 CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。 GPU是图形系统结构的重要元件"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-10-24T12:17:03&#43;08:00'/><meta property='article:modified_time' content='2023-10-24T12:17:03&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240217225631.png' />
+<meta name="twitter:title" content="数字混响器设计手册">
+<meta name="twitter:description" content="混响器简介 混响的概念 混响：是一种主要发生在封闭空间，由点声源按照球形向各个方向传播，经过墙面、地板、天花板等多次反射所形成的全部声音的统称。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240217225631.png' />
     </head>
     <body class="
     article-page
@@ -265,27 +265,40 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#cpu和gpu的区别">CPU和GPU的区别</a>
+    <li><a href="#混响器简介">混响器简介</a>
       <ol>
-        <li><a href="#简介">简介</a></li>
-        <li><a href="#gpu的发展">GPU的发展</a></li>
-        <li><a href="#主要区别列表">主要区别列表</a></li>
-      </ol>
-    </li>
-    <li><a href="#为什么gpu适合炼丹">为什么GPU适合炼丹</a>
-      <ol>
-        <li><a href="#一并行处理优势">一、并行处理优势</a></li>
-        <li><a href="#二浮点计算优势">二、浮点计算优势</a>
+        <li><a href="#混响的概念">混响的概念</a></li>
+        <li><a href="#产生混响的方法">产生混响的方法</a>
           <ol>
-            <li><a href="#计算单元位宽">计算单元位宽</a></li>
-            <li><a href="#cpu和gpu浮点运算性能比较">CPU和GPU浮点运算性能比较</a></li>
+            <li><a href="#古老的方法">古老的方法</a></li>
+            <li><a href="#现代的方法">现代的方法</a></li>
           </ol>
         </li>
-        <li><a href="#三nvidia的努力">三、Nvidia的努力</a></li>
-        <li><a href="#四生态支持">四、生态支持</a></li>
       </ol>
     </li>
-    <li><a href="#总结什么类型的程序适合在gpu上运行">总结：什么类型的程序适合在GPU上运行？</a></li>
+    <li><a href="#混响器设计指标">混响器设计指标</a>
+      <ol>
+        <li><a href="#混响器的使用及参数调节思路">混响器的使用及参数调节思路</a>
+          <ol>
+            <li><a href="#明确房间">明确房间</a></li>
+            <li><a href="#描述深度">描述深度</a></li>
+          </ol>
+        </li>
+        <li><a href="#混响的组成">混响的组成</a>
+          <ol>
+            <li><a href="#直达声direct-sound">直达声（Direct sound）</a></li>
+            <li><a href="#预延迟pre-delay">预延迟（Pre-delay）</a></li>
+            <li><a href="#早期反射声early-reflections">早期反射声（Early reflections）</a></li>
+            <li><a href="#混响声晚期反射声reverberation">混响声（晚期反射声，Reverberation）</a></li>
+            <li><a href="#干湿比例dry-wet-ratio">干湿比例（Dry-wet ratio）</a></li>
+            <li><a href="#混响时间reverb-time">混响时间（Reverb time）</a></li>
+            <li><a href="#房间大小size">房间大小（Size）</a></li>
+            <li><a href="#密度density">密度（Density）</a></li>
+            <li><a href="#扩散diffusion">扩散（Diffusion）</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -300,9 +313,9 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/cpu%E5%92%8Cgpu/">
+            <a href="/p/%E6%95%B0%E5%AD%97%E6%B7%B7%E5%93%8D%E5%99%A8%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C/">
                 
-                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" loading="lazy" alt="Featured image of post CPU和GPU" />
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240217225631.png" loading="lazy" alt="Featured image of post 数字混响器设计手册" />
                 
             </a>
         </div>
@@ -321,7 +334,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/cpu%E5%92%8Cgpu/">CPU和GPU</a>
+            <a href="/p/%E6%95%B0%E5%AD%97%E6%B7%B7%E5%93%8D%E5%99%A8%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C/">数字混响器设计手册</a>
         </h2>
     
         
@@ -343,7 +356,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Dec 10, 2023</time>
+                <time class="article-time--published">Oct 24, 2023</time>
             </div>
         
 
@@ -358,7 +371,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 9 分钟
                 </time>
             </div>
         
@@ -373,128 +386,176 @@
     <section class="article-content">
     
     
-    <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">微机原理课后写着玩玩系列
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div STYLE="page-break-after: always;"></div>
-<h2 id="cpu和gpu的区别">CPU和GPU的区别</h2>
-<h3 id="简介">简介</h3>
-<p>CPU的主要功能是解释计算机指令以及处理计算机软件中的数据。</p>
-<p>GPU是图形系统结构的重要元件，是连接计算机和显示终端的纽带。</p>
-<h3 id="gpu的发展">GPU的发展</h3>
-<p>光栅化显示系统离不开图形处理器。早期的显卡只包含简单的存储器和帧缓冲区，它们实际上只起了一个图形的存储和传递作用，一切操作都必须由CPU来控制。</p>
-<p>这对于文本和一些简单的图形来说是足够的，但是当要处理复杂场景特别是一些真实感的三维场景，单靠这种系统是无法完成任务的。
-所以后来发展的显卡都有图形处理的功能。它不单单存储图形，而且能完成大部分图形功能，这样就大大减轻了CPU的负担，提高了显示能力和显示速度。</p>
-<h3 id="主要区别列表">主要区别列表</h3>
-<p>|参数| CPU | GPU |
-| &ndash; | &ndash; |
-|通用性|通用|专用|
-|核心数|少|超级多|
-| 线程数 | 少 | 多 |
-| reg数 | 少 | 多 |
-| cache容量 | 大 | 小（计算卡的也不小）|
-| SIMD | 小 | 大 |
-| 时钟频率 | 较高 | 较低 |
-| 运算延迟 | 相对较小 | 相对较大 |
-| 数据吞吐量 | 相对较小 | 相对较大 |
-|功耗|相对较低|相对较高|
-|单核心任务复杂程度|复杂|简单|
-| 任务调度 | 通过操作系统调度 | 无复杂调度 |
-| 控制逻辑 | 复杂 | 简单 |
-| 优化电路 | 相对复杂 | 相对简单 |</p>
-<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163839.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Img"
-	
-	
-></p>
-<ul>
-<li>CPU需要很强的通用性来处理各种不同的数据类型，同时又要逻辑判断又会引入大量的分支跳转和中断的处理。这些都使得CPU的内部结构异常复杂。</li>
-<li>GPU面对的则是类型高度统一的、相互无依赖的大规模数据和不需要被打断的纯净的计算环境。</li>
-</ul>
-<p>综上所述：</p>
+    <h2 id="混响器简介">混响器简介</h2>
+<h3 id="混响的概念">混响的概念</h3>
+<p>混响：是一种主要发生在封闭空间，由点声源按照球形向各个方向传播，经过墙面、地板、天花板等多次反射所形成的全部声音的统称。</p>
+<p>混响器：用来来模拟这种自然现象的硬件或者软件。</p>
+<h3 id="产生混响的方法">产生混响的方法</h3>
+<h4 id="古老的方法">古老的方法</h4>
+<h5 id="话筒直录">话筒直录</h5>
+<h5 id="混响室reverb-chamber">混响室（Reverb chamber）</h5>
+<h4 id="现代的方法">现代的方法</h4>
+<h5 id="弹簧混响器spring-reverb">弹簧混响器（Spring reverb）</h5>
+<h5 id="板混响器plate-reverb">板混响器（Plate reverb）</h5>
+<h5 id="数字混响器digital-emulator">数字混响器（Digital emulator）</h5>
+<p>通过内部的DSP芯片的数学运算来实现混响处理，内部设计非常复杂。</p>
+<p>优点:
+能够产生几乎与真实房间内产生的混响完全一致的声音，并且具有非常多的控制参数，甚至能够产生延迟和合唱效果。</p>
+<p>缺点:
+硬件和软件插件都很贵，且软件消耗大量运算内存资源。</p>
+<h5 id="卷积混响器convolution-reverberator">卷积混响器（Convolution reverberator）</h5>
+<p>卷积混响器通过卷积运算产生混响。</p>
+<p>但与数字混响不同的是，卷积混响器需要前期采样，它需要在采样一个冲激信号后，再对这个信号进行相应计算，从而产生想要的混响效果。</p>
+<p>由于有真实信号的采样，它得到的最终混音效果有时比数字混音器还要真实，它的真实度很大程度上取决去前期的采样。</p>
+<h2 id="混响器设计指标">混响器设计指标</h2>
+<h3 id="混响器的使用及参数调节思路">混响器的使用及参数调节思路</h3>
+<h4 id="明确房间">明确房间</h4>
+<p>在调节混响器的参数之前，我们需要先建立一个明确的方向，即调节这些参数是为了什么，宏观来看，混响器就是模拟一个具有一定大小的空间，而这些参数就是去调节这个空间的大小和特性。</p>
+<p>比如，我想人声在一个较大的空间发声，那么就可以在心里大致模拟一个有具体长宽高的房间以及该房间的特性：房间墙壁是光滑还是粗糙，房间内的家具拥挤还是空荡，房间地面是硬实地板还是软绵地毯等等。</p>
+<p>因此调节混响器参数的第一步是先在心里打好空间大小特性的草稿，所有的混响器的参数都是为了模拟的空间大小和特性而服务的。</p>
+<h4 id="描述深度">描述深度</h4>
+<p>在设想与模拟空间大小时要考虑一个重要问题：即发声者（音源位置）与听音者（监听位置）是否为同一点。</p>
+<h5 id="音源位置与监听位置为同一点的情况">音源位置与监听位置为同一点的情况</h5>
+<p>此时我们只需要模拟好空间的大小尺寸即可，因为在同一个空间里，混响总量是恒定不变的，音源与监听位置在同一个点，不管这个点怎么移动，最终听到的混响量都是一样的。</p>
+<p>音源位置与监听位置为同一点的情况多用在：</p>
 <ol>
-<li>CPU被设计用于执行各种不同类型和级别的串行任务，包括操作系统运行、应用程序执行、数据处理等，适用于广泛的计算任务。</li>
-<li>GPU包含大量小而高效、能同时处理多个相似任务的核心，最初设计用于图形渲染，在不断发展的过程中向着并行处理而优化。这种并行性使GPU适合处理大规模数据集，执行相同计算的多个任务。</li>
-<li>GPU的计算速度比CPU快得多？emm，GPU相对于CPU的速度取决于执行的计算类型。</li>
+<li>
+<p>人声贴唱的混音：我们只需要给人声加一个有空间感的混响，不需要考虑别的东西，就直接模拟一个空间大小就可以。</p>
+</li>
+<li>
+<p>不需要考虑配器整体的相对位置与深度，只需要给单独的乐器加湿润色：比如很多后摇，自赏风格的歌曲不需要什么明确的空间感，也不需要考虑吉他在整体空间中到底是什么位置，就要电吉他一个超大的混响，就是要一个超大混响的感觉，就直接设定好一个空间，把吉他放进去就好。</p>
+</li>
+<li>
+<p>润色类混响时，如板式和弹簧混响，和以上同理，无需考虑空间位置和深度，只起到润色作用，空间的加大就表示润色更明显，信号更“湿”’。</p>
+</li>
 </ol>
-<div STYLE="page-break-after: always;"></div>
-<h2 id="为什么gpu适合炼丹">为什么GPU适合炼丹</h2>
-<h3 id="一并行处理优势">一、并行处理优势</h3>
-<p>图形卷积计算的filter是一个接一个地依次进行、每次计算独立于其他计算的。</p>
-<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163906.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Img"
-	
-	
-></p>
-<p>因此卷积神经网络的许多计算都可以分解成更小的计算单元，且小的计算集不会相互依赖，它是高度并行的。</p>
-<p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216163917.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Img"
-	
-	
-></p>
-<p>GPU在机器学习领域大展身手的原因也是跟他们的特点有关。机器学习任务通常牵涉到大规模数据并行计算，而GPU高并行性使得它们在处理并行计算任务时表现卓越。</p>
-<h3 id="二浮点计算优势">二、浮点计算优势</h3>
-<p>浮点运算的结果不是准确值，它的精度取决于数据位宽。
-要解决精度问题，也只能提高位宽。</p>
-<h4 id="计算单元位宽">计算单元位宽</h4>
-<p>实际使用的单精度浮点是32位，双精度是64位。
-CPU的FPU率先支持了更高宽度的数据。英特尔的CPU计算浮点的时候内部精度是80位，输出输入还是64位；但很多GPU（一般Nvidia非专业卡现在都给蔽了双精度）都是单精度32位的，专业计算卡现在一般都是64位。</p>
-<h4 id="cpu和gpu浮点运算性能比较">CPU和GPU浮点运算性能比较</h4>
-<p>CPU的FPU和逻辑单元、核心数量和频率都是同步的。每个FPU必须配对全套的逻辑和编解码单元以保证编程方面的兼容性。这也许也是就限制了CPU的核心做不了太多的一个因素。
-反正核心就那么几个，只能把CPU单核频率上升到很高的水平，支持各种超级宽的数据格式。</p>
-<p>而相比之下，GPU就是大批大批的小型FPU，其他的东西能少就少。
-GPU擅长的是数值计算，不擅长处理分支和随机读写。</p>
-<p>如果只做一道浮点运算，其实是CPU更快（频率更高嘛）。</p>
-<p>但问题的关键是，通常来说浮点运算都是大批量的任务且互相之间没有关联。这种情况下，复杂的浮点运算就变成一个并行问题了（和第一个原因有所重合），GPU大批量低频小FPU就有显著优势了（一言以蔽之，堆料也）。</p>
-<p>综上所述，GPU浮点运算能力得到充分发挥的前提是：</p>
+<h5 id="音源位置与听音位置为不同点的情况">音源位置与听音位置为不同点的情况</h5>
+<p>此时我们先要确定一个空间大小，再要确定好音源与监听的具体位置。</p>
+<p>其中音源与监听的距离就是我们口头常说的“深度”。</p>
+<p>当听众的位置不同时，其听到的混响声就会有所区别。听众离音源远，听众听到的混响声就会越强；听众离音源近，听众听到的混响声就会越弱。所以在音源位置与听音位置不同的情况下，不仅要设想好要模拟的空间大小，还要设想好“深度”。</p>
+<p>音源位置与听音位置为不同点的情况多用在至少是乐队配置的多轨混音中，比如为为一首基础三大件配置的摇滚乐歌曲混音：</p>
 <ol>
-<li>任务向量化</li>
-<li>连续读写</li>
-<li>任务分支少</li>
+<li>
+<p>先设想好演出场所空间大小，利用混响参数调节好要模拟的空间大小。</p>
+</li>
+<li>
+<p>再确定音源的具体位置，模拟好吉他、贝斯、鼓、人声分别放在舞台的前后与左右。</p>
+</li>
+<li>
+<p>最后模拟听音位置，确定“深度”。</p>
+</li>
 </ol>
-<p>而神经网络就是一个这样的模型。</p>
-<h3 id="三nvidia的努力">三、Nvidia的努力</h3>
-<p>是的没错，Nvidia的不断努力也是GPU适合神经网络的重要原因。
-Nvidia想方设法让GPU突破传统，装载更多先进的单元以应对更复杂的任务。没有Nivida，GPU最起码不会这么适配神经网络计算。</p>
-<p>其中比较有代表性的就是张量计算核心TC。
-矩阵运算和张量运算是TC加速的主要对象，</p>
-<ul>
-<li><strong>硬件加速</strong>：与传统的GPU相比，TC是专门设计用于数学计算的硬件，因此在执行矩阵和张量运算时具有显著的加速效果。这使得GPU成为深度学习任务的理想选择。</li>
-<li><strong>资源优化</strong>：GPU中的资源分配对性能至关重要。在一个流式多处理器（SM）中，拥有TC能大大降低共享内存访问和FFMA操作的成本，让每个线程专注于更多的计算，而不是计算索引。</li>
-</ul>
-<p>在深度学习中的应用在深度学习中，TC的应用广泛，包括矩阵乘法、卷积运算、元素级操作以及其他数学运算。这些操作构成了深度学习模型的基础，而TC的高性能和并行计算能力有助于加速训练和推理过程。</p>
-<h3 id="四生态支持">四、生态支持</h3>
-<p>GPU得到了TensorFlow、PyTorch等主流深度学习框架的良好支持，这使得开发者可以很方便地使用GPU进行深度学习的开发。</p>
-<p>这确实很重要。之前苹果联盟了Pytorch，然后发现M3芯片的笔记本跑Stable Difussion比以前快的不是一个档次，比大部分显卡都快。。。</p>
-<div STYLE="page-break-after: always;"></div>
-<h2 id="总结什么类型的程序适合在gpu上运行">总结：什么类型的程序适合在GPU上运行？</h2>
+<h3 id="混响的组成">混响的组成</h3>
+<h4 id="直达声direct-sound">直达声（Direct sound）</h4>
+<h5 id="直达声的概念">直达声的概念</h5>
+<p>直达声并不是混响的组成部分，是声源沿着直线最先到达我们耳朵的声音，即信号的干声。</p>
+<h4 id="预延迟pre-delay">预延迟（Pre-delay）</h4>
+<h5 id="预延迟的概念">预延迟的概念</h5>
+<p>预延迟是达到人耳的直达声和第一次反射声之间的时间间隔，它反应了空间大小和深度：</p>
+<p>房间越大，反射声传播的距离就越长，预延时就很长；<br>
+房间越小，反射声传播的距离短，预延时就越小。</p>
+<h5 id="预延迟的特点">预延迟的特点</h5>
+<p>当音源与监听是同一点时，直达声忽略不计，预延时=10-0=10ms；</p>
+<p>在空间大小确定，音源与监听位置是不同点的情况下，它直观反应出了音源到监听位置距离的信息：</p>
+<p>音源距监听位置远，其预延时时间就短；音源距监听位置近，其预延时时间就长。</p>
+<h4 id="早期反射声early-reflections">早期反射声（Early reflections）</h4>
+<h5 id="早期反射声的概念">早期反射声的概念</h5>
+<p>早期反射声是经过一两次界面反射形成的最早的反射声；
+它反应了空间大小和深度还有染色。</p>
+<h5 id="早期反射声的描述指标">早期反射声的描述指标</h5>
+<p>早期反射声有三个主要描述指标:</p>
 <ol>
-<li>易映射并行</li>
-<li>计算密集型</li>
-<li>任务向量化</li>
-<li>随机读写少</li>
-<li>任务分支少</li>
+<li>
+<p>密度：因为才开始反射，所以比较稀疏。随着时间的推移，会有越来越多反射声，还会有反射声的反射声，也就是后头要说的晚期反射声，它的密度就非常大，听感会浑浊混乱，因此只有早期反射声的声音最为清晰，几乎等于直达声。密度无法反应空间大小和深度，密度稀疏是早期反射声的固有属性，此处需要指出。</p>
+</li>
+<li>
+<p>频率：由于高频运动更猛烈，其能量衰减的就越快，而低频衰减的速度比高频慢很多，因此早期反射声相比于晚期反射声包含更多的高频成分。这也是早期反射声的固有属性。我们可以通过加大早期反射声来进行染色，高频多的早期反射声可以带来清亮的色彩。</p>
+</li>
+<li>
+<p>强度：即振幅，它表征能量的大小，也能够反映出房间的空间大小和深度。</p>
+</li>
 </ol>
+<h5 id="如何处理早期反射声">如何处理早期反射声：</h5>
+<ol>
+<li>
+<p>早期反射身会带来干扰干信号造成梳状滤波器等相位和失真问题（本质就是房间太小，所有这种梳状滤波的问题都是因为房间太小）。所以有时候为了不让声音变模糊，会去掉早期反射声或者增长预延时来使声音避免相位问题。早期反射声听觉就是干信号发出后紧随其后的那种“嗡嗡”的声音，它使得声音变得模糊；但若去除太多则会使得混响的感觉不太突出，因为只有这种“嗡嗡”的早期反射声强度最大，后期混响声因强度小、低频成分多而被淹没在伴奏和歌曲中。</p>
+</li>
+<li>
+<p>对干信号只加早期反射声，其他混响声都不要，这会让干信号既干净又有活力。</p>
+</li>
+<li>
+<p>突出早期反射声会带来清亮的染色，因为早期反射声高频多。</p>
+</li>
+</ol>
+<h4 id="混响声晚期反射声reverberation">混响声（晚期反射声，Reverberation）</h4>
+<h5 id="混响声的概念">混响声的概念</h5>
+<p>混响声是位于早期反期声之后的反射声集合，由于后期反射声越来越多，晚期反射声的密度是非常密集的，可以被认为是一整块声音，因此多被叫做混响声。</p>
+<h5 id="混响声的描述指标与特点">混响声的描述指标与特点</h5>
+<ol>
+<li>
+<p>密度：混响声的密度比早期反射声大的多，一整块的感觉。</p>
+</li>
+<li>
+<p>强度：混响声的强度远小于早期反射声，有时也被称作声音的尾音（Reverb tall）。</p>
+</li>
+<li>
+<p>频率：混响声的频率成分以低频为主。</p>
+</li>
+</ol>
+<h5 id="混响声的作用">混响声的作用：</h5>
+<p>混响声的作用单独拿出来没有作用，与早期反射声加在一起才有作用。</p>
+<p>很多混响器里没有这个参数的调节，那是因为全部的混响=早期反射声+晚期反射声，所以调节混响时间和早期反射声相当于调节了整个混响。严格来说，混响声应该是总体的混响而非晚期反射声。后文中的“混响声&quot;都指总体的混响。</p>
+<p>混响声（总体混响）与干湿比例共同决定了“深度”</p>
+<h4 id="干湿比例dry-wet-ratio">干湿比例（Dry-wet ratio）</h4>
+<p>干湿比例在空间大小确定的情况下，直接决定了“深度”。</p>
+<p>在同一个空间，音源和监听位置不是同一个的情况下，不管音源离我们距离多远或者多近，其发出的混响声的能量总和是不会变的。整体的混响能量只与所处的空间大小有关。</p>
+<p>混响声在同一个空间是恒定的，听者离音源越远，直达声和混响声的比例就越小。这个比例就是干湿比。</p>
+<p>当混音声的强度等于直达声时，这个音源距离我们称为临界距离。如果距离进一步大于临界距离，混响声强度大于直达声，信号就会变得模糊不清。</p>
+<p>反过来，我们可以通过通过调节干混比这个参数来控制信号的深度定位。比如我们在混乐队时，所以乐器都处在同一空间里，用得同一个混响，要把鼓组往后移，就可以利用干湿比例来进行操作。</p>
+<h4 id="混响时间reverb-time">混响时间（Reverb time）</h4>
+<h5 id="混响时间的概念">混响时间的概念</h5>
+<p>混响时间指混响在多长时间以后消失。</p>
+<p>一个较小的具有吸音材质的房间的混响时间大约为200ms，而一个非常大的场馆混响时间会达到4s左右。</p>
+<p>注意:混响时间不包括预延迟时间，因为预延迟不是混响的组成部分。混响=早期混响声+晚期混响声。</p>
+<h5 id="混响时间的作用">混响时间的作用：</h5>
+<p>混响时间直接反应空间的大小和房间材质：</p>
+<p>大的房间具有长的混响时间，小房间具有短的混响时间，<br>
+瓷砖墙面的房间比泡沫墙面的房间具有更长的混响时间。</p>
+<h5 id="混响时间的计算">混响时间的计算：</h5>
+<h6 id="惯用计算公式">惯用计算公式：</h6>
+<p>60除以歌曲速度，再根据需求不断乘2。</p>
+<p>比如想要一个短的room混响就可以乘一次2；想要一个长的hall混响就可以乘n个2。</p>
+<h6 id="实际情况">实际情况</h6>
+<p>混响时间的调节主要要看音乐的速度节拍，比如一个军鼓的混响声必须在下一声底鼓声响起之前完全消失，不然会掩蔽住底鼓，所以军鼓的混响经常需要用自动化处理。</p>
+<p>在副歌时候缩短军鼓混响时间来使军鼓变紧，加强力度；<br>
+在主歌时延长混响时间来使军鼓变软。</p>
+<p>值得注意的是，混响的强度比时间更具有影响力，持续时间短，强度大的混响比持续时间长强度小的混响更为突出。</p>
+<h4 id="房间大小size">房间大小（Size）</h4>
+<h5 id="房间大小的概念">房间大小的概念：</h5>
+<p>房间大小的就是混响器所模仿的房间的尺寸。</p>
+<h5 id="房间大小的作用">房间大小的作用：</h5>
+<p>房间大小直观反应空间大小。</p>
+<h5 id="房间大小的常用用途">房间大小的常用用途：</h5>
+<p>房间越小，混响对干声产生的染色越大；房间越大，我们就可以更突出早期反射声和更长的预延时；如果加上更短的混响时间，混响效果会更加明显。（大强度，持续时间短，预延迟长的混响声效果越明显）</p>
+<h4 id="密度density">密度（Density）</h4>
+<h5 id="密度的概念">密度的概念</h5>
+<p>密度指某一时间点的反射次数。反射次数越多密度越大。<br>
+密度可以只用来控制早期反射声，或者只用来控制晚期反射声，或者控制这两个部分的统一整体。</p>
+<h5 id="密度的作用">密度的作用:</h5>
+<p>密度可以反应空间大小和染色。</p>
+<ol>
+<li>
+<p>空间大小：单独控制早期反射声或者晚期反射声都可以改变房间大小的信息，密度越大意味房间越小。（小的房间可以迅速的反射）</p>
+</li>
+<li>
+<p>染色：当密度对早期反射声和晚期反射声共同起作用时，增大密度可以让声音变厚（适合军鼓），减小密度可以减少音色的失真和掩蔽效应，让声音更加清晰（适合人声）。</p>
+</li>
+</ol>
+<h4 id="扩散diffusion">扩散（Diffusion）</h4>
+<h5 id="扩散的概念">扩散的概念：</h5>
+<p>扩散是当声音遇到不规则表面时出现的漫反射，即更高级别的密度调整。</p>
+<p>想象一个空荡的房间，没有家具的时候信号都是通过反射形成混响，其混响的听觉就非常的直接；慢慢给房间里添加家具，混响慢慢就由扩散形成了。</p>
+<p>扩散形成的混响听觉更为含蓄与均衡。</p>
 
     
 </section>
@@ -563,18 +624,18 @@ Nvidia想方设法让GPU突破传统，装载更多先进的单元以应对更�
             
                 
 <article class="has-image">
-    <a href="/p/%E6%95%B0%E5%AD%97%E6%B7%B7%E5%93%8D%E5%99%A8%E8%AE%BE%E8%AE%A1%E6%89%8B%E5%86%8C/">
+    <a href="/p/cpu%E5%92%8Cgpu/">
         
         
             <div class="article-image">
                 
-                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240217225631.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240217225631.png"/>
+                    <img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png" loading="lazy" data-key="" data-hash="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216170058.png"/>
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">数字混响器设计手册</h2>
+            <h2 class="article-title">CPU和GPU</h2>
         </div>
     </a>
 </article>
