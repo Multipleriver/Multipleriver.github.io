@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='实验1：简单 IO 实验 任务 控制 8 个 LED 依次点亮，模拟流水灯试验。 利用一个独立式按键控制一个 LED 灯的亮灭，每按 一次键，灯状态改变一次状态，用中断方式实'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1 2 3 4 5 6 7 8 9 10 11 单片机课设任务比较多，我这几天还在医院，说实话本来想抄抄代码自己就debug一下的 没想到还蛮好玩的 借鉴别人代码的时候发'>
 <title>单片机课程设计</title>
 
 <link rel='canonical' href='https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/'>
 
 <link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='单片机课程设计'>
-<meta property='og:description' content='实验1：简单 IO 实验 任务 控制 8 个 LED 依次点亮，模拟流水灯试验。 利用一个独立式按键控制一个 LED 灯的亮灭，每按 一次键，灯状态改变一次状态，用中断方式实'>
+<meta property='og:description' content='1 2 3 4 5 6 7 8 9 10 11 单片机课设任务比较多，我这几天还在医院，说实话本来想抄抄代码自己就debug一下的 没想到还蛮好玩的 借鉴别人代码的时候发'>
 <meta property='og:url' content='https://Multipleriver.github.io/p/%E5%8D%95%E7%89%87%E6%9C%BA%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/'>
 <meta property='og:site_name' content='夜来风雨声'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-01-19T17:17:26&#43;08:00'/><meta property='article:modified_time' content='2024-01-19T17:17:26&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216220400.png' />
 <meta name="twitter:title" content="单片机课程设计">
-<meta name="twitter:description" content="实验1：简单 IO 实验 任务 控制 8 个 LED 依次点亮，模拟流水灯试验。 利用一个独立式按键控制一个 LED 灯的亮灭，每按 一次键，灯状态改变一次状态，用中断方式实"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="1 2 3 4 5 6 7 8 9 10 11 单片机课设任务比较多，我这几天还在医院，说实话本来想抄抄代码自己就debug一下的 没想到还蛮好玩的 借鉴别人代码的时候发"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216220400.png' />
     </head>
     <body class="
@@ -399,7 +399,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 14 分钟
+                    阅读时长: 15 分钟
                 </time>
             </div>
         
@@ -414,7 +414,35 @@
     <section class="article-content">
     
     
-    <h2 id="实验1简单-io-实验">实验1：简单 IO 实验</h2>
+    <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">单片机课设任务比较多，我这几天还在医院，说实话本来想抄抄代码自己就debug一下的
+</span></span><span class="line"><span class="cl">没想到还蛮好玩的
+</span></span><span class="line"><span class="cl">借鉴别人代码的时候发现有些朋友写的实在是一言难尽
+</span></span><span class="line"><span class="cl">基本没有模块化，变量命名等格式要求也不是很规范
+</span></span><span class="line"><span class="cl">遂自己写库文件，把几个常用的函数封装了一下
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">不禁让我想起，之前做数学动画用manim
+</span></span><span class="line"><span class="cl">原作者也是需要经常编程，但不从事软件开发相关工作的人
+</span></span><span class="line"><span class="cl">移植manim个人版项目的时候为了配环境搞的焦头烂额，太不规范了
+</span></span><span class="line"><span class="cl">后来搞出来一些之后就没有再探索了，等开源社区2.0版本出来再搞
+</span></span><span class="line"><span class="cl">代码素养真的很重要，方不方便移植和理解会直接影响一个项目的价值
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="实验1简单-io-实验">实验1：简单 IO 实验</h2>
 <h3 id="任务">任务</h3>
 <ol>
 <li>控制 8 个 LED 依次点亮，模拟流水灯试验。</li>

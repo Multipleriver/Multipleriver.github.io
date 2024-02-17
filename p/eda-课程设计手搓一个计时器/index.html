@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='一、实验名称 定时信号指示系统 二、实验目的 复习和进一步理解课堂所学理论知识 掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法 熟悉 Vivado 软件的基本使用'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='1 2 3 4 课设老师要求只到仿真那一步就可以了，后面的硬件部署全凭兴趣 学校没有fpga和开发板给本科生用，老师也不太懂开发板部署和vivado的'>
 <title>EDA 课程设计——手搓一个计时器</title>
 
 <link rel='canonical' href='https://Multipleriver.github.io/p/eda-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8/'>
 
 <link rel="stylesheet" href="/scss/style.min.abbd69b2908fdfcd5179898beaafd374514a86538d81639ddd2c58c06ae54e40.css"><meta property='og:title' content='EDA 课程设计——手搓一个计时器'>
-<meta property='og:description' content='一、实验名称 定时信号指示系统 二、实验目的 复习和进一步理解课堂所学理论知识 掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法 熟悉 Vivado 软件的基本使用'>
+<meta property='og:description' content='1 2 3 4 课设老师要求只到仿真那一步就可以了，后面的硬件部署全凭兴趣 学校没有fpga和开发板给本科生用，老师也不太懂开发板部署和vivado的'>
 <meta property='og:url' content='https://Multipleriver.github.io/p/eda-%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E8%AE%A1%E6%97%B6%E5%99%A8/'>
 <meta property='og:site_name' content='夜来风雨声'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-01-10T15:32:06&#43;08:00'/><meta property='article:modified_time' content='2024-01-10T15:32:06&#43;08:00'/><meta property='og:image' content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216232456.png' />
 <meta name="twitter:title" content="EDA 课程设计——手搓一个计时器">
-<meta name="twitter:description" content="一、实验名称 定时信号指示系统 二、实验目的 复习和进一步理解课堂所学理论知识 掌握基本组合、时序逻辑电路模块的 VerilogHDL 语言的描述方法 熟悉 Vivado 软件的基本使用"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="1 2 3 4 课设老师要求只到仿真那一步就可以了，后面的硬件部署全凭兴趣 学校没有fpga和开发板给本科生用，老师也不太懂开发板部署和vivado的"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240216232456.png' />
     </head>
     <body class="
@@ -403,7 +403,21 @@
     <section class="article-content">
     
     
-    <h2 id="一实验名称">一、实验名称</h2>
+    <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">课设老师要求只到仿真那一步就可以了，后面的硬件部署全凭兴趣
+</span></span><span class="line"><span class="cl">学校没有fpga和开发板给本科生用，老师也不太懂开发板部署和vivado的使用
+</span></span><span class="line"><span class="cl">实在是太苦了，我借了一块7010跑，不会的只能自己查
+</span></span><span class="line"><span class="cl">感谢雪总的技术支持
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="一实验名称">一、实验名称</h2>
 <p>定时信号指示系统</p>
 <h2 id="二实验目的">二、实验目的</h2>
 <ul>
@@ -414,14 +428,14 @@
 </ul>
 <h2 id="三实验任务">三、实验任务</h2>
 <p>设计一个定时信号指示系统，该系统有三个设备，每个设备上有红、绿、蓝三个指示灯，用 VerilogHDL 语言设计一个定时控制系统，要求:
-按时钟时间，
-00时03分15秒：设备1绿灯亮    设备2红灯亮    设备3红灯亮
-02时09分29秒：设备1蓝灯亮    设备2红灯亮    设备3红灯亮
-04时20分33秒：设备1红灯亮    设备2绿灯亮    设备3红灯亮
-06时19分14秒：设备1红灯亮    设备2蓝灯亮    设备3红灯亮
-08时25分50秒：设备1红灯亮    设备2红灯亮    设备3绿灯亮
-10时13分17秒：设备1红灯亮    设备2红灯亮    设备3蓝灯亮
-00时03分15秒：设备1绿灯亮    设备2红灯亮    设备3红灯亮
+按时钟时间，<br>
+00时03分15秒：设备1绿灯亮    设备2红灯亮    设备3红灯亮<br>
+02时09分29秒：设备1蓝灯亮    设备2红灯亮    设备3红灯亮<br>
+04时20分33秒：设备1红灯亮    设备2绿灯亮    设备3红灯亮<br>
+06时19分14秒：设备1红灯亮    设备2蓝灯亮    设备3红灯亮<br>
+08时25分50秒：设备1红灯亮    设备2红灯亮    设备3绿灯亮<br>
+10时13分17秒：设备1红灯亮    设备2红灯亮    设备3蓝灯亮<br>
+00时03分15秒：设备1绿灯亮    设备2红灯亮    设备3红灯亮<br>
 这样依次循环。</p>
 <p>FPGA 外输入时钟为8Hz,在 FPGA 分频为1Hz后，设计数字时钟，然后根据时间向外发不同的控制信号，控制三个设备灯的亮灭如下图所示：</p>
 <p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240108110814.png"
@@ -1149,7 +1163,8 @@
 	
 	
 ></p>
-<p>怀疑并不是代码不规范，而是 Vivado 自身 bug</p>
+<p>怀疑并不是代码不规范，而是 Vivado 自身bug。</p>
+<p>原先那句timescale在 2023.1 版本无法运行，更新到 2023.2 就可以了。</p>
 <h4 id="2进位对齐问题">2、进位对齐问题</h4>
 <p>因在光标处进位出现提前，故改为采用下降沿触发进位</p>
 <p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240104105223.png"
@@ -1886,8 +1901,16 @@ emm失败了</p>
 	
 ></p>
 <p>生成比特流</p>
-<p>[DRC UCIO-1] Unconstrained Logical Port: 1 out of 10 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected.</p>
-<p>管脚约束不恰当，修改之</p>
+<p>报错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">[</span><span class="n">DRC</span> <span class="n">UCIO</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="n">Unconstrained</span> <span class="n">Logical</span> <span class="n">Port</span><span class="p">:</span> <span class="mi">1</span> <span class="n">out</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">logical</span> <span class="n">ports</span> <span class="n">have</span> <span class="n">no</span> <span class="n">user</span> <span class="n">assigned</span> <span class="n">specific</span> <span class="n">location</span> <span class="n">constraint</span> <span class="p">(</span><span class="n">LOC</span><span class="p">)</span><span class="o">.</span> <span class="n">This</span> <span class="n">may</span> <span class="n">cause</span> <span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="n">contention</span> <span class="ow">or</span> <span class="n">incompatibility</span> <span class="n">with</span> <span class="n">the</span> <span class="n">board</span> <span class="n">power</span> <span class="ow">or</span> <span class="n">connectivity</span> <span class="n">affecting</span> <span class="n">performance</span><span class="p">,</span> <span class="k">signal</span> <span class="n">integrity</span> <span class="ow">or</span> <span class="ow">in</span> <span class="n">extreme</span> <span class="n">cases</span> <span class="n">cause</span> <span class="n">damage</span> <span class="n">to</span> <span class="n">the</span> <span class="n">device</span> <span class="ow">or</span> <span class="n">the</span> <span class="n">components</span> <span class="n">to</span> <span class="n">which</span> <span class="n">it</span> <span class="n">is</span> <span class="n">connected</span><span class="o">.</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>管脚约束不恰当，修改之</p>
 <p><img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240112200418.png"
 	
 	
@@ -1962,7 +1985,7 @@ emm失败了</p>
 <p>但是最后一个状态好像没出来，不知道为什么呜呜呜&hellip;&hellip;</p>
 <p>未完待续&hellip;&hellip;</p>
 <h2 id="六实验感想">六、实验感想</h2>
-<p>本次实践感想颇多，主要分为以下几个方面。</p>
+<p>本次实践感想主要分为以下几个方面：</p>
 <p>首先我十分感谢老师的教学和指导，这让我掌握了 FPGA 基本的基本理论知识和 VerilogHDL 的基本编程、调试方法。在本次实践过程中我遇到了一些问题，没有老师的指导，这些问题就不会被顺利解决。</p>
 <p>其次，这此实践锻炼了我创建并实施项目的能力。我克服畏惧，独立完成了从总体设计、模块设计到 debug、仿真、综合等全部环节。面对一个个 error，我没有灰心丧气，而是一个一个排查错误，积极上网查找资料、找大佬沟通交流。这些对于一年前怕写代码、怕 debug、怕跟人沟通的我来说是一种进步。</p>
 <p>最后，我深刻地认识到，在课程体系落后于其他以电子信息为专长的学校的情况下，只有自力更生，学会理解迁移经典代码，学会合理运用网络，学会与更强的人沟通，才能在短时间内上手一份自己并不熟悉的工程。</p>
