@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>乒乓球 on 夜来风雨声</title>
+        <link>https://Multipleriver.github.io/categories/%E4%B9%92%E4%B9%93%E7%90%83/</link>
+        <description>Recent content in 乒乓球 on 夜来风雨声</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>rivers@hhu.edu.cn</copyright>
+        <lastBuildDate>Sat, 10 Feb 2024 12:19:03 +0800</lastBuildDate><atom:link href="https://Multipleriver.github.io/categories/%E4%B9%92%E4%B9%93%E7%90%83/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>砂板乒乓球技能树（持续点亮中）</title>
+        <link>https://Multipleriver.github.io/p/%E7%A0%82%E6%9D%BF%E4%B9%92%E4%B9%93%E7%90%83%E6%8A%80%E8%83%BD%E6%A0%91%E6%8C%81%E7%BB%AD%E7%82%B9%E4%BA%AE%E4%B8%AD/</link>
+        <pubDate>Sat, 10 Feb 2024 12:19:03 +0800</pubDate>
+        
+        <guid>https://Multipleriver.github.io/p/%E7%A0%82%E6%9D%BF%E4%B9%92%E4%B9%93%E7%90%83%E6%8A%80%E8%83%BD%E6%A0%91%E6%8C%81%E7%BB%AD%E7%82%B9%E4%BA%AE%E4%B8%AD/</guid>
+        <description>&lt;img src="https://multipleriver-img.oss-cn-nanjing.aliyuncs.com/img/yank-note-picgo-img-20240218095338.png" alt="Featured image of post 砂板乒乓球技能树（持续点亮中）" /&gt;&lt;h2 id=&#34;技能&#34;&gt;技能&lt;/h2&gt;
+&lt;h3 id=&#34;基本功&#34;&gt;基本功&lt;/h3&gt;
+&lt;div class=&#34;mermaid&#34;&gt;mindmap
+  root((基本功))
+    正手攻球
+        连续快攻
+        连续变点快攻
+        抢点快带
+    正手前冲
+        近台上步冲上升期
+        近台抢冲大板
+        中台冲斜线
+        中台抢冲大板
+        中台滑板反手大角
+    正手拉球
+        连续对拉
+        反拉
+            反--&gt;正交叉步反拉正手位大角
+            正--&gt;反连续并步侧身反拉正手位大角
+            正--&gt;反连续并步侧身反拉反手位大角
+    反手侧向引拍连续抽
+    反手攻球
+        中台连续快攻
+    正反手攻球转换
+        重心移动
+        前后脚站位变化&lt;/div&gt;
+
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h3 id=&#34;接发球抢攻&#34;&gt;接发球抢攻&lt;/h3&gt;
+&lt;div class=&#34;mermaid&#34;&gt;mindmap
+  root((接发球抢攻))
+    正手挑打
+        连续上步挑打
+        挑打接同向快带
+        挑打接滑板反手位
+    反手起板
+        起板接正手大角
+        起板接抽中高球
+        起板接反手相持
+        起板接反手变直线
+    反手磕
+        磕接侧身正手冲、反拉正手位大角
+        磕接反手抽反手位大角
+    摆、侧切反手位小三角
+        摆接正手台内冲、挑打正手位
+        摆接正手撇冲反手位大角
+        摆接反手抽、起板反手位
+        摆、切反手短球
+    摆正手位小三角
+        摆接正手冲正手位
+        摆接正手撇冲反手位大角
+        摆接反手抽、起板反手位&lt;/div&gt;
+
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h3 id=&#34;防守&#34;&gt;防守&lt;/h3&gt;
+&lt;div class=&#34;mermaid&#34;&gt;mindmap
+  root((防守))
+    反手削球
+        中台退反手位远台
+        反手连续削
+        反手顶大板
+        反手低长球点削
+    正手削球
+        中台退正手位远台
+        正手连续削
+        正手顶大板
+    正反手削球
+        重心移动
+        前后脚站位变化
+        稳定并步
+    主动起板后退台防守
+        削正反手大角&lt;/div&gt;
+
+&lt;div STYLE=&#34;page-break-after: always;&#34;&gt;&lt;/div&gt;
+&lt;h3 id=&#34;发球&#34;&gt;发球&lt;/h3&gt;
+&lt;h2 id=&#34;主要参考&#34;&gt;主要参考&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;进攻技能：陈玘、王励勤&lt;br&gt;
+防守技能：朱世赫、村松雄斗&lt;br&gt;
+发球：张继科&lt;br&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
