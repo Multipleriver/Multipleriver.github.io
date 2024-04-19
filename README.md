@@ -9,4 +9,4 @@ My SSD is unable to read the data of flash properly due to the damaged FTL file.
 | Capacity | 1TB |
 | Master chip | yingren(英韧) IG5216 |
 
-So, my friend, please regularly backup important data and avoid repeating my mistake.
+So, my friend, please regularly backup important data to avoid my mistake.
