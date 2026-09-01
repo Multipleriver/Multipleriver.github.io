@@ -6,8 +6,29 @@
     <description>Recent content in 首页 on River&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://multipleriver.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>美股核电研究报告</title>
+      <link>https://multipleriver.github.io/posts/%E7%BE%8E%E8%82%A1%E6%A0%B8%E7%94%B5%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://multipleriver.github.io/posts/%E7%BE%8E%E8%82%A1%E6%A0%B8%E7%94%B5%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</guid>
+      <description>&lt;blockquote&#xD;&#xA;    class=&#34;border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1&#34;&#xD;&#xA;  &gt;&#xD;&#xA;    &lt;div class=&#34;prose prose-sm max-w-none&#34;&gt;&#xD;&#xA;      &lt;p&gt;&lt;strong&gt;数据窗口&lt;/strong&gt;：2024-08-27 至 2026-08-26（估值快照 2026-08-27），主要来源于 Yahoo Finance（行情、估值、财报）、SEC EDGAR（8-K 重大事件）、公开新闻与机构报告（详见文末）&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bias，激活函数的偏置与 Tikhonov 正则化</title>
+      <link>https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</guid>
+      <description>&lt;p&gt;在神经网络和矩阵分析中，经常会看到一种表面相似的操作：给某个表达式加一个小量。&lt;/p&gt;&#xA;&lt;p&gt;在线性最小二乘的 Tikhonov 正则化中，我们把&lt;/p&gt;&#xA;$$&#xD;&#xA;\min_x \|Ax-b\|_2^2&#xD;&#xA;$$&lt;p&gt;改成&lt;/p&gt;&#xA;$$&#xD;&#xA;\min_x \|Ax-b\|_2^2+\lambda\|x\|_2^2&#xD;&#xA;$$&lt;p&gt;求导后，法方程从&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>从列满秩到最小二乘：矩阵性质串烧</title>
+      <link>https://multipleriver.github.io/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/</link>
+      <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://multipleriver.github.io/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/</guid>
+      <description>&lt;p&gt;我们从一个很小的例子开始。&lt;/p&gt;&#xA;&lt;p&gt;设&lt;/p&gt;&#xA;$$&#xD;&#xA;A=&#xD;&#xA;\begin{bmatrix}&#xD;&#xA;1 &amp; 2\\&#xD;&#xA;2 &amp; 4\\&#xD;&#xA;3 &amp; 6&#xD;&#xA;\end{bmatrix}&#xD;&#xA;$$&lt;p&gt;这个矩阵有两列：&lt;/p&gt;&#xA;$$&#xD;&#xA;a_1=&#xD;&#xA;\begin{bmatrix}&#xD;&#xA;1\\2\\3&#xD;&#xA;\end{bmatrix},&#xD;&#xA;\qquad&#xD;&#xA; a_2=&#xD;&#xA;\begin{bmatrix}&#xD;&#xA;2\\4\\6&#xD;&#xA;\end{bmatrix}&#xD;&#xA;$$&lt;p&gt;显然&lt;/p&gt;&#xA;$$&#xD;&#xA;a_2=2a_1&#xD;&#xA;$$&lt;p&gt;也就是说，第二列并没有提供新的方向。虽然 $A$ 有两列，但它真正独立的列方向只有一个。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>邻值平均, 循环移位, 特征分解, 傅里叶基和低通滤波</title>
       <link>https://multipleriver.github.io/posts/%E9%82%BB%E5%80%BC%E5%B9%B3%E5%9D%87-%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D-%E7%89%B9%E5%BE%81%E5%88%86%E8%A7%A3-%E5%82%85%E9%87%8C%E5%8F%B6%E5%9F%BA%E5%92%8C%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2/</link>

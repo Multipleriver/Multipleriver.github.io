@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>Habits |
+<title>Bias，激活函数的偏置与 Tikhonov 正则化 |
     River&#39;s Blog</title>
 
 <meta
   name="description"
-  content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design."
+  content="有类比，但不是同一件事"
 />
 <meta
   name="keywords"
-  content="Hugo, Blog, Theme, Technology, Programming"
+  content="Matrix, Neural Network"
 />
 <meta
   name="author"
@@ -26,7 +26,7 @@
   name="robots"
   content="index, follow"
 />
-<link rel="canonical" href="https://multipleriver.github.io/tags/habits/" />
+<link rel="canonical" href="https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/" />
 
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,35 +34,35 @@
 
 
 <link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://multipleriver.github.io/tags/habits/">
+<meta property="og:url" content="https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/">
   <meta property="og:site_name" content="River&#39;s Blog">
-  <meta property="og:title" content="Habits">
-  <meta property="og:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
+  <meta property="og:title" content="Bias，激活函数的偏置与 Tikhonov 正则化">
+  <meta property="og:description" content="有类比，但不是同一件事">
   <meta property="og:locale" content="zh_CN">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-15T00:00:00+00:00">
+    <meta property="article:tag" content="Matrix">
+    <meta property="article:tag" content="Neural Network">
     <meta property="og:image" content="https://multipleriver.github.io/images/og-default.avif">
 
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://multipleriver.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="Habits">
-  <meta name="twitter:description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
+  <meta name="twitter:title" content="Bias，激活函数的偏置与 Tikhonov 正则化">
+  <meta name="twitter:description" content="有类比，但不是同一件事">
 
 
-  <meta itemprop="name" content="Habits">
-  <meta itemprop="description" content="A modern, clean, and minimal Hugo theme built with Tailwind CSS 4.0. Support custom themes, dark mode, and responsive design.">
-  <meta itemprop="datePublished" content="2026-02-04T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-02-04T00:00:00+00:00">
+  <meta itemprop="name" content="Bias，激活函数的偏置与 Tikhonov 正则化">
+  <meta itemprop="description" content="有类比，但不是同一件事">
+  <meta itemprop="datePublished" content="2026-05-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="4190">
   <meta itemprop="image" content="https://multipleriver.github.io/images/og-default.avif">
+  <meta itemprop="keywords" content="Matrix,Neural Network">
 
 
-
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title="River&#39;s Blog"
-    href="https://multipleriver.github.io/tags/habits/index.xml"
-  />
 
 
 
@@ -207,6 +207,12 @@
 
 
 
+            <script
+              src="/js/toc.3026ef97e410bb3e98d57739bcabc32ac568e9001b2e42385de731663378ae85.js"
+              integrity="sha256-MCbvl&#43;QQuz6Y1Xc5vKvDKsVo6QAbLkI4XecxZjN4roU="
+              crossorigin="anonymous"
+              defer
+            ></script>
 
 
 
@@ -812,13 +818,13 @@
 </svg>
             </span>
             <a
-              href="/tags/"
+              href="/posts/"
               class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex shrink-0 items-center gap-1 rounded-lg px-1 py-0.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] md:px-3 md:py-1.5"
             >
               <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
 </svg>
-              <span class="max-w-16 truncate md:max-w-none">标签</span>
+              <span class="max-w-16 truncate md:max-w-none">文章</span>
             </a>
           </li>
         
@@ -836,7 +842,7 @@
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
 </svg>
-          <span class="max-w-32 truncate md:max-w-[16rem] lg:max-w-none">Habits</span>
+          <span class="max-w-32 truncate md:max-w-[16rem] lg:max-w-none">Bias，激活函数的偏置与 Tikhonov 正则化</span>
         </span>
       </li>
     </ol>
@@ -845,137 +851,913 @@
 
         
   
+
+
+  
   <header class="mb-8">
-    <div class="mb-4 flex items-center gap-3">
-      
-        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-	<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-		<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
-		<circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />
-	</g>
-</svg>
-      
-      <h1 class="text-foreground text-3xl font-bold">
-        Habits
-      </h1>
-    </div>
-
-    
-      <p class="text-muted-foreground mb-6">
-        
-          标签 &#34;Habits&#34; 下的所有文章
-        
-      </p>
     
 
 
-    
-    <div class="text-muted-foreground flex items-center gap-4 text-sm">
-      <div class="flex items-center gap-1">
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-</svg>
-        <span
-          >共 1 篇文章</span
-        >
-      </div>
-      <div class="flex items-center gap-1">
-        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-</svg>
 
-        <span>按时间排序</span>
-      </div>
-    </div>
-  </header>
+
+<div class="post-meta mb-8">
+  
+  <h1 class="text-foreground mb-6 text-3xl leading-tight font-bold md:text-4xl">
+    Bias，激活函数的偏置与 Tikhonov 正则化
+  </h1>
 
   
   
+
   
-    
-
-
-
-
-
-
-
-
-  <section class="post-list">
-    
-    
-
+  <div class="bg-card border-border rounded-xl border">
 
     
-    <div class="space-y-4">
-      
         
+        <div class="p-6">
 
-
-
-
-<article class="group">
-  <a href="/posts/%E5%85%B3%E4%BA%8Eworkflow%E6%9E%84%E5%BB%BA%E7%9A%84%E5%AE%8F%E8%A7%82tips/" class="block">
-    <div
-      class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 relative flex flex-col overflow-hidden rounded-xl border transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none md:flex-row"
-    >
-      
-      <div class="flex flex-1 flex-col justify-center gap-4 p-6">
-        
-        <h3
-          class="text-foreground group-hover:text-primary text-xl leading-tight font-bold transition-colors duration-200"
-        >
-          关于Workflow构建的宏观Tips
-        </h3>
-
-        
-        
-          <p class="text-muted-foreground line-clamp-3 text-sm leading-relaxed md:line-clamp-2">
-            关于Workflow构建的宏观Tips
-          </p>
-        
-
-
-        
-        <div class="text-muted-foreground mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
           
-          <div class="flex items-center gap-1.5">
-            <svg class="h-4 w-4" aria-label="发布于" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <div class="text-muted-foreground flex flex-wrap items-center gap-3 text-sm mb-4">
+            
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4" aria-label="发布于" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 </svg>
 
-            <time datetime="2026-02-04" class="font-medium">
-              2026 年 02 月 04 日
-            </time>
+              <time datetime="2026-05-15">
+                2026 年 05 月 15 日
+              </time>
+            </div>
+
+            
+            
+
+            
+            
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4" aria-label="字数" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+</svg>
+
+              <span>4190 字</span>
+            </div>
+            
+          </div>
+
+          
+          <div class="space-y-3 pt-4 border-t border-border">
+            <div class="flex items-center gap-2">
+              <div class="flex-shrink-0">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+</svg>
+
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="text-muted-foreground text-sm font-medium">
+                    Categories:
+                  </span>
+                  <a href="/categories/article/"
+                    class="inline-flex items-center rounded-full px-2.5 py-1 text-sm font-medium transition-all duration-200 bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground">
+                    Article
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="flex-shrink-0">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+</svg>
+
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="text-muted-foreground text-sm font-medium">
+                    Tags:
+                  </span>
+                  <a href="/tags/matrix/"
+                    class="inline-flex items-center rounded-full px-2.5 py-1 text-sm font-medium transition-all duration-200 bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground">
+                    Matrix
+                  </a>
+                  <a href="/tags/neural-network/"
+                    class="inline-flex items-center rounded-full px-2.5 py-1 text-sm font-medium transition-all duration-200 bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground">
+                    Neural Network
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           
           
-            <div class="ml-auto flex flex-wrap items-center gap-1.5 md:ml-0">
-              
-                <span
-                  class="bg-muted/50 border-muted/30 flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs"
-                >
-                  <span class="font-medium">Habits</span>
-                </span>
-              
-            </div>
-          
-        </div>
-      </div>
     </div>
-  </a>
-</article>
+  </div>
+</div>
+
+  </header>
+
+  
+  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
+    <p>在神经网络和矩阵分析中，经常会看到一种表面相似的操作：给某个表达式加一个小量。</p>
+<p>在线性最小二乘的 Tikhonov 正则化中，我们把</p>
+$$
+\min_x \|Ax-b\|_2^2
+$$<p>改成</p>
+$$
+\min_x \|Ax-b\|_2^2+\lambda\|x\|_2^2
+$$<p>求导后，法方程从</p>
+$$
+A^TAx=A^Tb
+$$<p>变成</p>
+$$
+(A^TA+\lambda I)x=A^Tb
+$$<p>其中 $\lambda>0$。</p>
+<p>在神经网络中，一个神经元通常写成</p>
+$$
+z=w^Tx+b
+$$$$
+a=\phi(z)
+$$<p>其中 $b$ 是 bias，$\phi$ 是激活函数。</p>
+<p>于是一个自然问题出现了：</p>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>神经网络中给激活函数加一个小 bias，是否和 Tikhonov 正则化中加一个小 $\lambda$ 有关系？</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<p>答案是：<strong>有类比，但不是同一件事。</strong></p>
+<p>更准确地说：</p>
+$$
+\text{activation bias}\neq \text{Tikhonov regularization parameter}
+$$<p>但在更高层次上，它们都属于“向原问题加入额外结构，以改变问题性质”的操作。</p>
+<p>区别在于，Tikhonov 中的 $\lambda$ 是对参数规模的惩罚强度；神经网络中的 bias 是模型结构中的平移自由度。</p>
+<h2 id="先区分三个容易混淆的-bias">先区分三个容易混淆的 “bias”<a
+  href="#%e5%85%88%e5%8c%ba%e5%88%86%e4%b8%89%e4%b8%aa%e5%ae%b9%e6%98%93%e6%b7%b7%e6%b7%86%e7%9a%84-bias"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>讨论之前，必须先拆开三个不同概念。</p>
+<h3 id="神经网络中的-bias">神经网络中的 bias<a
+  href="#%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84-bias"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>神经网络中的 bias 通常是仿射变换的一部分：</p>
+$$
+z=w^Tx+b
+$$$$
+a=\phi(z)
+$$<p>这里的 $b$ 是可训练参数。它的作用是平移激活函数的输入，使神经元的响应阈值可以移动。</p>
+<p>例如 ReLU 神经元：</p>
+$$
+a=\max(0,w^Tx+b)
+$$<p>如果 $b=0$，激活边界是</p>
+$$
+w^Tx=0
+$$<p>如果 $b\neq 0$，激活边界变成</p>
+$$
+w^Tx+b=0
+$$<p>也就是</p>
+$$
+w^Tx=-b
+$$<p>所以 bias 改变的是神经元的几何分割位置。</p>
+<h3 id="统计估计中的-bias">统计估计中的 bias<a
+  href="#%e7%bb%9f%e8%ae%a1%e4%bc%b0%e8%ae%a1%e4%b8%ad%e7%9a%84-bias"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>统计中的 bias 指估计量的偏差：</p>
+$$
+\operatorname{Bias}(\hat\theta)=\mathbb{E}[\hat\theta]-\theta
+$$<p>Tikhonov 正则化会使估计量通常变成有偏估计。</p>
+<p>对于线性模型</p>
+$$
+y=Ax_0+\varepsilon
+$$<p>Tikhonov 解为</p>
+$$
+\hat{x}_\lambda=(A^TA+\lambda I)^{-1}A^Ty
+$$<p>于是</p>
+$$
+\mathbb{E}[\hat{x}_\lambda]
+=(A^TA+\lambda I)^{-1}A^TAx_0
+$$<p>一般不等于 $x_0$。</p>
+<p>这里的 bias 是“估计偏差”，不是神经网络层里的偏置参数。</p>
+<h3 id="数值计算中的小常数">数值计算中的小常数<a
+  href="#%e6%95%b0%e5%80%bc%e8%ae%a1%e7%ae%97%e4%b8%ad%e7%9a%84%e5%b0%8f%e5%b8%b8%e6%95%b0"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>有时深度学习里也会给表达式加一个很小的常数 $\varepsilon$，例如</p>
+$$
+\log(x+\varepsilon)
+$$<p>或者</p>
+$$
+\frac{x}{\sqrt{\sigma^2+\varepsilon}}
+$$<p>这里的 $\varepsilon$ 主要是数值稳定项，用来避免除零、开方奇异、对数无定义等问题。</p>
+<p>这种 $\varepsilon$ 和 Tikhonov 的 $\lambda$ 有某种“防止退化”的相似性，但它通常不是参数范数惩罚，也不一定对应统计意义上的正则化。</p>
+<h2 id="tikhonov-正则化中的--到底做了什么">Tikhonov 正则化中的 $\lambda$ 到底做了什么<a
+  href="#tikhonov-%e6%ad%a3%e5%88%99%e5%8c%96%e4%b8%ad%e7%9a%84--%e5%88%b0%e5%ba%95%e5%81%9a%e4%ba%86%e4%bb%80%e4%b9%88"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>普通最小二乘为</p>
+$$
+\min_x \|Ax-b\|_2^2
+$$<p>它只关心拟合误差。</p>
+<p>Tikhonov 正则化改为</p>
+$$
+\min_x \|Ax-b\|_2^2+\lambda\|x\|_2^2
+$$<p>它同时要求：</p>
+$$
+\|Ax-b\|_2^2 \quad \text{小}
+$$<p>以及</p>
+$$
+\|x\|_2^2 \quad \text{小}
+$$<p>因此 $\lambda$ 控制的是两个目标之间的权衡：</p>
+$$
+\text{拟合数据} \quad \text{vs.} \quad \text{压低参数规模}
+$$<p>对目标函数求导：</p>
+$$
+J(x)=\|Ax-b\|_2^2+\lambda\|x\|_2^2
+$$<p>展开为</p>
+$$
+J(x)=(Ax-b)^T(Ax-b)+\lambda x^Tx
+$$<p>对 $x$ 求导：</p>
+$$
+\nabla_xJ=2A^T(Ax-b)+2\lambda x
+$$<p>令其为零：</p>
+$$
+A^T(Ax-b)+\lambda x=0
+$$<p>得到</p>
+$$
+(A^TA+\lambda I)x=A^Tb
+$$<p>因此</p>
+$$
+\hat{x}_\lambda=(A^TA+\lambda I)^{-1}A^Tb
+$$<p>关键在于：</p>
+$$
+A^TA
+$$<p>一定半正定，但可能不正定。若 $A$ 不满列秩，则 $A^TA$ 有零特征值，因而不可逆。</p>
+<p>加上 $\lambda I$ 后，对任意非零向量 $z\neq 0$，有</p>
+$$
+z^T(A^TA+\lambda I)z
+=z^TA^TAz+\lambda z^Tz
+$$<p>即</p>
+$$
+z^T(A^TA+\lambda I)z
+=\|Az\|_2^2+\lambda\|z\|_2^2
+$$<p>因为</p>
+$$
+\|Az\|_2^2\ge 0
+$$<p>且</p>
+$$
+\lambda\|z\|_2^2>0
+$$<p>所以</p>
+$$
+z^T(A^TA+\lambda I)z>0
+$$<p>因此</p>
+$$
+A^TA+\lambda I\succ 0
+$$<p>它正定，因此可逆。</p>
+<p>所以 Tikhonov 中的 $\lambda$ 不是简单地“加一个小偏置”，而是在目标函数里加入参数范数惩罚，并在法方程中把 $A^TA$ 的全部特征值整体抬高。</p>
+<p>若 $A^TA$ 的特征值为</p>
+$$
+\mu_1,\mu_2,
+\dots,
+\mu_n
+$$<p>则</p>
+$$
+A^TA+\lambda I
+$$<p>的特征值为</p>
+$$
+\mu_1+\lambda,\mu_2+\lambda,
+\dots,
+\mu_n+\lambda
+$$<p>所有特征值都至少大于等于 $\lambda$。</p>
+<p>这是谱意义上的稳定化。</p>
+<h2 id="神经网络中的-bias-做了什么">神经网络中的 bias 做了什么<a
+  href="#%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%ad%e7%9a%84-bias-%e5%81%9a%e4%ba%86%e4%bb%80%e4%b9%88"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>考虑最简单的单神经元：</p>
+$$
+a=\phi(w^Tx+b)
+$$<p>这里的 bias $b$ 不是损失函数中的惩罚系数，而是模型参数的一部分。</p>
+<p>没有 bias 时：</p>
+$$
+a=\phi(w^Tx)
+$$<p>有 bias 时：</p>
+$$
+a=\phi(w^Tx+b)
+$$<p>它改变的是函数族本身。</p>
+<p>例如线性模型中，如果没有截距项：</p>
+$$
+y=wx
+$$<p>所有直线必须经过原点。</p>
+<p>加入 bias 后：</p>
+$$
+y=wx+b
+$$<p>直线可以上下平移，不必经过原点。</p>
+<p>所以 bias 的核心作用是：</p>
+$$
+\text{给模型增加平移自由度}
+$$<p>而不是：</p>
+$$
+\text{惩罚参数规模}
+$$<p>这和 Tikhonov 的作用方向相反。</p>
+<p>Tikhonov 正则化通常减少模型自由度的有效使用，压低参数范数；bias 通常增加模型表达能力，使模型不再被迫通过原点或固定阈值。</p>
+<h2 id="一个具体例子线性模型中的截距项与-tikhonov-正则化">一个具体例子：线性模型中的截距项与 Tikhonov 正则化<a
+  href="#%e4%b8%80%e4%b8%aa%e5%85%b7%e4%bd%93%e4%be%8b%e5%ad%90%e7%ba%bf%e6%80%a7%e6%a8%a1%e5%9e%8b%e4%b8%ad%e7%9a%84%e6%88%aa%e8%b7%9d%e9%a1%b9%e4%b8%8e-tikhonov-%e6%ad%a3%e5%88%99%e5%8c%96"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>考虑一维数据拟合。</p>
+<p>如果模型没有 bias：</p>
+$$
+\hat{y}=wx
+$$<p>则模型只能表示过原点的直线。</p>
+<p>如果真实数据大致满足</p>
+$$
+y=2x+5
+$$<p>那么没有 bias 的模型必须通过调整 $w$ 来勉强拟合整体偏移。它没有能力单独表示常数项 $5$。</p>
+<p>加入 bias 后：</p>
+$$
+\hat{y}=wx+b
+$$<p>模型可以直接学习</p>
+$$
+w\approx 2,
+\qquad b\approx 5
+$$<p>这不是正则化，而是扩充模型结构。</p>
+<p>从矩阵角度看，加入截距项等价于扩充设计矩阵：</p>
+<h1 id="xwbmathbf1">$$
+Xw+b\mathbf{1}<a
+  href="#xwbmathbf1"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>\begin{bmatrix}
+X &amp; \mathbf{1}
+\end{bmatrix}
+\begin{bmatrix}
+w\
+b
+\end{bmatrix}
+$$</p>
+<p>也就是把一列全 1 向量加入设计矩阵。</p>
+<p>这一步改变的是列空间：</p>
+$$
+\mathcal{C}(X)
+\quad \longrightarrow \quad
+\mathcal{C}([X,\mathbf{1}])
+$$<p>它使模型能够表达常数平移。</p>
+<p>Tikhonov 正则化则是：</p>
+$$
+\min_w \|Xw-y\|_2^2+\lambda\|w\|_2^2
+$$<p>它没有给模型增加一列常数特征，而是在已有参数上施加范数惩罚。</p>
+<p>因此：</p>
+$$
+\text{bias 是扩展特征空间}
+$$$$
+\text{Tikhonov 是约束参数空间}
+$$<p>这是根本区别。</p>
+<h2 id="relu-中的-bias移动激活边界">ReLU 中的 bias：移动激活边界<a
+  href="#relu-%e4%b8%ad%e7%9a%84-bias%e7%a7%bb%e5%8a%a8%e6%bf%80%e6%b4%bb%e8%be%b9%e7%95%8c"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>以 ReLU 为例：</p>
+$$
+a=\max(0,w^Tx+b)
+$$<p>神经元是否激活由下面的不等式决定：</p>
+$$
+w^Tx+b>0
+$$<p>其边界为</p>
+$$
+w^Tx+b=0
+$$<p>如果没有 bias：</p>
+$$
+w^Tx=0
+$$<p>边界必须经过原点。</p>
+<p>如果有 bias：</p>
+$$
+w^Tx=-b
+$$<p>边界可以平移。</p>
+<p>所以 ReLU bias 的作用是改变分段线性函数的折点位置。</p>
+<p>在一维情况下：</p>
+$$
+a=\max(0,wx+b)
+$$<p>折点满足</p>
+$$
+wx+b=0
+$$<p>即</p>
+$$
+x=-\frac{b}{w}
+$$<p>因此 bias 决定了 ReLU 从零区间进入线性区间的位置。</p>
+<p>这与 Tikhonov 中的 $\lambda$ 不同。$\lambda$ 不移动某个激活边界，而是改变优化目标，限制参数过大，并改善矩阵条件数。</p>
+<h2 id="为什么二者容易被联系起来">为什么二者容易被联系起来<a
+  href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%ba%8c%e8%80%85%e5%ae%b9%e6%98%93%e8%a2%ab%e8%81%94%e7%b3%bb%e8%b5%b7%e6%9d%a5"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>它们容易被联系起来，主要是因为都表现为“加一个小量”。</p>
+<p>但数学位置不同。</p>
+<p>神经网络 bias 通常出现在模型内部：</p>
+$$
+a=\phi(w^Tx+b)
+$$<p>Tikhonov 正则化出现在优化目标里：</p>
+$$
+J(x)=\|Ax-b\|_2^2+\lambda\|x\|_2^2
+$$<p>进一步，它们影响的对象不同。</p>
+<p>神经网络 bias 改变函数：</p>
+$$
+x\mapsto \phi(w^Tx+b)
+$$<p>Tikhonov $\lambda$ 改变解的选择原则：</p>
+$$
+\text{残差小} \quad \text{且} \quad \text{参数范数小}
+$$<p>前者是模型层面的平移参数，后者是优化层面的惩罚权重。</p>
+<h2 id="真正与-tikhonov-对应的神经网络概念l2-正则化与-weight-decay">真正与 Tikhonov 对应的神经网络概念：L2 正则化与 weight decay<a
+  href="#%e7%9c%9f%e6%ad%a3%e4%b8%8e-tikhonov-%e5%af%b9%e5%ba%94%e7%9a%84%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e6%a6%82%e5%bf%b5l2-%e6%ad%a3%e5%88%99%e5%8c%96%e4%b8%8e-weight-decay"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>如果要在神经网络中寻找与 Tikhonov 正则化真正对应的东西，应该看 L2 正则化或 weight decay。</p>
+<p>神经网络训练通常是</p>
+$$
+\min_\theta \mathcal{L}(\theta)
+$$<p>其中 $\theta$ 表示所有可训练参数，包括权重和可能的 bias。</p>
+<p>加入 L2 正则化后：</p>
+$$
+\min_\theta \mathcal{L}(\theta)+\lambda\|\theta\|_2^2
+$$<p>这和 Tikhonov 的形式一致。</p>
+<p>如果只对权重正则化，不对 bias 正则化，则常写成</p>
+$$
+\min_{W,b} \mathcal{L}(W,b)+\lambda\|W\|_2^2
+$$<p>如果同时对权重和 bias 正则化，则是</p>
+$$
+\min_{W,b} \mathcal{L}(W,b)+\lambda(\|W\|_2^2+\|b\|_2^2)
+$$<p>这时 $\lambda$ 才是 Tikhonov 意义上的正则化系数。</p>
+<p>所以更准确的对应关系是：</p>
+$$
+\text{Tikhonov 正则化}
+\quad \leftrightarrow \quad
+\text{神经网络中的 L2 正则化 / weight decay}
+$$<p>而不是：</p>
+$$
+\text{Tikhonov 正则化}
+\quad \leftrightarrow \quad
+\text{神经网络中的 bias 参数}
+$$<h2 id="bias-是否也可以被正则化">bias 是否也可以被正则化<a
+  href="#bias-%e6%98%af%e5%90%a6%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%a2%ab%e6%ad%a3%e5%88%99%e5%8c%96"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>可以。</p>
+<p>如果神经网络参数为</p>
+$$
+\theta=(W,b)
+$$<p>则可以构造正则化项：</p>
+$$
+\lambda\|\theta\|_2^2
+$$<p>也就是</p>
+$$
+\lambda(\|W\|_2^2+\|b\|_2^2)
+$$<p>这时 bias 作为参数，也被 Tikhonov/L2 正则化惩罚。</p>
+<p>但要注意，这里的逻辑是：</p>
+$$
+\text{bias 是被正则化的参数}
+$$<p>而不是：</p>
+$$
+\text{bias 本身就是正则化}
+$$<p>二者不同。</p>
+<p>在实际深度学习中，很多实现默认对权重做 weight decay，但不一定对 bias 和归一化层参数做 weight decay。原因是 bias 参数数量少，且主要承担平移功能；对它们强行衰减到零，不一定带来明显泛化收益。</p>
+<h2 id="从线性代数角度看二者的差异">从线性代数角度看二者的差异<a
+  href="#%e4%bb%8e%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e8%a7%92%e5%ba%a6%e7%9c%8b%e4%ba%8c%e8%80%85%e7%9a%84%e5%b7%ae%e5%bc%82"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>Tikhonov 正则化的核心操作是：</p>
+$$
+A^TA \longrightarrow A^TA+\lambda I
+$$<p>这发生在参数求解方程的二次型矩阵上。</p>
+<p>它的效果是谱平移：</p>
+$$
+\mu_i \longrightarrow \mu_i+\lambda
+$$<p>因此可以消除零特征值，提高最小特征值，改善条件数。</p>
+<p>神经网络 bias 的核心操作是：</p>
+$$
+w^Tx \longrightarrow w^Tx+b
+$$<p>这发生在神经元的仿射输入上。</p>
+<p>它的效果是几何平移：</p>
+$$
+w^Tx=0
+\quad \longrightarrow \quad
+w^Tx+b=0
+$$<p>因此可以移动分类边界、激活边界或函数折点。</p>
+<p>这两个操作不在同一个数学层级上。</p>
+<p>一个改变优化问题的 Hessian 或法方程结构。</p>
+<p>一个改变模型函数族的几何表达能力。</p>
+<h2 id="从贝叶斯角度看-tikhonov">从贝叶斯角度看 Tikhonov<a
+  href="#%e4%bb%8e%e8%b4%9d%e5%8f%b6%e6%96%af%e8%a7%92%e5%ba%a6%e7%9c%8b-tikhonov"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>Tikhonov 正则化还有一个统计解释。</p>
+<p>假设线性模型为</p>
+$$
+y=Ax+\varepsilon
+$$<p>其中噪声为高斯噪声：</p>
+$$
+\varepsilon\sim\mathcal{N}(0,\sigma^2I)
+$$<p>如果再给参数 $x$ 一个零均值高斯先验：</p>
+$$
+x\sim\mathcal{N}(0,\tau^2I)
+$$<p>那么最大后验估计会变成</p>
+$$
+\min_x \|Ax-y\|_2^2+\lambda\|x\|_2^2
+$$<p>其中 $\lambda$ 与噪声方差和先验方差有关。</p>
+<p>所以 Tikhonov 可以理解为：</p>
+$$
+\text{参数先验倾向于靠近零}
+$$<p>这与神经网络 bias 的作用也不同。</p>
+<p>bias 参数不是“先验强度”。它是模型中的可学习平移项。</p>
+<p>只有当我们对 bias 本身施加 L2 惩罚时，才可以说 bias 参数也受到了 Tikhonov 式先验约束。</p>
+<h2 id="一个容易误判的说法">一个容易误判的说法<a
+  href="#%e4%b8%80%e4%b8%aa%e5%ae%b9%e6%98%93%e8%af%af%e5%88%a4%e7%9a%84%e8%af%b4%e6%b3%95"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>有一种说法是：</p>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>给激活函数加一个小 bias，可以避免某些神经元不工作；Tikhonov 加小 $\lambda$ 也可以避免矩阵奇异。因此它们是同一类东西。</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<p>这句话只能算弱类比，不是数学等价。</p>
+<p>以 ReLU 为例，如果</p>
+$$
+a=\max(0,w^Tx+b)
+$$<p>适当的 $b$ 可能让神经元在初始阶段更容易进入激活区间，影响梯度流动。</p>
+<p>但这不保证任何矩阵正定，也不等价于对参数范数施加惩罚。</p>
+<p>Tikhonov 中的 $\lambda I$ 有严格结论：</p>
+$$
+A^TA+\lambda I\succ 0
+$$<p>只要 $\lambda>0$，该结论必然成立。</p>
+<p>而给激活函数加 bias 并没有类似的普遍保证。它可能改善训练，也可能造成激活偏移、饱和、输出分布偏移，具体效果取决于网络结构、初始化、归一化、数据分布和优化器。</p>
+<p>所以二者不是同一种机制。</p>
+<h2 id="小常数的三种类型">小常数的三种类型<a
+  href="#%e5%b0%8f%e5%b8%b8%e6%95%b0%e7%9a%84%e4%b8%89%e7%a7%8d%e7%b1%bb%e5%9e%8b"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>可以把“加小常数”分成三类。</p>
+<h3 id="结构性平移">结构性平移<a
+  href="#%e7%bb%93%e6%9e%84%e6%80%a7%e5%b9%b3%e7%a7%bb"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>例如</p>
+$$
+a=\phi(w^Tx+b)
+$$<p>这里的 $b$ 是模型结构的一部分。</p>
+<p>它改变函数族。</p>
+<p>对应概念：神经网络 bias，线性回归截距项。</p>
+<h3 id="正则化惩罚">正则化惩罚<a
+  href="#%e6%ad%a3%e5%88%99%e5%8c%96%e6%83%a9%e7%bd%9a"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>例如</p>
+$$
+J(x)=\|Ax-b\|_2^2+\lambda\|x\|_2^2
+$$<p>这里的 $\lambda$ 是惩罚强度。</p>
+<p>它改变优化目标。</p>
+<p>对应概念：Tikhonov 正则化，L2 正则化，weight decay。</p>
+<h3 id="数值稳定项">数值稳定项<a
+  href="#%e6%95%b0%e5%80%bc%e7%a8%b3%e5%ae%9a%e9%a1%b9"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>例如</p>
+$$
+\frac{x}{\sqrt{\sigma^2+\varepsilon}}
+$$<p>或者</p>
+$$
+\log(x+\varepsilon)
+$$<p>这里的 $\varepsilon$ 是为了避免数值异常。</p>
+<p>它主要改变计算稳定性。</p>
+<p>对应概念：normalization epsilon，log epsilon，division epsilon。</p>
+<p>这三类都可能表现为“加一个小常数”，但数学含义不同。</p>
+<h2 id="关系图">关系图<a
+  href="#%e5%85%b3%e7%b3%bb%e5%9b%be"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2>
+
+
+<pre class="mermaid">
+  flowchart LR
+    A[加一个小量] --&gt; B[结构性平移]
+    A --&gt; C[正则化惩罚]
+    A --&gt; D[数值稳定项]
+
+    B --&gt; B1[神经网络 bias: z = w^T x + b]
+    B --&gt; B2[线性回归截距项]
+    B --&gt; B3[改变函数族与几何边界]
+
+    C --&gt; C1[Tikhonov]
+    C --&gt; C2[L2 regularization / weight decay]
+    C --&gt; C3[惩罚参数范数]
+    C --&gt; C4[改善条件数与抑制过大参数]
+
+    D --&gt; D1[epsilon in denominator]
+    D --&gt; D2[epsilon in log]
+    D --&gt; D3[避免除零或数值异常]
+</pre>
+
+<h2 id="对应关系表">对应关系表<a
+  href="#%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb%e8%a1%a8"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><table>
+  <thead>
+      <tr>
+          <th>对象</th>
+          <th>出现位置</th>
+          <th>数学形式</th>
+          <th>主要作用</th>
+          <th>是否等价于 Tikhonov</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>神经网络 bias</td>
+          <td>模型内部</td>
+          <td>$\phi(w^Tx+b)$</td>
+          <td>平移激活边界，增加表达能力</td>
+          <td>否</td>
+      </tr>
+      <tr>
+          <td>线性回归截距</td>
+          <td>模型内部</td>
+          <td>$Xw+b\mathbf{1}$</td>
+          <td>扩展列空间，表示常数偏移</td>
+          <td>否</td>
+      </tr>
+      <tr>
+          <td>Tikhonov $\lambda$</td>
+          <td>损失函数</td>
+          <td>$\|Ax-y\|^2+\lambda\|x\|^2$</td>
+          <td>惩罚参数范数，改善病态</td>
+          <td>是</td>
+      </tr>
+      <tr>
+          <td>神经网络 L2 正则</td>
+          <td>损失函数</td>
+          <td>$\mathcal{L}(\theta)+\lambda\|\theta\|^2$</td>
+          <td>抑制参数过大，提高泛化</td>
+          <td>是，广义 Tikhonov</td>
+      </tr>
+      <tr>
+          <td>数值 $\varepsilon$</td>
+          <td>计算公式</td>
+          <td>$1/\sqrt{v+\varepsilon}$</td>
+          <td>避免数值奇异</td>
+          <td>只有弱类比</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="最终判断">最终判断<a
+  href="#%e6%9c%80%e7%bb%88%e5%88%a4%e6%96%ad"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>神经网络中给激活函数加 bias，与 Tikhonov 正则化中加入 $\lambda$，不是同一个数学操作。</p>
+<p>bias 是模型参数。它改变神经元的仿射输入，使激活函数发生平移，从而改变模型的表达能力。</p>
+<p>Tikhonov 中的 $\lambda$ 是正则化强度。它改变优化目标，在最小二乘中等价于把法方程矩阵从</p>
+$$
+A^TA
+$$<p>变成</p>
+$$
+A^TA+\lambda I
+$$<p>从而提升正定性、改善条件数、抑制参数范数。</p>
+<p>二者的共同点只是：它们都通过加入额外项改变原问题。</p>
+<p>但其数学位置不同，作用对象不同，几何意义不同，统计意义不同。</p>
+<p>更准确的对应关系是：</p>
+$$
+\text{神经网络 bias}
+\quad \leftrightarrow \quad
+\text{线性模型截距项}
+$$<p>而</p>
+$$
+\text{Tikhonov 正则化}
+\quad \leftrightarrow \quad
+\text{神经网络 L2 正则化 / weight decay}
+$$<p>如果 bias 本身也被纳入 L2 正则化项，那么它只是“被 Tikhonov 正则化约束的参数之一”。</p>
+<p>它不是 $\lambda$ 本身。</p>
+<p>这一区分很关键。把所有“小常数”都理解成同一种正则化，会混淆模型结构、优化约束和数值稳定这三个层面。</p>
+
+  </article>
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  <nav
+    class="post-navigation mb-12"
+    aria-label="文章导航"
+  >
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      
+      <div class="nav-item">
+        
+          <a
+            href="/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/"
+            class="group bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[140px] flex-col justify-between rounded-xl border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
+          >
+            <div>
+              <div class="mb-3 flex items-center gap-3">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+</svg>
+                <span class="text-muted-foreground text-sm font-medium">
+                  上一篇
+                </span>
+              </div>
+
+              <h3
+                class="text-foreground group-hover:text-primary mb-3 line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200"
+              >
+                从列满秩到最小二乘：矩阵性质串烧
+              </h3>
+            </div>
+
+            <div class="text-muted-foreground mt-auto flex items-center gap-2 text-xs">
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+
+              <time datetime="2026-05-15">
+                05 月 15 日
+              </time>
+            </div>
+          </a>
+        
+      </div>
 
       
+      <div class="nav-item">
+        
+          <a
+            href="/posts/%E7%BE%8E%E8%82%A1%E6%A0%B8%E7%94%B5%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/"
+            class="group bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[140px] flex-col justify-between rounded-xl border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
+          >
+            <div>
+              <div class="mb-3 flex items-center justify-end gap-3">
+                <span class="text-muted-foreground text-sm font-medium">
+                  下一篇
+                </span>
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+              </div>
+
+              <h3
+                class="text-foreground group-hover:text-primary mb-3 line-clamp-2 text-right text-lg leading-tight font-semibold transition-colors duration-200"
+              >
+                美股核电研究报告
+              </h3>
+            </div>
+
+            <div class="text-muted-foreground mt-auto flex items-center justify-end gap-2 text-xs">
+              <time datetime="2026-09-01">
+                09 月 01 日
+              </time>
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+
+            </div>
+          </a>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  <section class="related-posts mb-12">
+    
+    <div class="mb-6 flex items-center gap-3">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+</svg>
+      <h2 class="text-foreground text-2xl font-bold">
+        相关文章
+      </h2>
     </div>
 
     
-    
-
+    <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      
+        <article class="group">
+          <a href="/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/" class="block">
+            <div
+              class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[120px] items-center rounded-xl border p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
+            >
+              <h3
+                class="text-foreground group-hover:text-primary line-clamp-3 w-full text-lg leading-snug font-semibold"
+              >
+                从列满秩到最小二乘：矩阵性质串烧
+              </h3>
+            </div>
+          </a>
+        </article>
+      
+    </div>
   </section>
 
 
+
+
+  
   
 
 
@@ -1160,7 +1942,84 @@
 
 
 
-      
+      <aside
+    id="toc-container"
+    class="toc-center"
+    data-position="center"
+  >
+      <div
+        id="toc-center"
+        class="pointer-events-none fixed top-28 right-0 left-0 z-40 mx-auto w-full max-w-4xl px-4 transition-all duration-300"
+      >
+        <div class="pointer-events-auto relative mx-auto w-fit">
+          <button
+            id="toc-center-toggle"
+            class="bg-card/80 border-border text-muted-foreground hover:text-primary hover:bg-primary/10 ring-offset-background focus-visible:ring-ring flex cursor-pointer items-center gap-2 rounded-full border px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+          >
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+</svg>
+
+            <span id="toc-center-title" class="max-w-[200px] truncate"
+              >目录</span
+            >
+            <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+          </button>
+
+          
+          <div
+            id="toc-center-dropdown"
+            class="bg-card border-border scrollbar-hide absolute top-full left-1/2 mt-2 hidden max-h-[60vh] w-[280px] origin-top -translate-x-1/2 scale-95 overflow-y-auto rounded-xl border p-4 opacity-0 shadow-lg transition-all"
+          >
+            <div
+              id="toc-center-content"
+              class="[&_a]:text-muted-foreground [&_a:hover]:bg-primary/10 [&_a:hover]:text-primary [&_a.active]:bg-primary/10 [&_a.active]:text-primary text-sm [&_a]:block [&_a]:truncate [&_a]:rounded-md [&_a]:px-2 [&_a]:py-1 [&_a]:transition-colors [&_a.active]:font-medium [&_li]:my-1.5 [&_nav>ul]:pl-0 [&_ul]:list-none [&_ul]:pl-4"
+            >
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#先区分三个容易混淆的-bias">先区分三个容易混淆的 “bias”</a>
+      <ul>
+        <li><a href="#神经网络中的-bias">神经网络中的 bias</a></li>
+        <li><a href="#统计估计中的-bias">统计估计中的 bias</a></li>
+        <li><a href="#数值计算中的小常数">数值计算中的小常数</a></li>
+      </ul>
+    </li>
+    <li><a href="#tikhonov-正则化中的--到底做了什么">Tikhonov 正则化中的  到底做了什么</a></li>
+    <li><a href="#神经网络中的-bias-做了什么">神经网络中的 bias 做了什么</a></li>
+    <li><a href="#一个具体例子线性模型中的截距项与-tikhonov-正则化">一个具体例子：线性模型中的截距项与 Tikhonov 正则化</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#relu-中的-bias移动激活边界">ReLU 中的 bias：移动激活边界</a></li>
+    <li><a href="#为什么二者容易被联系起来">为什么二者容易被联系起来</a></li>
+    <li><a href="#真正与-tikhonov-对应的神经网络概念l2-正则化与-weight-decay">真正与 Tikhonov 对应的神经网络概念：L2 正则化与 weight decay</a></li>
+    <li><a href="#bias-是否也可以被正则化">bias 是否也可以被正则化</a></li>
+    <li><a href="#从线性代数角度看二者的差异">从线性代数角度看二者的差异</a></li>
+    <li><a href="#从贝叶斯角度看-tikhonov">从贝叶斯角度看 Tikhonov</a></li>
+    <li><a href="#一个容易误判的说法">一个容易误判的说法</a></li>
+    <li><a href="#小常数的三种类型">小常数的三种类型</a>
+      <ul>
+        <li><a href="#结构性平移">结构性平移</a></li>
+        <li><a href="#正则化惩罚">正则化惩罚</a></li>
+        <li><a href="#数值稳定项">数值稳定项</a></li>
+      </ul>
+    </li>
+    <li><a href="#关系图">关系图</a></li>
+    <li><a href="#对应关系表">对应关系表</a></li>
+    <li><a href="#最终判断">最终判断</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </div></aside>
       
 <div
   id="search-overlay"
@@ -1360,6 +2219,93 @@
       
 
 
+  <style>
+     
+    svg[id^="mermaid-"] {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    
+    function getCurrentTheme() {
+      const isDark = document.documentElement.classList.contains("dark");
+      return isDark ? "dark" : "default";
+    }
+
+    
+    const theme = getCurrentTheme();
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: theme,
+      look: "classic",
+      securityLevel: "loose",
+      themeCSS: `
+        [data-look="neo"].node rect,
+        [data-look="neo"].cluster rect,
+        [data-look="neo"].node polygon,
+        [data-look="neo"].node .outer-path,
+        [data-look="neo"].node circle,
+        [data-look="neo"].icon-shape .icon,
+        [data-look="neo"].icon-shape .icon-neo path {
+          filter: none !important;
+        }
+      `,
+    });
+
+    
+    document.querySelectorAll(".mermaid").forEach((element) => {
+      if (!element.getAttribute("data-original-code")) {
+        
+        const originalCode = element.textContent.trim();
+        element.setAttribute("data-original-code", originalCode);
+      }
+    });
+
+    
+    window.addEventListener("themeChanged", async () => {
+      const newTheme = getCurrentTheme();
+
+      try {
+        
+        document.querySelectorAll(".mermaid").forEach((element) => {
+          const originalCode = element.getAttribute("data-original-code");
+          if (originalCode) {
+            
+            element.removeAttribute("data-processed");
+            
+            element.textContent = originalCode;
+          }
+        });
+
+        
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: newTheme,
+          look: "classic",
+          securityLevel: "loose",
+          themeCSS: `
+            [data-look="neo"].node rect,
+            [data-look="neo"].cluster rect,
+            [data-look="neo"].node polygon,
+            [data-look="neo"].node .outer-path,
+            [data-look="neo"].node circle,
+            [data-look="neo"].icon-shape .icon,
+            [data-look="neo"].icon-shape .icon-neo path {
+              filter: none !important;
+            }
+          `,
+        });
+
+        
+        await mermaid.run();
+      } catch (error) {
+        console.error("Mermaid 主题更新失败:", error);
+      }
+    });
+  </script>
     </main>
   </body>
 </html>

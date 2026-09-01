@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<title>党的自我革命 |
+<title>从列满秩到最小二乘：矩阵性质串烧 |
     River&#39;s Blog</title>
 
 <meta
   name="description"
-  content="学校党课培训的学习心得"
+  content="矩阵性质的互相关系"
 />
 <meta
   name="keywords"
-  content="Political Education"
+  content="Matrix"
 />
 <meta
   name="author"
@@ -26,7 +26,7 @@
   name="robots"
   content="index, follow"
 />
-<link rel="canonical" href="https://multipleriver.github.io/posts/%E5%85%9A%E7%9A%84%E8%87%AA%E6%88%91%E9%9D%A9%E5%91%BD/" />
+<link rel="canonical" href="https://multipleriver.github.io/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/" />
 
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,32 +34,32 @@
 
 
 <link rel="manifest" href="/site.webmanifest" />
-<meta property="og:url" content="https://multipleriver.github.io/posts/%E5%85%9A%E7%9A%84%E8%87%AA%E6%88%91%E9%9D%A9%E5%91%BD/">
+<meta property="og:url" content="https://multipleriver.github.io/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/">
   <meta property="og:site_name" content="River&#39;s Blog">
-  <meta property="og:title" content="党的自我革命">
-  <meta property="og:description" content="学校党课培训的学习心得">
+  <meta property="og:title" content="从列满秩到最小二乘：矩阵性质串烧">
+  <meta property="og:description" content="矩阵性质的互相关系">
   <meta property="og:locale" content="zh_CN">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-11-20T00:00:00+00:00">
-    <meta property="article:modified_time" content="2023-11-20T00:00:00+00:00">
-    <meta property="article:tag" content="Political Education">
+    <meta property="article:published_time" content="2026-05-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-05-15T00:00:00+00:00">
+    <meta property="article:tag" content="Matrix">
     <meta property="og:image" content="https://multipleriver.github.io/images/og-default.avif">
 
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://multipleriver.github.io/images/og-default.avif">
-  <meta name="twitter:title" content="党的自我革命">
-  <meta name="twitter:description" content="学校党课培训的学习心得">
+  <meta name="twitter:title" content="从列满秩到最小二乘：矩阵性质串烧">
+  <meta name="twitter:description" content="矩阵性质的互相关系">
 
 
-  <meta itemprop="name" content="党的自我革命">
-  <meta itemprop="description" content="学校党课培训的学习心得">
-  <meta itemprop="datePublished" content="2023-11-20T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2023-11-20T00:00:00+00:00">
-  <meta itemprop="wordCount" content="5887">
+  <meta itemprop="name" content="从列满秩到最小二乘：矩阵性质串烧">
+  <meta itemprop="description" content="矩阵性质的互相关系">
+  <meta itemprop="datePublished" content="2026-05-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-05-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="6207">
   <meta itemprop="image" content="https://multipleriver.github.io/images/og-default.avif">
-  <meta itemprop="keywords" content="Political Education">
+  <meta itemprop="keywords" content="Matrix">
 
 
 
@@ -841,7 +841,7 @@
           <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
 </svg>
-          <span class="max-w-32 truncate md:max-w-[16rem] lg:max-w-none">党的自我革命</span>
+          <span class="max-w-32 truncate md:max-w-[16rem] lg:max-w-none">从列满秩到最小二乘：矩阵性质串烧</span>
         </span>
       </li>
     </ol>
@@ -862,7 +862,7 @@
 <div class="post-meta mb-8">
   
   <h1 class="text-foreground mb-6 text-3xl leading-tight font-bold md:text-4xl">
-    党的自我革命
+    从列满秩到最小二乘：矩阵性质串烧
   </h1>
 
   
@@ -883,8 +883,8 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
 </svg>
 
-              <time datetime="2023-11-20">
-                2023 年 11 月 20 日
+              <time datetime="2026-05-15">
+                2026 年 05 月 15 日
               </time>
             </div>
 
@@ -898,7 +898,7 @@
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
 </svg>
 
-              <span>5887 字</span>
+              <span>6207 字</span>
             </div>
             
           </div>
@@ -936,9 +936,9 @@
                   <span class="text-muted-foreground text-sm font-medium">
                     Tags:
                   </span>
-                  <a href="/tags/political-education/"
+                  <a href="/tags/matrix/"
                     class="inline-flex items-center rounded-full px-2.5 py-1 text-sm font-medium transition-all duration-200 bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground">
-                    Political Education
+                    Matrix
                   </a>
                 </div>
               </div>
@@ -955,26 +955,259 @@
 
   
   <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
-    <p>从今年10月份开始，我陆续参与了学校开展的五次党课，积极和老师、党员同志们交流，收获甚丰，尤其对党的自我革命这一话题有所感想。</p>
-<p>  结合思政必修课和日常自我学习的内容，我就党推进自我革命的百年历程、宝贵经验和实践成效，从以下几个部分谈谈我的党课学习心得：</p>
-<h2 id="1-党推进伟大自我革命的百年历程">1. 党推进伟大自我革命的百年历程<a
-  href="#1-%e5%85%9a%e6%8e%a8%e8%bf%9b%e4%bc%9f%e5%a4%a7%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e7%9a%84%e7%99%be%e5%b9%b4%e5%8e%86%e7%a8%8b"
+    <p>我们从一个很小的例子开始。</p>
+<p>设</p>
+$$
+A=
+\begin{bmatrix}
+1 & 2\\
+2 & 4\\
+3 & 6
+\end{bmatrix}
+$$<p>这个矩阵有两列：</p>
+$$
+a_1=
+\begin{bmatrix}
+1\\2\\3
+\end{bmatrix},
+\qquad
+ a_2=
+\begin{bmatrix}
+2\\4\\6
+\end{bmatrix}
+$$<p>显然</p>
+$$
+a_2=2a_1
+$$<p>也就是说，第二列并没有提供新的方向。虽然 $A$ 有两列，但它真正独立的列方向只有一个。</p>
+<p>这就是“不满列秩”的最简单例子。</p>
+<p>这件事看似只是“有一列是另一列的倍数”，但它会引出一串重要结论：</p>
+$$
+A\text{ 不满列秩}
+\Longleftrightarrow
+\exists z\neq 0,\ Az=0
+\Longleftrightarrow
+A^TA\text{ 奇异}
+\Longleftrightarrow
+A^TA\text{ 不可逆}
+\Longleftrightarrow
+A^TA\text{ 有零特征值}
+\Longleftrightarrow
+A^TA\text{ 半正定但不正定}
+$$<p>这些结论正是理解普通最小二乘、Tikhonov 正则化、Moore-Penrose 伪逆的基础。</p>
+<h3 id="向量线性组合">向量线性组合<a
+  href="#%e5%90%91%e9%87%8f%e7%ba%bf%e6%80%a7%e7%bb%84%e5%90%88"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><h3 id="11-第一次自我革命八七会议">1.1 第一次自我革命：八七会议<a
-  href="#11-%e7%ac%ac%e4%b8%80%e6%ac%a1%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e5%85%ab%e4%b8%83%e4%bc%9a%e8%ae%ae"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>设</p>
+$$
+A\in\mathbb{R}^{m\times n}
+$$<p>也就是说，$A$ 有 $m$ 行、$n$ 列。把它按列写成：</p>
+$$
+A=
+\begin{bmatrix}
+| & | & & |\\
+a_1 & a_2 & \cdots & a_n\\
+| & | & & |
+\end{bmatrix}
+$$<p>对于任意</p>
+$$
+x=
+\begin{bmatrix}
+x_1\\x_2\\ \vdots\\x_n
+\end{bmatrix}
+$$<p>矩阵乘法</p>
+$$
+Ax
+$$<p>本质上是列向量的线性组合：</p>
+$$
+Ax=x_1a_1+x_2a_2+\cdots+x_na_n
+$$<p>所以矩阵 $A$ 可以理解为一个线性变换：</p>
+$$
+A:\mathbb{R}^n\to\mathbb{R}^m
+$$<p>它把参数空间中的 $x$，映射到输出空间中的 $Ax$。</p>
+<h3 id="矩阵的基本空间">矩阵的基本空间<a
+  href="#%e7%9f%a9%e9%98%b5%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%a9%ba%e9%97%b4"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  八七会议是党在早期探索中国革命遭受挫折危急关头的一次自我革命。</p>
-<p>  中国共产党成立后不久，便投入到轰轰烈烈的大革命运动中，但由于缺乏革命斗争经验，对主导北伐战争的国民党领导集团政治警觉不够。1927年北伐胜利进军时，蒋介石、汪精卫集团相继背叛革命，屠杀大量革命群众和共产党人。</p>
-<p>  在大革命面临失败的紧要关头，党中央于1927年8月7日在湖北汉口召开会议，检讨党的工作，批判大革命后期右倾机会主义错误，确立了实行土地革命和武装起义的总方针。</p>
-<p>  会议通过的《中国共产党中央执行委员会告全党党员书》中指出：</p>
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>理解矩阵性质，必须先理解四个空间。</p>
+<h5 id="列空间">列空间<a
+  href="#%e5%88%97%e7%a9%ba%e9%97%b4"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h5><p>列空间记为</p>
+$$
+\mathcal{C}(A)
+$$<p>定义为</p>
+$$
+\mathcal{C}(A)=\{Ax:x\in\mathbb{R}^n\}
+$$<p>也就是 $A$ 的所有列向量的线性组合构成的空间。</p>
+<p>换句话说：</p>
+$$
+\mathcal{C}(A)=\operatorname{span}\{a_1,a_2,\dots,a_n\}
+$$<p>它告诉我们：所有可能的输出 $Ax$ 落在哪个空间里。</p>
+<p>在最小二乘问题</p>
+$$
+Ax\approx b
+$$<p>中，真正能被 $Ax$ 表示出来的向量，只能落在 $\mathcal{C}(A)$ 中。</p>
+<h5 id="零空间">零空间<a
+  href="#%e9%9b%b6%e7%a9%ba%e9%97%b4"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h5><p>零空间记为</p>
+$$
+\mathcal{N}(A)
+$$<p>定义为</p>
+$$
+\mathcal{N}(A)=\{x:Ax=0\}
+$$<p>它告诉我们：哪些输入方向会被 $A$ 压成零。</p>
+<p>如果存在非零向量</p>
+$$
+z\neq 0
+$$<p>使得</p>
+$$
+Az=0
+$$<p>那么说明 $A$ 在方向 $z$ 上丢失了信息。</p>
+<p>因为对于任意 $x$，都有</p>
+$$
+A(x+z)=Ax+Az=Ax
+$$<p>也就是说，$x$ 和 $x+z$ 经过 $A$ 之后完全一样。</p>
+<p>这就是“不唯一”的根源。</p>
+<h5 id="行空间">行空间<a
+  href="#%e8%a1%8c%e7%a9%ba%e9%97%b4"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h5><p>行空间是 $A$ 的行向量张成的空间。它也等于 $A^T$ 的列空间：</p>
+$$
+\mathcal{R}(A)=\mathcal{C}(A^T)
+$$<p>它位于输入空间 $\mathbb{R}^n$ 中。</p>
+<p>行空间与零空间互相正交：</p>
+$$
+\mathcal{R}(A)\perp \mathcal{N}(A)
+$$<p>更准确地说：</p>
+$$
+\mathbb{R}^n=\mathcal{R}(A)\oplus \mathcal{N}(A)
+$$<p>这里的 $\oplus$ 表示直和分解。</p>
+<p>这句话很重要：任意一个输入向量 $x$，都可以拆成两部分：</p>
+$$
+x=x_r+x_n
+$$<p>其中</p>
+$$
+x_r\in\mathcal{R}(A),\qquad x_n\in\mathcal{N}(A)
+$$<p>而</p>
+$$
+Ax=A x_r+A x_n=A x_r
+$$<p>所以零空间分量 $x_n$ 对输出没有任何影响。</p>
+<h5 id="左零空间">左零空间<a
+  href="#%e5%b7%a6%e9%9b%b6%e7%a9%ba%e9%97%b4"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h5><p>左零空间是</p>
+$$
+\mathcal{N}(A^T)
+$$<p>定义为</p>
+$$
+\mathcal{N}(A^T)=\{y:A^Ty=0\}
+$$<p>它位于输出空间 $\mathbb{R}^m$ 中。</p>
+<p>列空间和左零空间互相正交：</p>
+$$
+\mathcal{C}(A)\perp \mathcal{N}(A^T)
+$$<p>并且</p>
+$$
+\mathbb{R}^m=\mathcal{C}(A)\oplus \mathcal{N}(A^T)
+$$<p>普通最小二乘中的正交投影，就是在这个分解下发生的。</p>
+<h3 id="什么是秩">什么是秩<a
+  href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%a7%a9"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>矩阵的秩记为</p>
+$$
+\operatorname{rank}(A)
+$$<p>它可以理解为 $A$ 真正保留下来的独立方向数。</p>
+<p>等价地说：</p>
+$$
+\operatorname{rank}(A)=\dim \mathcal{C}(A)
+$$<p>也就是列空间的维数。</p>
+<p>虽然矩阵 $A$ 有 $n$ 列，但这些列不一定都独立。</p>
+<p>如果</p>
+$$
+\operatorname{rank}(A)=n
+$$<p>说明 $A$ 的 $n$ 个列向量全部线性无关，此时称 $A$ <strong>列满秩</strong>。</p>
+<p>如果</p>
+$$
+\operatorname{rank}(A) < n
+$$<p>说明 $A$ 的列向量之间存在冗余，此时称 $A$ <strong>不满列秩</strong>。</p>
+<p>注意：列满秩要求</p>
+$$
+\operatorname{rank}(A)=\text{列数}
+$$<p>而不是要求 $A$ 是方阵。</p>
+<p>例如</p>
+$$
+A\in\mathbb{R}^{100\times 3}
+$$<p>只要三列线性无关，它就是列满秩。</p>
+<h3 id="列满秩和零空间的关系">列满秩和零空间的关系<a
+  href="#%e5%88%97%e6%bb%a1%e7%a7%a9%e5%92%8c%e9%9b%b6%e7%a9%ba%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>核心结论：</p>
+$$
+A\text{ 列满秩}
+\Longleftrightarrow
+\mathcal{N}(A)=\{0\}
+$$<p>也就是说：</p>
+$$
+\operatorname{rank}(A)=n
+\Longleftrightarrow
+Az=0\text{ 只有零解}
+$$<p>反过来：</p>
+$$
+A\text{ 不满列秩}
+\Longleftrightarrow
+\exists z\neq 0,\ Az=0
+$$<p>证明很直接。</p>
+<p>如果 $A$ 不满列秩，那么列向量线性相关，所以存在一组不全为零的系数 $z_1,\dots,z_n$，使得</p>
+$$
+z_1a_1+\cdots+z_na_n=0
+$$<p>写成矩阵形式就是</p>
+$$
+Az=0
+$$<p>其中</p>
+$$
+z=
+\begin{bmatrix}
+z_1\\
+\vdots\\
+z_n
+\end{bmatrix}
+\neq 0
+$$<p>所以不满列秩推出存在非零零空间向量。</p>
+<p>反过来，如果存在非零 $z$，使得</p>
+$$
+Az=0
+$$<p>那么</p>
+$$
+z_1a_1+\cdots+z_na_n=0
+$$<p>这就是列向量之间存在非平凡线性关系，因此列向量线性相关，所以</p>
+$$
+\operatorname{rank}(A) < n
+$$<p>于是二者等价。</p>
+<h3 id="秩-零化度定理">秩-零化度定理<a
+  href="#%e7%a7%a9-%e9%9b%b6%e5%8c%96%e5%ba%a6%e5%ae%9a%e7%90%86"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>对任意</p>
+$$
+A\in\mathbb{R}^{m\times n}
+$$<p>有</p>
+$$
+\operatorname{rank}(A)+\dim\mathcal{N}(A)=n
+$$<p>这叫秩-零化度定理。</p>
+<p>它的含义是：</p>
 
   <blockquote
     class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
   >
     <div class="prose prose-sm max-w-none">
-      <p>“我们党公开承认并纠正错误，不含混不隐瞒，这并不是示弱，而正是证明中国共产主义运动的力量。”</p>
+      <p>输入空间一共有 $n$ 个维度，其中一部分被 $A$ 有效映射出去，另一部分被 $A$ 压成零。</p>
 
     </div>
   </blockquote><script>
@@ -1006,36 +1239,553 @@
     });
   });
 </script>
-<p>  会议制定的继续进行革命斗争的正确方针，使全党重新鼓起同国民党反动派斗争的勇气，开启了中国共产党独自担当起领导中国革命艰巨使命的伟大征程。</p>
-<h3 id="12-第二次自我革命遵义会议">1.2 第二次自我革命：遵义会议<a
-  href="#12-%e7%ac%ac%e4%ba%8c%e6%ac%a1%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e9%81%b5%e4%b9%89%e4%bc%9a%e8%ae%ae"
+<p>如果 $A$ 列满秩：</p>
+$$
+\operatorname{rank}(A)=n
+$$<p>那么</p>
+$$
+\dim\mathcal{N}(A)=0
+$$<p>所以</p>
+$$
+\mathcal{N}(A)=\{0\}
+$$<p>如果 $A$ 不满列秩：</p>
+$$
+\operatorname{rank}(A) < n
+$$<p>那么</p>
+$$
+\dim\mathcal{N}(A)>0
+$$<p>所以存在非零零空间方向。</p>
+<h3 id="奇异性和可逆性">奇异性和可逆性<a
+  href="#%e5%a5%87%e5%bc%82%e6%80%a7%e5%92%8c%e5%8f%af%e9%80%86%e6%80%a7"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  遵义会议是在极端危急关头实现党的历史伟大转折的一次自我革命。</p>
-<p>  1935年1月15日至17日，中央政治局在贵州遵义召开扩大会议，批评博古、李德在军事指导上的错误。毛泽东的发言不仅对他们在军事指导上的错误进行了深刻分析，而且阐述了中国革命战争的战略战术问题和此后在军事上应该采取的方针。会议改组中央领导机构，选举毛泽东为中央政治局常委，决定仍由朱德、周恩来指挥军事。2月初在川滇黔交界的“鸡鸣三省”村子举行会议，政治局常委再作分工，由张闻天代替博古在中央负总责，毛泽东为周恩来在军事指挥上的帮助者。3月中旬，中央政治局在遵义附近的苟坝召开扩大会议。根据毛泽东提议，重新成立“三人团”代表政治局全权指挥军事，以周恩来为团长，成员为毛泽东和王稼祥。</p>
-<p>  遵义会议以来的这些重大决策，在长征濒临绝境时挽救了党和红军，挽救了中国革命，是党的历史上一个生死攸关的转折点。从此，党就在以毛泽东同志为核心的第一代中央领导集体正确领导下，带领中国革命走向胜利。</p>
-<h3 id="13-第三次自我革命延安整风">1.3 第三次自我革命：延安整风<a
-  href="#13-%e7%ac%ac%e4%b8%89%e6%ac%a1%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e5%bb%b6%e5%ae%89%e6%95%b4%e9%a3%8e"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>严格来说，“奇异”和“可逆”只对方阵讨论。</p>
+<p>设</p>
+$$
+M\in\mathbb{R}^{n\times n}
+$$<p>如果存在矩阵 $M^{-1}$，使得</p>
+$$
+M^{-1}M=MM^{-1}=I
+$$<p>那么 $M$ 可逆。</p>
+<p>如果 $M$ 不可逆，则称 $M$ 奇异。</p>
+<p>所以：</p>
+$$
+M\text{ 奇异}
+\Longleftrightarrow
+M\text{ 不可逆}
+$$<p>对于方阵 $M$，下面这些条件等价：</p>
+$$
+M\text{ 可逆}
+$$$$
+\Longleftrightarrow
+\mathcal{N}(M)=\{0\}
+$$$$
+\Longleftrightarrow
+Mx=0\text{ 只有零解}
+$$$$
+\Longleftrightarrow
+\operatorname{rank}(M)=n
+$$$$
+\Longleftrightarrow
+\det(M)\neq 0
+$$$$
+\Longleftrightarrow
+0\text{ 不是 }M\text{ 的特征值}
+$$<p>反过来，下面这些条件也等价：</p>
+$$
+M\text{ 奇异}
+$$$$
+\Longleftrightarrow
+M\text{ 不可逆}
+$$$$
+\Longleftrightarrow
+\exists z\neq 0,\ Mz=0
+$$$$
+\Longleftrightarrow
+\operatorname{rank}(M) < n
+$$$$
+\Longleftrightarrow
+\det(M)=0
+$$$$
+\Longleftrightarrow
+0\text{ 是 }M\text{ 的特征值}
+$$<h3 id="为什么有零特征值就不可逆">为什么有零特征值就不可逆<a
+  href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%9c%89%e9%9b%b6%e7%89%b9%e5%be%81%e5%80%bc%e5%b0%b1%e4%b8%8d%e5%8f%af%e9%80%86"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  延安整风运动是党在抗战时期通过总结历史经验，从思上批判以王明为代表的&quot;左&quot;倾教条主义错误，提高全党马克思主义理论水平的一次自我革命。</p>
-<p>  遵义会议后，党从军事上、政治上纠正了王明“左”倾错误，但一直没有来得及从思想上系统地彻底清算这种错误。有鉴于此，加强党的建设，解决党内思想矛盾，批判党的历史错误，克服好的思想意识，提高全党特别是高级干部的马克思主义水平就非常必要。它既是一次全党范围的马克思主义的思想教育运动也是破除党内把马克思主义教条化、把共产国际和苏联经验神圣化错误倾向的思想解放运动，对于全党同志特别是党的高级干部坚持一切从实际出发，理论联系实际的马克思主义思想路线具有深远意义。</p>
-<p>  在学习延安整风运动的时候，我对比了国共两党治党的两大典型案例：黄克功杀女友案和张灵甫杀妻案。</p>
-<h4 id="黄克功杀女友案是延安时期我们党的自我革命的典型案例">–黄克功杀女友案是延安时期我们党的自我革命的典型案例–<a
-  href="#%e9%bb%84%e5%85%8b%e5%8a%9f%e6%9d%80%e5%a5%b3%e5%8f%8b%e6%a1%88%e6%98%af%e5%bb%b6%e5%ae%89%e6%97%b6%e6%9c%9f%e6%88%91%e4%bb%ac%e5%85%9a%e7%9a%84%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e7%9a%84%e5%85%b8%e5%9e%8b%e6%a1%88%e4%be%8b"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>特征值定义为：</p>
+$$
+Mv=\lambda v
+$$<p>其中</p>
+$$
+v\neq 0
+$$<p>如果</p>
+$$
+\lambda=0
+$$<p>那么</p>
+$$
+Mv=0
+$$<p>也就是说，存在非零向量 $v$，被 $M$ 压成零。</p>
+<p>如果 $M$ 可逆，则两边左乘 $M^{-1}$：</p>
+$$
+M^{-1}Mv=M^{-1}0
+$$<p>得到</p>
+$$
+v=0
+$$<p>这和 $v\neq 0$ 矛盾。</p>
+<p>所以：</p>
+$$
+0\text{ 是特征值}
+\Longrightarrow
+M\text{ 不可逆}
+$$<p>反过来，如果 $M$ 不可逆，那么存在非零 $v$，使得</p>
+$$
+Mv=0
+$$<p>这正是</p>
+$$
+Mv=0\cdot v
+$$<p>所以 $0$ 是特征值。</p>
+<p>因此：</p>
+$$
+M\text{ 不可逆}
+\Longleftrightarrow
+0\text{ 是 }M\text{ 的特征值}
+$$<h3 id="为什么--特别重要">为什么 $A^TA$ 特别重要<a
+  href="#%e4%b8%ba%e4%bb%80%e4%b9%88--%e7%89%b9%e5%88%ab%e9%87%8d%e8%a6%81"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p>  黄克功，江西南康人，1911年出生。1929年参加了中国工农红军，经历过井冈山斗争和二万五千里长征，参加过多次战斗，负过重伤，在长征中立过大功，历任红军班长、排长、连长、团长等职，也曾从事过师团政治工作。红一、二、四方面军会师时，年仅26岁的黄克功已是身经百战的红军旅长。</p>
-<p>  1937年10月5日晚饭后，黄克功因感情纠纷，恼羞成怒，开枪射杀其女友刘茜，酿成轰动一时的杀妻案。</p>
-<p>  国内外一些报刊把它当成共产党的“桃色案件”，大肆渲染，攻击和污蔑边区政府“无法无天”、“蹂躏人权”，引起了部分不明真相人士的猜疑和不满；边区社会各界也议论纷纷，看法不一。</p>
-<p>  边区组织讨论，围绕杀与不杀，争议不下。</p>
-<p>  毛泽东很愤怒：</p>
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>普通最小二乘中，我们要求</p>
+$$
+\min_x\|Ax-b\|^2
+$$<p>目标函数为</p>
+$$
+J(x)=\|Ax-b\|^2
+$$<p>求导得到法方程：</p>
+$$
+A^TAx=A^Tb
+$$<p>所以 $A^TA$ 是普通最小二乘中的核心矩阵。</p>
+<p>另一方面，$A^TA$ 还有明确的几何意义。</p>
+<p>如果</p>
+$$
+A=
+\begin{bmatrix}
+| & | & & |\\
+a_1 & a_2 & \cdots & a_n\\
+| & | & & |
+\end{bmatrix}
+$$<p>那么</p>
+$$
+A^TA
+$$<p>的第 $i,j$ 个元素是</p>
+$$
+a_i^Ta_j
+$$<p>也就是第 $i$ 列和第 $j$ 列的内积。</p>
+<p>因此 $A^TA$ 记录了 $A$ 的列向量之间的相关关系。</p>
+<p>它也叫 Gram 矩阵。</p>
+<h3 id="为什么--一定半正定">为什么 $A^TA$ 一定半正定<a
+  href="#%e4%b8%ba%e4%bb%80%e4%b9%88--%e4%b8%80%e5%ae%9a%e5%8d%8a%e6%ad%a3%e5%ae%9a"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>对任意向量 $z$，都有</p>
+$$
+z^TA^TAz=(Az)^T(Az)=\|Az\|^2
+$$<p>而范数平方一定非负，所以</p>
+$$
+z^TA^TAz\ge 0
+$$<p>因此：</p>
+$$
+A^TA\text{ 一定半正定}
+$$<p>这个结论不需要 $A$ 满秩，也不需要 $A$ 是方阵。</p>
+<p>只要 $A$ 是实矩阵，$A^TA$ 就是对称半正定矩阵。</p>
+<h3 id="正定与半正定">正定与半正定<a
+  href="#%e6%ad%a3%e5%ae%9a%e4%b8%8e%e5%8d%8a%e6%ad%a3%e5%ae%9a"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>设 $M\in\mathbb{R}^{n\times n}$ 是实对称矩阵。</p>
+<p>如果对任意 $z$，都有</p>
+$$
+z^TMz\ge 0
+$$<p>则称 $M$ 是半正定矩阵，记作</p>
+$$
+M\succeq 0
+$$<p>如果对任意非零 $z\neq 0$，都有</p>
+$$
+z^TMz>0
+$$<p>则称 $M$ 是正定矩阵，记作</p>
+$$
+M\succ 0
+$$<p>区别在于：</p>
+$$
+\text{半正定允许某些非零方向上等于 }0
+$$$$
+\text{正定要求所有非零方向上都严格大于 }0
+$$<p>因此：</p>
+$$
+M\text{ 正定}
+\Longrightarrow
+M\text{ 半正定}
+$$<p>但反过来不一定成立。</p>
+<p>例如</p>
+$$
+M=
+\begin{bmatrix}
+1 & 0\\
+0 & 0
+\end{bmatrix}
+$$<p>对任意</p>
+$$
+z=
+\begin{bmatrix}
+z_1\\z_2
+\end{bmatrix}
+$$<p>有</p>
+$$
+z^TMz=z_1^2\ge 0
+$$<p>所以它半正定。</p>
+<p>但取</p>
+$$
+z=
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+\neq 0
+$$<p>有</p>
+$$
+z^TMz=0
+$$<p>所以它不是正定。</p>
+<p>因此：</p>
+$$
+\text{正定是比半正定更强的条件}
+$$<h3 id="半正定正定和特征值">半正定、正定和特征值<a
+  href="#%e5%8d%8a%e6%ad%a3%e5%ae%9a%e6%ad%a3%e5%ae%9a%e5%92%8c%e7%89%b9%e5%be%81%e5%80%bc"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>对实对称矩阵 $M$，有以下等价关系：</p>
+$$
+M\succeq 0
+\Longleftrightarrow
+M\text{ 的所有特征值 }\lambda_i\ge 0
+$$$$
+M\succ 0
+\Longleftrightarrow
+M\text{ 的所有特征值 }\lambda_i>0
+$$<p>这两个结论要求 $M$ 是实对称矩阵，或者复数情况下是 Hermitian 矩阵。</p>
+<p>简要证明如下。</p>
+<p>因为实对称矩阵可以正交对角化：</p>
+$$
+M=Q\Lambda Q^T
+$$<p>其中</p>
+$$
+Q^TQ=I
+$$$$
+\Lambda=\operatorname{diag}(\lambda_1,\dots,\lambda_n)
+$$<p>于是</p>
+$$
+z^TMz=z^TQ\Lambda Q^Tz
+$$<p>令</p>
+$$
+y=Q^Tz
+$$<p>由于 $Q$ 是正交矩阵，$z\neq 0$ 等价于 $y\neq 0$。</p>
+<p>于是</p>
+$$
+z^TMz=y^T\Lambda y
+$$<p>也就是</p>
+$$
+z^TMz=\sum_{i=1}^n \lambda_i y_i^2
+$$<p>如果所有</p>
+$$
+\lambda_i\ge 0
+$$<p>则显然</p>
+$$
+z^TMz\ge 0
+$$<p>所以 $M$ 半正定。</p>
+<p>如果所有</p>
+$$
+\lambda_i>0
+$$<p>并且 $z\neq 0$，则 $y\neq 0$，至少有一个 $y_i\neq 0$，因此</p>
+$$
+\sum_{i=1}^n \lambda_i y_i^2>0
+$$<p>所以 $M$ 正定。</p>
+<p>反过来，如果 $M$ 半正定，那么取 $z$ 为某个特征向量 $v_i$，有</p>
+$$
+v_i^TMv_i=v_i^T\lambda_i v_i=\lambda_i\|v_i\|^2\ge 0
+$$<p>由于</p>
+$$
+\|v_i\|^2>0
+$$<p>所以</p>
+$$
+\lambda_i\ge 0
+$$<p>正定情形同理可得</p>
+$$
+\lambda_i>0
+$$<h3 id="为什么正定矩阵一定可逆">为什么正定矩阵一定可逆<a
+  href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%ad%a3%e5%ae%9a%e7%9f%a9%e9%98%b5%e4%b8%80%e5%ae%9a%e5%8f%af%e9%80%86"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>设 $M$ 是正定矩阵。</p>
+<p>正定意味着：</p>
+$$
+\forall z\neq 0,\quad z^TMz>0
+$$<p>现在反设 $M$ 不可逆。</p>
+<p>如果 $M$ 不可逆，那么存在非零向量 $z\neq 0$，使得</p>
+$$
+Mz=0
+$$<p>于是</p>
+$$
+z^TMz=z^T0=0
+$$<p>这和正定性要求的</p>
+$$
+z^TMz>0
+$$<p>矛盾。</p>
+<p>所以 $M$ 不可能不可逆。</p>
+<p>因此：</p>
+$$
+M\succ 0
+\Longrightarrow
+M\text{ 可逆}
+$$<p>从特征值角度看也一样。</p>
+<p>正定矩阵的所有特征值都满足</p>
+$$
+\lambda_i>0
+$$<p>所以没有零特征值。</p>
+<p>没有零特征值，就可逆。</p>
+<p>因此：</p>
+$$
+M\succ 0
+\Longrightarrow
+0\text{ 不是特征值}
+\Longrightarrow
+M\text{ 可逆}
+$$<h3 id="满列秩与--正定等价">$A$ 满列秩与 $A^TA$ 正定等价<a
+  href="#%e6%bb%a1%e5%88%97%e7%a7%a9%e4%b8%8e--%e6%ad%a3%e5%ae%9a%e7%ad%89%e4%bb%b7"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>这是最重要的桥梁之一。</p>
+<p>结论：</p>
+$$
+A\text{ 满列秩}
+\Longleftrightarrow
+A^TA\text{ 正定}
+$$<p>证明如下。</p>
+<p>先证明</p>
+$$
+A\text{ 满列秩}
+\Longrightarrow
+A^TA\text{ 正定}
+$$<p>若 $A$ 满列秩，则</p>
+$$
+\mathcal{N}(A)=\{0\}
+$$<p>所以对任意非零 $z\neq 0$，都有</p>
+$$
+Az\neq 0
+$$<p>因此</p>
+$$
+z^TA^TAz=\|Az\|^2>0
+$$<p>所以</p>
+$$
+A^TA\text{ 正定}
+$$<p>再证明反方向：</p>
+$$
+A^TA\text{ 正定}
+\Longrightarrow
+A\text{ 满列秩}
+$$<p>若 $A^TA$ 正定，则对任意非零 $z\neq 0$，有</p>
+$$
+z^TA^TAz>0
+$$<p>而</p>
+$$
+z^TA^TAz=\|Az\|^2
+$$<p>所以</p>
+$$
+\|Az\|^2>0
+$$<p>即</p>
+$$
+Az\neq 0
+$$<p>这说明不存在非零 $z$，使得</p>
+$$
+Az=0
+$$<p>因此</p>
+$$
+\mathcal{N}(A)=\{0\}
+$$<p>所以 $A$ 满列秩。</p>
+<p>于是二者等价。</p>
+<h3 id="不满列秩与--奇异等价">$A$ 不满列秩与 $A^TA$ 奇异等价<a
+  href="#%e4%b8%8d%e6%bb%a1%e5%88%97%e7%a7%a9%e4%b8%8e--%e5%a5%87%e5%bc%82%e7%ad%89%e4%bb%b7"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>结论：</p>
+$$
+A\text{ 不满列秩}
+\Longleftrightarrow
+A^TA\text{ 奇异}
+$$<p>证明如下。</p>
+<p>先证明：</p>
+$$
+A\text{ 不满列秩}
+\Longrightarrow
+A^TA\text{ 奇异}
+$$<p>如果 $A$ 不满列秩，则存在</p>
+$$
+z\neq 0
+$$<p>使得</p>
+$$
+Az=0
+$$<p>于是</p>
+$$
+A^TAz=A^T0=0
+$$<p>所以存在非零向量 $z$，使得</p>
+$$
+A^TAz=0
+$$<p>因此</p>
+$$
+A^TA
+$$<p>不可逆，也就是奇异。</p>
+<p>再证明反方向：</p>
+$$
+A^TA\text{ 奇异}
+\Longrightarrow
+A\text{ 不满列秩}
+$$<p>如果 $A^TA$ 奇异，则存在</p>
+$$
+z\neq 0
+$$<p>使得</p>
+$$
+A^TAz=0
+$$<p>左乘 $z^T$，得到</p>
+$$
+z^TA^TAz=0
+$$<p>也就是</p>
+$$
+\|Az\|^2=0
+$$<p>所以</p>
+$$
+Az=0
+$$<p>于是存在非零 $z$，使得</p>
+$$
+Az=0
+$$<p>因此</p>
+$$
+A\text{ 不满列秩}
+$$<p>所以二者等价。</p>
+<h3 id="相关性质的充分必要和条件范围">相关性质的充分、必要和条件范围<a
+  href="#%e7%9b%b8%e5%85%b3%e6%80%a7%e8%b4%a8%e7%9a%84%e5%85%85%e5%88%86%e5%bf%85%e8%a6%81%e5%92%8c%e6%9d%a1%e4%bb%b6%e8%8c%83%e5%9b%b4"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>很多矩阵结论必须注意条件范围。</p>
+<p>例如：</p>
+$$
+A\text{ 满列秩}
+\Longleftrightarrow
+A^TA\text{ 可逆}
+$$<p>这个结论对任意</p>
+$$
+A\in\mathbb{R}^{m\times n}
+$$<p>都成立。</p>
+<p>但是：</p>
+$$
+A\text{ 可逆}
+$$<p>这个说法只在 $A$ 是方阵时才有意义。</p>
+<p>如果 $A$ 是 $m\times n$ 的长方矩阵，那么不能说 $A$ 可逆或奇异。只能说它列满秩、行满秩、满秩、零空间是否平凡。</p>
+<p>又如：</p>
+$$
+M\succ 0
+\Longrightarrow
+M\text{ 可逆}
+$$<p>但</p>
+$$
+M\text{ 可逆}
+\not\Longrightarrow
+M\succ 0
+$$<p>例如</p>
+$$
+M=
+\begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}
+$$<p>它可逆，因为特征值为 $1$ 和 $-1$，都不为零。</p>
+<p>但它不是正定，因为取</p>
+$$
+z=
+\begin{bmatrix}
+0\\1
+\end{bmatrix}
+$$<p>有</p>
+$$
+z^TMz=-1 < 0
+$$<p>所以可逆不等于正定。</p>
+<p>再如：</p>
+$$
+M\succ 0
+\Longrightarrow
+M\succeq 0
+$$<p>但</p>
+$$
+M\succeq 0
+\not\Longrightarrow
+M\succ 0
+$$<p>因为半正定允许零特征值，而正定不允许零特征值。</p>
+<h3 id="moore-penrose-伪逆">Moore-Penrose 伪逆<a
+  href="#moore-penrose-%e4%bc%aa%e9%80%86"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>普通逆矩阵只对可逆方阵存在。</p>
+<p>但在很多问题中，矩阵可能不是方阵，或者虽然是方阵但不可逆。此时仍然希望有一个“类似逆矩阵”的对象。</p>
+<p>这就是 Moore-Penrose 伪逆，记为</p>
+$$
+A^+
+$$<p>它对任意矩阵都存在。</p>
+<p>如果 $A$ 是可逆方阵，那么</p>
+$$
+A^+=A^{-1}
+$$<p>如果 $A$ 不可逆或者不是方阵，$A^+$ 仍然可以定义。</p>
+<p>最清楚的定义来自奇异值分解。</p>
+<p>设</p>
+$$
+A=U\Sigma V^T
+$$<p>其中 $\Sigma$ 是奇异值矩阵：</p>
+$$
+\Sigma=
+\operatorname{diag}(\sigma_1,\dots,\sigma_r,0,\dots)
+$$<p>正奇异值满足</p>
+$$
+\sigma_i>0
+$$<p>伪逆定义为</p>
+$$
+A^+=V\Sigma^+U^T
+$$<p>其中 $\Sigma^+$ 的做法是：</p>
+$$
+\sigma_i\mapsto \frac{1}{\sigma_i}
+$$<p>而零奇异值仍然保持为零。</p>
+<p>也就是说，普通逆矩阵要求所有方向都能反解；伪逆只在 $A$ 没有丢失的方向上做反解，对已经被压成零的方向不强行反解。</p>
+<h3 id="伪逆和零空间的关系">伪逆和零空间的关系<a
+  href="#%e4%bc%aa%e9%80%86%e5%92%8c%e9%9b%b6%e7%a9%ba%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>如果 $A$ 不满列秩，则存在非零</p>
+$$
+z\in\mathcal{N}(A)
+$$<p>所以</p>
+$$
+A(x+z)=Ax
+$$<p>这说明很多不同的 $x$ 对应同一个输出。</p>
+<p>此时如果我们想解</p>
+$$
+Ax=b
+$$<p>或者最小化</p>
+$$
+\|Ax-b\|^2
+$$<p>解可能不唯一。</p>
+<p>Moore-Penrose 伪逆给出的解</p>
+$$
+x=A^+b
+$$<p>具有一个重要性质：</p>
 
   <blockquote
     class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
   >
     <div class="prose prose-sm max-w-none">
-      <p>“这是什么问题？这是什么问题？这样的人不杀，我们还是共产党吗？”</p>
+      <p>它是所有最小二乘解中范数最小的那个。</p>
 
     </div>
   </blockquote><script>
@@ -1067,303 +1817,489 @@
     });
   });
 </script>
-
-  <blockquote
-    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
-  >
-    <div class="prose prose-sm max-w-none">
-      <p>“黄克功过去斗争历史是光荣的，今天处以极刑，我及党中央的同志都是为之惋惜的。但他犯了不容赦免的大罪，以一个共产党员、红军干部而有如此卑鄙的，残忍的，失掉党的立场的，失掉革命立场的，失掉人的立场的行为，如为赦免，便无以教育党，无以教育红军，无以教育革命者，并无以教育每一个普通的人。”</p>
-
-    </div>
-  </blockquote><script>
-  function toggleAlert(alertId) {
-    const content = document.getElementById(alertId + "-content");
-    const chevron = document.getElementById(alertId + "-chevron");
-    const header = content.previousElementSibling;
-
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      chevron.style.transform = "rotate(0deg)";
-      header.setAttribute("aria-expanded", "true");
-    } else {
-      content.classList.add("hidden");
-      chevron.style.transform = "rotate(-90deg)";
-      header.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
-    collapsedAlerts.forEach(function (content) {
-      const alertId = content.id.replace("-content", "");
-      const chevron = document.getElementById(alertId + "-chevron");
-      if (chevron) {
-        chevron.style.transform = "rotate(-90deg)";
-      }
-    });
-  });
-</script>
-<h4 id="张灵甫杀妻案是国民党从宽治党的反面典型">–张灵甫杀妻案是国民党从宽治党的反面典型–<a
-  href="#%e5%bc%a0%e7%81%b5%e7%94%ab%e6%9d%80%e5%a6%bb%e6%a1%88%e6%98%af%e5%9b%bd%e6%b0%91%e5%85%9a%e4%bb%8e%e5%ae%bd%e6%b2%bb%e5%85%9a%e7%9a%84%e5%8f%8d%e9%9d%a2%e5%85%b8%e5%9e%8b"
+<p>如果有多个 $x$ 都能给出同样的最小残差，那么 $A^+b$ 会选择长度最短的那个。</p>
+<p>从空间上说，它会去掉零空间中的任意漂移分量。</p>
+<p>因为零空间分量不会改变 $Ax$，但会增大 $\|x\|$。所以最小范数解不会包含零空间分量。</p>
+<h3 id="普通最小二乘的解性质">普通最小二乘的解性质<a
+  href="#%e6%99%ae%e9%80%9a%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e7%9a%84%e8%a7%a3%e6%80%a7%e8%b4%a8"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p>  1935年冬，张灵甫带妻子回老家探亲，借住在西安张灵甫的堂哥家中，后将吴海兰枪杀。事发后，吴海兰的哥哥吴正有状告张灵甫，希望借助法律严惩凶手。</p>
-<p>  法院和军方接到状纸并未及时作出回应。吴正有写了控告信递给西安的妇女协会。张学良的夫人于凤至来到了西安，妇女协会的人将吴正有的控告信转到了她手中。于凤至回到南京将此事说给了宋美龄。蒋介石吩咐将张灵甫送交南京军事法庭查办。</p>
-<p>  胡宗南接到严惩张灵甫命令后，张灵甫提出投案，去南京自首，被判死刑，择期处决。这时张灵甫染上了疟疾。典狱长安排狱医为张灵甫治病，病好后张灵甫向军事法庭递交了申诉书。法庭接受了他的申辩，对他的原判并没有被执行。</p>
-<p>  1937年，卢沟桥事变爆发后，南京国民政府下令，所有服刑官兵，除“政治犯”外，一律调服军役，并保留原来军衔。张灵甫的老上司王耀武便向蒋介石为张灵甫求情，随即，张灵甫被秘密释放，去了王耀武处任上校候差员。张灵甫将先前用名“张钟麟”更改为“张灵甫”。</p>
-<p>  蒋介石赦一张灵甫，毒瘤暗生，法乱而后功溃；毛泽东毙一黄克功，三军整肃，法立而后功成。国民党高层选择御人心术，使用小手段收买将领，却让军纪、法律成为空文；而我们党行的是人间正道，虽然痛失将领，却让军纪严明、号令如山、道义无价。前几年，电影黄克功案件上演，成为依法从严治党、依法从严治军的历史镜鉴。</p>
-<p>  延安整风的直接成果，就是既为制定《关于若干历史问题的决议》、确定毛泽东思想为党的指导思想奠定了理论基础，也夺取抗日战争的胜利和新民主主义革命在全国的胜利奠定了政治基础。</p>
-<h3 id="14-第四次自我革命两个务必">1.4 第四次自我革命：“两个务必”<a
-  href="#14-%e7%ac%ac%e5%9b%9b%e6%ac%a1%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e4%b8%a4%e4%b8%aa%e5%8a%a1%e5%bf%85"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>普通最小二乘问题为：</p>
+$$
+\min_x\|Ax-b\|^2
+$$<p>几何上，它是在列空间 $\mathcal{C}(A)$ 中寻找一个向量</p>
+$$
+A\hat{x}
+$$<p>使得它最接近 $b$。</p>
+<p>也就是说，</p>
+$$
+A\hat{x}
+$$<p>是 $b$ 在列空间 $\mathcal{C}(A)$ 上的正交投影。</p>
+<p>因此残差</p>
+$$
+r=b-A\hat{x}
+$$<p>必须垂直于列空间：</p>
+$$
+r\perp \mathcal{C}(A)
+$$<p>这等价于</p>
+$$
+A^Tr=0
+$$<p>代入</p>
+$$
+r=b-A\hat{x}
+$$<p>得到</p>
+$$
+A^T(b-A\hat{x})=0
+$$<p>也就是</p>
+$$
+A^TA\hat{x}=A^Tb
+$$<p>这就是法方程。</p>
+<h3 id="普通最小二乘在不同秩条件下的结果">普通最小二乘在不同秩条件下的结果<a
+  href="#%e6%99%ae%e9%80%9a%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e5%9c%a8%e4%b8%8d%e5%90%8c%e7%a7%a9%e6%9d%a1%e4%bb%b6%e4%b8%8b%e7%9a%84%e7%bb%93%e6%9e%9c"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  在党的七届二中全会谋划筹建新中国时，毛泽东提出务必继地保持谦虚、谨慎、不骄、不躁的作风，务必继续地保持艰苦奋斗的作风的思想，作为执政警钟。</p>
-<p>  新中国成立后，党中央践行“两个务必”思想。1950年下半年开始，整风运动全面展开；1951年春开展整党运动，为党在全国执政的新的历史条件下坚持共产党员先进性进行教育；1951年底，党中央又决定将正在开展的“三反”运动与整党结合，严肃批判与处理部分党员干部存在的贪污、浪费、受贿等腐化堕落为。其中最引人注目的是从严处理了号称共和国反腐第一案的刘青山、张子善事件，开启了从严治党、清廉治国的良好风气。</p>
-<h3 id="15-第五次自我革命拨乱反正">1.5 第五次自我革命：拨乱反正<a
-  href="#15-%e7%ac%ac%e4%ba%94%e6%ac%a1%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e6%8b%a8%e4%b9%b1%e5%8f%8d%e6%ad%a3"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><h5 id="列满秩">$A$ 列满秩<a
+  href="#%e5%88%97%e6%bb%a1%e7%a7%a9"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  1976年10月粉碎“四人帮”的胜利，从危难中挽救了党和国家，挽救了社会主义。</p>
-<p>  1978年底召开的党的十一届三中全会是新中国成立我党历史上具有深远意义的伟大转折。全会开始实现从“两个凡是”到解放思想、实事求是，从以阶级斗争为纲到以经济建设为中心，从僵化半僵化、封闭半封闭到对外开放的历史性转变。全会还充分肯定必须完整地准确地掌握毛泽东思想的科学体系，开始全面地认真地纠正“文化大革命”中及其以前的“左”倾错误，审查和解决了一批重大冤假错案和一些重要领导人的功过是非问题。这标志着我们党重新确立马克思主义的思想路线、政治路线和组织路线。</p>
-<p>  1978年12月，党的十一届三中全会在北京召开。会议作出把全党工作着重点转移到社会主义现代化建设上来，实行改革开放的历史性决策。党中央作出“执政党的党风问题是有关党的生死存亡的问题”的重要论断，出台《关于党内政治生活的若干准则》，恢复重建的中央纪委围绕端正党风、确保党中央路线方针政策的贯彻执行、改进纪律检查工作等问题开展卓有成效的工作，开启了党的纪律建设新时期。</p>
-
-  <blockquote
-    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
-  >
-    <div class="prose prose-sm max-w-none">
-      <p>《关于党内政治生活的若干准则》一、坚持党的政治路线和思想路线；二、坚持集体领导，反对个人专断；三、维护党的集中统一，严格遵守党的纪律；四、坚持党性，根绝派性；五、要讲真话，言行一致；六、发扬党内民主，正确对待不同意见；七、保障党员的权利不受侵犯；八、选举要充分体现选举人的意愿；九、同错误倾向和坏人坏事作斗争；十、正确对待犯错误的同餐，不准搞特权；十二、努力学习，做到又红又专。</p>
-
-    </div>
-  </blockquote><script>
-  function toggleAlert(alertId) {
-    const content = document.getElementById(alertId + "-content");
-    const chevron = document.getElementById(alertId + "-chevron");
-    const header = content.previousElementSibling;
-
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      chevron.style.transform = "rotate(0deg)";
-      header.setAttribute("aria-expanded", "true");
-    } else {
-      content.classList.add("hidden");
-      chevron.style.transform = "rotate(-90deg)";
-      header.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
-    collapsedAlerts.forEach(function (content) {
-      const alertId = content.id.replace("-content", "");
-      const chevron = document.getElementById(alertId + "-chevron");
-      if (chevron) {
-        chevron.style.transform = "rotate(-90deg)";
-      }
-    });
-  });
-</script>
-<p>  1981年通过的《关于建国以来党的若干历史问题的决议》，又标志着我们党实现了指导思想的拨乱反正。《决议》指出：</p>
-
-  <blockquote
-    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
-  >
-    <div class="prose prose-sm max-w-none">
-      <p>“我们党敢于正视和纠正自己的错误，有决心有能力防重犯过去那样严重的错误。‘坚持真理，修正错误’，这是我们党必须采取的辩证唯物主义的根本立场。过去采取这个立场，曾使我们的事业转危为安，转败为胜。今后继续采取这个立场，必将引导我们取得更大胜利。”</p>
-
-    </div>
-  </blockquote><script>
-  function toggleAlert(alertId) {
-    const content = document.getElementById(alertId + "-content");
-    const chevron = document.getElementById(alertId + "-chevron");
-    const header = content.previousElementSibling;
-
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      chevron.style.transform = "rotate(0deg)";
-      header.setAttribute("aria-expanded", "true");
-    } else {
-      content.classList.add("hidden");
-      chevron.style.transform = "rotate(-90deg)";
-      header.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
-    collapsedAlerts.forEach(function (content) {
-      const alertId = content.id.replace("-content", "");
-      const chevron = document.getElementById(alertId + "-chevron");
-      if (chevron) {
-        chevron.style.transform = "rotate(-90deg)";
-      }
-    });
-  });
-</script>
-<h3 id="16-第六次自我革命全面从严治党新征程">1.6 第六次自我革命：全面从严治党新征程<a
-  href="#16-%e7%ac%ac%e5%85%ad%e6%ac%a1%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e5%85%a8%e9%9d%a2%e4%bb%8e%e4%b8%a5%e6%b2%bb%e5%85%9a%e6%96%b0%e5%be%81%e7%a8%8b"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h5><p>如果</p>
+$$
+\operatorname{rank}(A)=n
+$$<p>那么</p>
+$$
+A^TA\text{ 正定}
+$$<p>所以</p>
+$$
+A^TA\text{ 可逆}
+$$<p>于是最小二乘解唯一：</p>
+$$
+\hat{x}=(A^TA)^{-1}A^Tb
+$$<p>这时不存在非零 $z$，使得</p>
+$$
+Az=0
+$$<p>所以不存在“加一个零空间方向但输出不变”的自由度。</p>
+<h5 id="不满列秩">$A$ 不满列秩<a
+  href="#%e4%b8%8d%e6%bb%a1%e5%88%97%e7%a7%a9"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  党的十八大以来开启的全面从严治党新征程是中国特色社会主义进入新时代的伟大自我革命。</p>
-<p>  改革开放以来我们党把马克思主义基本原理同中国改革开放的具体实际结合起来，团结带领人民进行建设中国特色社会主义新的伟大实践。</p>
-<p>  以习近平同志为核心的党中央提出全面从严治党战略，以雷露万钧之势开展反腐败斗争，标本兼治，坚持“打虎”“拍蝇”“猎狐”无禁区、全覆盖、零容忍。</p>
-<p>  党中央严肃查处了从中央到地方一批腐败变质的领导干部和重大案件，反腐败斗争取得压倒性胜利。</p>
-<p>  全面从严治党这场伟大的自我革命，校正了党和国家前进的航向，解决了党和国家事业发展带有全局性、根本性、方向性的问题。它在理论上将对党的建设规律认识提到新高度，在实践上深得党心民心，更加巩固了执政基础。</p>
-<h2 id="2-党推进伟大自我革命的宝贵经验">2. 党推进伟大自我革命的宝贵经验<a
-  href="#2-%e5%85%9a%e6%8e%a8%e8%bf%9b%e4%bc%9f%e5%a4%a7%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e7%9a%84%e5%ae%9d%e8%b4%b5%e7%bb%8f%e9%aa%8c"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h5><p>如果</p>
+$$
+\operatorname{rank}(A) < n
+$$<p>那么存在</p>
+$$
+z\neq 0
+$$<p>使得</p>
+$$
+Az=0
+$$<p>因此如果 $\hat{x}$ 是一个最小二乘解，那么</p>
+$$
+\hat{x}+z
+$$<p>也是一个最小二乘解，因为</p>
+$$
+A(\hat{x}+z)=A\hat{x}
+$$<p>这时解不唯一。</p>
+<p>同时</p>
+$$
+A^TA
+$$<p>奇异，所以不能写</p>
+$$
+(A^TA)^{-1}A^Tb
+$$<p>但可以写</p>
+$$
+\hat{x}=A^+b
+$$<p>其中 $A^+b$ 是最小范数最小二乘解。</p>
+<p>更一般地，所有最小二乘解可表示为</p>
+$$
+x=A^+b+(I-A^+A)w
+$$<p>其中 $w$ 是任意向量。</p>
+<p>这里</p>
+$$
+(I-A^+A)w
+$$<p>属于 $A$ 的零空间部分。它不会改变 $Ax$，只是在不同的等价解之间移动。</p>
+<h3 id="一个具体例子串起来">一个具体例子串起来<a
+  href="#%e4%b8%80%e4%b8%aa%e5%85%b7%e4%bd%93%e4%be%8b%e5%ad%90%e4%b8%b2%e8%b5%b7%e6%9d%a5"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><h3 id="21-必须坚决维护党中央权威和集中统一领导确保全党步调一致行动统一">2.1 必须坚决维护党中央权威和集中统一领导，确保全党步调一致、行动统一<a
-  href="#21-%e5%bf%85%e9%a1%bb%e5%9d%9a%e5%86%b3%e7%bb%b4%e6%8a%a4%e5%85%9a%e4%b8%ad%e5%a4%ae%e6%9d%83%e5%a8%81%e5%92%8c%e9%9b%86%e4%b8%ad%e7%bb%9f%e4%b8%80%e9%a2%86%e5%af%bc%e7%a1%ae%e4%bf%9d%e5%85%a8%e5%85%9a%e6%ad%a5%e8%b0%83%e4%b8%80%e8%87%b4%e8%a1%8c%e5%8a%a8%e7%bb%9f%e4%b8%80"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>回到开头的矩阵：</p>
+$$
+A=
+\begin{bmatrix}
+1 & 2\\
+2 & 4\\
+3 & 6
+\end{bmatrix}
+$$<p>它的第二列是第一列的两倍，所以</p>
+$$
+\operatorname{rank}(A)=1 < 2
+$$<p>因此 $A$ 不满列秩。</p>
+<p>我们可以找到非零向量</p>
+$$
+z=
+\begin{bmatrix}
+2\\
+-1
+\end{bmatrix}
+$$<p>使得</p>
+$$
+Az=0
+$$<p>因为</p>
+$$
+2a_1-a_2=0
+$$<p>这说明 $A$ 的零空间非平凡：</p>
+$$
+\mathcal{N}(A)\neq \{0\}
+$$<p>于是 $A^TA$ 必然奇异。</p>
+<p>实际计算：</p>
+<h1 id="endbmatrix">$$
+A^TA=
+\begin{bmatrix}
+1 &amp; 2 &amp; 3\
+2 &amp; 4 &amp; 6
+\end{bmatrix}
+\begin{bmatrix}
+1 &amp; 2\
+2 &amp; 4\
+3 &amp; 6
+\end{bmatrix}<a
+  href="#endbmatrix"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  治理好我们这样一个大党、治理好我们这样一个大国，保证党的团结和集中统一至关重要，维护党中央权威至关重要。因此，坚决维护习近平总书记党中央的核心、全党的核心地位，坚决维护党中央权威和集中统一领导，是新时代推进党和国家各项事业的根本保证。</p>
-<h3 id="22-必须坚持治国必先治党治党务必从严确保党成为中国特色社会主义事业的中流砥柱">2.2 必须坚持治国必先治党、治党务必从严，确保党成为中国特色社会主义事业的中流砥柱<a
-  href="#22-%e5%bf%85%e9%a1%bb%e5%9d%9a%e6%8c%81%e6%b2%bb%e5%9b%bd%e5%bf%85%e5%85%88%e6%b2%bb%e5%85%9a%e6%b2%bb%e5%85%9a%e5%8a%a1%e5%bf%85%e4%bb%8e%e4%b8%a5%e7%a1%ae%e4%bf%9d%e5%85%9a%e6%88%90%e4%b8%ba%e4%b8%ad%e5%9b%bd%e7%89%b9%e8%89%b2%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e4%ba%8b%e4%b8%9a%e7%9a%84%e4%b8%ad%e6%b5%81%e7%a0%a5%e6%9f%b1"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>\begin{bmatrix}
+14 &amp; 28\
+28 &amp; 56
+\end{bmatrix}
+$$</p>
+<p>第二列仍然是第一列的两倍：</p>
+<h1 id="endbmatrix-1">$$
+\begin{bmatrix}
+28\56
+\end{bmatrix}<a
+  href="#endbmatrix-1"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  治国必先治党、治党务必从严，这是坚持党的先进性和纯洁性，增强党的政治领导力、思想引领力、群众组织力、社会号召力，确保我们党永葆旺盛生命力和强大战斗力的根本途径。</p>
-<p>  党的十八大以来，党中央先后审议通过了90多部中央重要党内法规，超过现行有效的170多部党内法规的50%。一系列关于加强党内法规制度建设的决策部署，立足实际、着眼长远，环环相扣、梯次推进，推进力度之大、建章立制之多、执规执纪之严、社会反响之好，在中国共产党百年制度建设史上前所未有，彰显了党中央对加强党内法规制度建设的高度重视，对党的建设规律的深刻洞见，对全面推进制度治党、依规治党的坚定决心。</p>
-<h3 id="23-必须坚持以人民为中心确保立党为公执政为民">2.3 必须坚持以人民为中心，确保立党为公、执政为民<a
-  href="#23-%e5%bf%85%e9%a1%bb%e5%9d%9a%e6%8c%81%e4%bb%a5%e4%ba%ba%e6%b0%91%e4%b8%ba%e4%b8%ad%e5%bf%83%e7%a1%ae%e4%bf%9d%e7%ab%8b%e5%85%9a%e4%b8%ba%e5%85%ac%e6%89%a7%e6%94%bf%e4%b8%ba%e6%b0%91"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>2
+\begin{bmatrix}
+14\28
+\end{bmatrix}
+$$</p>
+<p>所以</p>
+$$
+A^TA
+$$<p>也不满秩，因而不可逆。</p>
+<p>同时</p>
+$$
+z^TA^TAz=\|Az\|^2=0
+$$<p>其中 $z\neq 0$，所以 $A^TA$ 不是正定。</p>
+<p>但对任意 $u$，仍然有</p>
+$$
+u^TA^TAu=\|Au\|^2\ge 0
+$$<p>所以 $A^TA$ 是半正定。</p>
+<p>因此它的特征值满足：</p>
+$$
+\lambda_i\ge 0
+$$<p>但至少有一个特征值等于零。</p>
+<p>实际上，</p>
+$$
+A^TA=
+\begin{bmatrix}
+14 & 28\\
+28 & 56
+\end{bmatrix}
+$$<p>的特征值是</p>
+$$
+70,\quad 0
+$$<p>这正好对应：</p>
+$$
+A^TA\text{ 半正定但不正定}
+$$$$
+A^TA\text{ 有零特征值}
+$$$$
+A^TA\text{ 奇异}
+$$$$
+A^TA\text{ 不可逆}
+$$$$
+A\text{ 不满列秩}
+$$<h3 id="加上-tikhonov-正则化之后">加上 Tikhonov 正则化之后<a
+  href="#%e5%8a%a0%e4%b8%8a-tikhonov-%e6%ad%a3%e5%88%99%e5%8c%96%e4%b9%8b%e5%90%8e"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  党的十九届六中全会通过的《中共中央关于党的百年奋斗重大成就和历史经验的决议》全面总结党的百年奋斗重大成就和历史经验，强调：</p>
-
-  <blockquote
-    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
-  >
-    <div class="prose prose-sm max-w-none">
-      <p>“全党必须永远保持同人民群众的血肉联系”。</p>
-
-    </div>
-  </blockquote><script>
-  function toggleAlert(alertId) {
-    const content = document.getElementById(alertId + "-content");
-    const chevron = document.getElementById(alertId + "-chevron");
-    const header = content.previousElementSibling;
-
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      chevron.style.transform = "rotate(0deg)";
-      header.setAttribute("aria-expanded", "true");
-    } else {
-      content.classList.add("hidden");
-      chevron.style.transform = "rotate(-90deg)";
-      header.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
-    collapsedAlerts.forEach(function (content) {
-      const alertId = content.id.replace("-content", "");
-      const chevron = document.getElementById(alertId + "-chevron");
-      if (chevron) {
-        chevron.style.transform = "rotate(-90deg)";
-      }
-    });
-  });
-</script>
-<p>  党的最大政治优势是密切联系群众，党执政后的最大危险是脱离群众；民心是最大的政治，一个政党，一个政权，其前途和命运最终取决于人心向背；江山就是人民、人民就是江山，打江山、守江山，守的是人民的心；老百姓是天，老百姓是地，忘记了人民，脱离了人民，我们就会成为无源之水、无本之木，就会一事无成。</p>
-<h3 id="24-必须坚持改革创新艰苦奋斗作风确保党始终走在时代前列">2.4 必须坚持改革创新、艰苦奋斗作风，确保党始终走在时代前列<a
-  href="#24-%e5%bf%85%e9%a1%bb%e5%9d%9a%e6%8c%81%e6%94%b9%e9%9d%a9%e5%88%9b%e6%96%b0%e8%89%b0%e8%8b%a6%e5%a5%8b%e6%96%97%e4%bd%9c%e9%a3%8e%e7%a1%ae%e4%bf%9d%e5%85%9a%e5%a7%8b%e7%bb%88%e8%b5%b0%e5%9c%a8%e6%97%b6%e4%bb%a3%e5%89%8d%e5%88%97"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>虽然本文主要讲矩阵性质，但可以顺手看一下 Tikhonov 正则化为什么有效。</p>
+<p>普通最小二乘的法方程是：</p>
+$$
+A^TAx=A^Tb
+$$<p>如果 $A$ 不满列秩，则 $A^TA$ 不可逆。</p>
+<p>Tikhonov 正则化改为：</p>
+$$
+\min_x\|Ax-b\|^2+\lambda\|x\|^2
+$$<p>求导得到：</p>
+$$
+(A^TA+\lambda I)x=A^Tb
+$$<p>其中</p>
+$$
+\lambda>0
+$$<p>关键是：</p>
+$$
+A^TA+\lambda I
+$$<p>一定正定。</p>
+<p>因为对任意非零 $z\neq 0$：</p>
+<h1 id="ztatalambda-iz">$$
+z<sup>T(A</sup>TA+\lambda I)z<a
+  href="#ztatalambda-iz"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  艰苦奋斗精神是中华民族的优良传统，也是我们党巩固执政地位、提高执政能力必备的政治素养。</p>
-<p>  习近平总书记指出：</p>
-
-  <blockquote
-    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
-  >
-    <div class="prose prose-sm max-w-none">
-      <p>“只有不忘初心、牢记使命、永远奋斗，才能让中国共产党永远年轻。只要全党全国各族人民团结一心、苦干实干，中华民族伟大复兴的巨轮就一定能够乘风破浪、胜利驶向光辉的彼岸。”</p>
-
-    </div>
-  </blockquote><script>
-  function toggleAlert(alertId) {
-    const content = document.getElementById(alertId + "-content");
-    const chevron = document.getElementById(alertId + "-chevron");
-    const header = content.previousElementSibling;
-
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      chevron.style.transform = "rotate(0deg)";
-      header.setAttribute("aria-expanded", "true");
-    } else {
-      content.classList.add("hidden");
-      chevron.style.transform = "rotate(-90deg)";
-      header.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
-    collapsedAlerts.forEach(function (content) {
-      const alertId = content.id.replace("-content", "");
-      const chevron = document.getElementById(alertId + "-chevron");
-      if (chevron) {
-        chevron.style.transform = "rotate(-90deg)";
-      }
-    });
-  });
-</script>
-<p>  新时代党的建设伟大工程，是把党建设成为勇于自我革命、经得起各种风浪考验的马克思主义执政党。推进党的自我革命，必须敢于刀刃向内，自我净化、自我完善、自我革新、自我提高，必须坚持改革创新、艰苦奋斗作风，提高党的战斗力和生命力，确保党始终走在时代前列。</p>
-<h3 id="25-必须坚决同消极腐败现象作斗争确保党永葆清正廉洁的政治本色">2.5 必须坚决同消极腐败现象作斗争，确保党永葆清正廉洁的政治本色<a
-  href="#25-%e5%bf%85%e9%a1%bb%e5%9d%9a%e5%86%b3%e5%90%8c%e6%b6%88%e6%9e%81%e8%85%90%e8%b4%a5%e7%8e%b0%e8%b1%a1%e4%bd%9c%e6%96%97%e4%ba%89%e7%a1%ae%e4%bf%9d%e5%85%9a%e6%b0%b8%e8%91%86%e6%b8%85%e6%ad%a3%e5%bb%89%e6%b4%81%e7%9a%84%e6%94%bf%e6%b2%bb%e6%9c%ac%e8%89%b2"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>z<sup>TA</sup>TAz+\lambda z^Tz
+$$</p>
+<p>也就是</p>
+<h1 id="ztatalambda-iz-1">$$
+z<sup>T(A</sup>TA+\lambda I)z<a
+  href="#ztatalambda-iz-1"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>  永葆共产党人政治本色，既是严肃的政治问题，也是现实的实践问题。</p>
-<p>  2019年1月11日，习近平在十九届中央纪律检查委员会第三次全体会议上的讲话中强调：</p>
-
-  <blockquote
-    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
-  >
-    <div class="prose prose-sm max-w-none">
-      <p>“改革开放40年来，在党中央坚强领导下，各级纪检监察机关坚持党的领导、从严管党治党，探索积累了宝贵经验。这就是，必须坚决维护党中央权威和集中统一领导，确保全党步调一致、行动统一；必须坚持治国必先治党、治党务必从严，确保党成为中国特色社会主义事业的中流砥柱；必须坚持以人民为中心，确保立党为公、执政为民；必须坚持改革创新、艰苦奋斗作风，确保党始终走在时代前列；必须坚决同消极腐败现象作斗争，确保党永葆清正廉洁的政治本色。”</p>
-
-    </div>
-  </blockquote><script>
-  function toggleAlert(alertId) {
-    const content = document.getElementById(alertId + "-content");
-    const chevron = document.getElementById(alertId + "-chevron");
-    const header = content.previousElementSibling;
-
-    if (content.classList.contains("hidden")) {
-      content.classList.remove("hidden");
-      chevron.style.transform = "rotate(0deg)";
-      header.setAttribute("aria-expanded", "true");
-    } else {
-      content.classList.add("hidden");
-      chevron.style.transform = "rotate(-90deg)";
-      header.setAttribute("aria-expanded", "false");
-    }
-  }
-
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
-    collapsedAlerts.forEach(function (content) {
-      const alertId = content.id.replace("-content", "");
-      const chevron = document.getElementById(alertId + "-chevron");
-      if (chevron) {
-        chevron.style.transform = "rotate(-90deg)";
-      }
-    });
-  });
-</script>
-<p>  公道正派才能出清风正气，廉洁自律才能塑良好形象。每个党员、干部一定要提高政治站位，增强行动自觉，更好地筑牢信仰之基、补足精神之钙、把稳思想之舵，在永葆政治本色上干在实处、走在前列。</p>
-<h2 id="3-新时代党推进伟大自我革命的实践成效">3. 新时代党推进伟大自我革命的实践成效<a
-  href="#3-%e6%96%b0%e6%97%b6%e4%bb%a3%e5%85%9a%e6%8e%a8%e8%bf%9b%e4%bc%9f%e5%a4%a7%e8%87%aa%e6%88%91%e9%9d%a9%e5%91%bd%e7%9a%84%e5%ae%9e%e8%b7%b5%e6%88%90%e6%95%88"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>|Az|^2+\lambda|z|^2
+$$</p>
+<p>其中</p>
+$$
+\|Az\|^2\ge 0
+$$<p>而</p>
+$$
+\lambda\|z\|^2>0
+$$<p>所以</p>
+$$
+\|Az\|^2+\lambda\|z\|^2>0
+$$<p>因此</p>
+$$
+A^TA+\lambda I
+$$<p>正定。</p>
+<p>正定矩阵一定可逆，所以</p>
+$$
+(A^TA+\lambda I)^{-1}
+$$<p>一定存在。</p>
+<p>这就是 Tikhonov 正则化能把病态或不唯一问题变成稳定唯一问题的原因。</p>
+<h3 id="各性质关系图">各性质关系图<a
+  href="#%e5%90%84%e6%80%a7%e8%b4%a8%e5%85%b3%e7%b3%bb%e5%9b%be"
   class="heading-anchor"
   aria-label="Link to this section"
-><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h2><p>  习近平总书记所作的党的二十大报告，高举中国特色社会主义伟大旗帜，站在中国共产党百年奋斗和新时代10年伟大变革新的历史起点上，宣示了新时代新征程中国共产党的使命任务，开辟了马克思主义中国化时代化新境界，是以中国式现代化全面推进中华民族伟大复兴的政治宣言和行动纲领。报告深刻指出，全面建设社会主义现代化国家、全面推进中华民族伟大复兴，关键在党，必须弘扬伟大建党精神，坚定不移全面从严治党，以党的自我革命引领社会革命。我们要认真学习领悟党的二十大精神，一刻不停歇地推进全面从严治党，努力把党建设得更加坚强有力，引领和保障中国特色社会主义伟大事业继往开来、行稳致远。我们要深入学习贯彻习近平总书记关于党的自我革命的战略思想，增强“四个意识”、坚定“四个自信”、做到“两个维护”，坚定不移推进党的自我革命，推动全面从严治党向纵深发展。</p>
-<p>  新时代我们党以刀刃向内的勇气和刮骨疗毒的决心，把自我革命的课题推向深入，实现“四个自我”，坚持四个“相统一”，抓好“关键少数”，深化运用“四种形态”，落实“三个区分开来”，坚持真理、修正错误，以伟大自我革命引领伟大社会革命，以伟大社会革命促进伟大自我革命，我们党就能在应对国内外各种风险挑战的历史进程中始终成为全国人民的主心骨，引领和推动新时代中国特色社会主义航船劈波斩浪、一往无前。</p>
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>下面这张图可以作为总览。</p>
 
+
+
+<pre class="mermaid">
+  flowchart TD
+    A[&#34;A ∈ R^{m×n}&#34;] --&gt; B[&#34;列向量 a1,...,an&#34;]
+    B --&gt; C[&#34;列空间 C(A)&#34;]
+    B --&gt; D[&#34;秩 rank(A)=dim C(A)&#34;]
+
+    D --&gt; E{&#34;rank(A)=n ?&#34;}
+
+    E --&gt;|是| F[&#34;A 列满秩&#34;]
+    F --&gt; G[&#34;N(A)={0}&#34;]
+    G --&gt; H[&#34;不存在 z≠0 使 Az=0&#34;]
+    H --&gt; I[&#34;A^T A 正定&#34;]
+    I --&gt; J[&#34;A^T A 所有特征值 &gt; 0&#34;]
+    J --&gt; K[&#34;A^T A 非奇异&#34;]
+    K --&gt; L[&#34;A^T A 可逆&#34;]
+    L --&gt; M[&#34;OLS 解唯一: x=(A^T A)^(-1)A^T b&#34;]
+
+    E --&gt;|否| N[&#34;A 不满列秩&#34;]
+    N --&gt; O[&#34;N(A) 非平凡&#34;]
+    O --&gt; P[&#34;存在 z≠0 使 Az=0&#34;]
+    P --&gt; Q[&#34;A^T A z=0&#34;]
+    Q --&gt; R[&#34;A^T A 有零特征值&#34;]
+    R --&gt; S[&#34;A^T A 奇异&#34;]
+    S --&gt; T[&#34;A^T A 不可逆&#34;]
+    T --&gt; U[&#34;OLS 不能用普通逆公式&#34;]
+    U --&gt; V[&#34;用 Moore-Penrose 伪逆 A^+b&#34;]
+</pre>
+
+<h3 id="方阵性质关系图">方阵性质关系图<a
+  href="#%e6%96%b9%e9%98%b5%e6%80%a7%e8%b4%a8%e5%85%b3%e7%b3%bb%e5%9b%be"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>对于方阵</p>
+$$
+M\in\mathbb{R}^{n\times n}
+$$<p>有下面的等价关系：</p>
+
+
+
+<pre class="mermaid">
+  flowchart LR
+    A[&#34;M 可逆&#34;] &lt;--&gt; B[&#34;M 非奇异&#34;]
+    B &lt;--&gt; C[&#34;rank(M)=n&#34;]
+    C &lt;--&gt; D[&#34;N(M)={0}&#34;]
+    D &lt;--&gt; E[&#34;Mx=0 只有零解&#34;]
+    E &lt;--&gt; F[&#34;det(M)≠0&#34;]
+    F &lt;--&gt; G[&#34;0 不是 M 的特征值&#34;]
+</pre>
+
+<p>对应地：</p>
+
+
+
+<pre class="mermaid">
+  flowchart LR
+    A[&#34;M 不可逆&#34;] &lt;--&gt; B[&#34;M 奇异&#34;]
+    B &lt;--&gt; C[&#34;rank(M)&lt;n&#34;]
+    C &lt;--&gt; D[&#34;N(M) 非平凡&#34;]
+    D &lt;--&gt; E[&#34;存在 x≠0 使 Mx=0&#34;]
+    E &lt;--&gt; F[&#34;det(M)=0&#34;]
+    F &lt;--&gt; G[&#34;0 是 M 的特征值&#34;]
+</pre>
+
+<h3 id="正定半正定特征值关系图">正定、半正定、特征值关系图<a
+  href="#%e6%ad%a3%e5%ae%9a%e5%8d%8a%e6%ad%a3%e5%ae%9a%e7%89%b9%e5%be%81%e5%80%bc%e5%85%b3%e7%b3%bb%e5%9b%be"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>对实对称矩阵 $M$：</p>
+
+
+
+<pre class="mermaid">
+  flowchart TD
+    A[&#34;M 正定 M ≻ 0&#34;] --&gt; B[&#34;∀z≠0, z^T M z &gt; 0&#34;]
+    B --&gt; C[&#34;所有特征值 λ_i &gt; 0&#34;]
+    C --&gt; D[&#34;无零特征值&#34;]
+    D --&gt; E[&#34;M 可逆&#34;]
+
+    F[&#34;M 半正定 M ⪰ 0&#34;] --&gt; G[&#34;∀z, z^T M z ≥ 0&#34;]
+    G --&gt; H[&#34;所有特征值 λ_i ≥ 0&#34;]
+
+    A --&gt; F
+    C --&gt; H
+</pre>
+
+<p>注意这里有几个非等价关系：</p>
+$$
+M\succ 0 \Longrightarrow M\succeq 0
+$$<p>但</p>
+$$
+M\succeq 0 \not\Longrightarrow M\succ 0
+$$$$
+M\succ 0 \Longrightarrow M\text{ 可逆}
+$$<p>但</p>
+$$
+M\text{ 可逆}\not\Longrightarrow M\succ 0
+$$<h3 id="最小二乘之间的关系表">$A$、$A^TA$、最小二乘之间的关系表<a
+  href="#%e6%9c%80%e5%b0%8f%e4%ba%8c%e4%b9%98%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb%e8%a1%a8"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><table>
+  <thead>
+      <tr>
+          <th>条件</th>
+          <th>等价和推出关系</th>
+          <th>结果</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>$A$ 列满秩</td>
+          <td>$\operatorname{rank}(A)=n$</td>
+          <td>列向量线性无关</td>
+      </tr>
+      <tr>
+          <td>$A$ 列满秩</td>
+          <td>$\mathcal{N}(A)=\{0\}$</td>
+          <td>没有非零输入被压成零</td>
+      </tr>
+      <tr>
+          <td>$A$ 列满秩</td>
+          <td>$A^TA\succ 0$</td>
+          <td>$A^TA$ 正定</td>
+      </tr>
+      <tr>
+          <td>$A$ 列满秩</td>
+          <td>$A^TA$ 可逆</td>
+          <td>OLS 普通逆公式成立</td>
+      </tr>
+      <tr>
+          <td>$A$ 不满列秩</td>
+          <td>$\operatorname{rank}(A) < n$</td>
+          <td>列向量线性相关</td>
+      </tr>
+      <tr>
+          <td>$A$ 不满列秩</td>
+          <td>$\exists z\neq 0,\ Az=0$</td>
+          <td>存在零空间自由度</td>
+      </tr>
+      <tr>
+          <td>$A$ 不满列秩</td>
+          <td>$A^TA$ 奇异</td>
+          <td>不能直接求 $(A^TA)^{-1}$</td>
+      </tr>
+      <tr>
+          <td>$A$ 不满列秩</td>
+          <td>$A^TA\succeq 0$ 但非正定</td>
+          <td>有零特征值</td>
+      </tr>
+      <tr>
+          <td>$A^TA$ 奇异</td>
+          <td>$A^TA$ 不可逆</td>
+          <td>OLS 解可能不唯一</td>
+      </tr>
+      <tr>
+          <td>OLS 解不唯一</td>
+          <td>存在零空间自由度</td>
+          <td>可用 $A^+b$ 选最小范数解</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="总结">总结<a
+  href="#%e6%80%bb%e7%bb%93"
+  class="heading-anchor"
+  aria-label="Link to this section"
+><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h3><p>矩阵 $A$ 的列向量决定了它能表示哪些输出。列向量独立，说明每个参数方向都有独立作用；列向量相关，说明存在某些参数方向对输出没有影响。</p>
+<p>如果</p>
+$$
+A\text{ 不满列秩}
+$$<p>那么存在非零方向</p>
+$$
+z\neq 0
+$$<p>使得</p>
+$$
+Az=0
+$$<p>这个方向就是零空间方向。沿着这个方向移动，输出 $Ax$ 不变。</p>
+<p>因此在最小二乘中，多个不同的 $x$ 可能产生同一个 $Ax$，解就可能不唯一。</p>
+<p>同时，由于</p>
+$$
+z^TA^TAz=\|Az\|^2
+$$<p>所以 $A^TA$ 一定半正定。</p>
+<p>如果 $A$ 满列秩，则非零 $z$ 不可能被 $A$ 压成零，所以</p>
+$$
+z^TA^TAz>0
+$$<p>于是 $A^TA$ 正定、可逆，普通最小二乘解唯一。</p>
+<p>如果 $A$ 不满列秩，则存在非零 $z$，使得</p>
+$$
+Az=0
+$$<p>于是</p>
+$$
+z^TA^TAz=0
+$$<p>所以 $A^TA$ 只是半正定，不是正定；它有零特征值，因此奇异、不可逆。</p>
+<p>这时普通逆公式失效，但 Moore-Penrose 伪逆仍然可以给出最小范数最小二乘解。</p>
+<p>而 Tikhonov 正则化通过加入</p>
+$$
+\lambda I
+$$<p>把</p>
+$$
+A^TA
+$$<p>变成</p>
+$$
+A^TA+\lambda I
+$$<p>从而把半正定提升为正定，保证可逆性和稳定性。</p>
+<p>总结：</p>
+$$
+\text{列相关}
+\Rightarrow
+\text{零空间非平凡}
+\Rightarrow
+\text{信息丢失}
+\Rightarrow
+A^TA\text{ 奇异}
+\Rightarrow
+\text{普通逆失效}
+\Rightarrow
+\text{伪逆或正则化}
+$$
   </article>
 
   
@@ -1400,21 +2336,37 @@
       
       <div class="nav-item">
         
-          <div
-            class="bg-muted/30 border-border/50 flex min-h-[140px] flex-col justify-center rounded-xl border p-6"
+          <a
+            href="/posts/%E9%82%BB%E5%80%BC%E5%B9%B3%E5%9D%87-%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D-%E7%89%B9%E5%BE%81%E5%88%86%E8%A7%A3-%E5%82%85%E9%87%8C%E5%8F%B6%E5%9F%BA%E5%92%8C%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2/"
+            class="group bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[140px] flex-col justify-between rounded-xl border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
           >
-            <div class="mb-3 flex items-center gap-3">
-              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div>
+              <div class="mb-3 flex items-center gap-3">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 </svg>
-              <span class="text-muted-foreground/50 text-sm font-medium">
-                没有上一篇
-              </span>
+                <span class="text-muted-foreground text-sm font-medium">
+                  上一篇
+                </span>
+              </div>
+
+              <h3
+                class="text-foreground group-hover:text-primary mb-3 line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200"
+              >
+                邻值平均, 循环移位, 特征分解, 傅里叶基和低通滤波
+              </h3>
             </div>
-            <p class="text-muted-foreground/50 text-sm">
-              这是最早的文章
-            </p>
-          </div>
+
+            <div class="text-muted-foreground mt-auto flex items-center gap-2 text-xs">
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+
+              <time datetime="2026-04-28">
+                04 月 28 日
+              </time>
+            </div>
+          </a>
         
       </div>
 
@@ -1422,7 +2374,7 @@
       <div class="nav-item">
         
           <a
-            href="/posts/learning-note-of-ns-sar-adc/"
+            href="/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/"
             class="group bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[140px] flex-col justify-between rounded-xl border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
           >
             <div>
@@ -1438,13 +2390,13 @@
               <h3
                 class="text-foreground group-hover:text-primary mb-3 line-clamp-2 text-right text-lg leading-tight font-semibold transition-colors duration-200"
               >
-                Learning Note of NS SAR ADC
+                Bias，激活函数的偏置与 Tikhonov 正则化
               </h3>
             </div>
 
             <div class="text-muted-foreground mt-auto flex items-center justify-end gap-2 text-xs">
-              <time datetime="2025-12-01">
-                12 月 01 日
+              <time datetime="2026-05-15">
+                05 月 15 日
               </time>
               <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -1468,6 +2420,37 @@
 
 
 
+
+  <section class="related-posts mb-12">
+    
+    <div class="mb-6 flex items-center gap-3">
+      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+</svg>
+      <h2 class="text-foreground text-2xl font-bold">
+        相关文章
+      </h2>
+    </div>
+
+    
+    <div class="grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      
+        <article class="group">
+          <a href="/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/" class="block">
+            <div
+              class="bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[120px] items-center rounded-xl border p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
+            >
+              <h3
+                class="text-foreground group-hover:text-primary line-clamp-3 w-full text-lg leading-snug font-semibold"
+              >
+                Bias，激活函数的偏置与 Tikhonov 正则化
+              </h3>
+            </div>
+          </a>
+        </article>
+      
+    </div>
+  </section>
 
 
 
@@ -1699,31 +2682,58 @@
             >
               <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-党推进伟大自我革命的百年历程">1. 党推进伟大自我革命的百年历程</a>
+    <li>
       <ul>
-        <li><a href="#11-第一次自我革命八七会议">1.1 第一次自我革命：八七会议</a></li>
-        <li><a href="#12-第二次自我革命遵义会议">1.2 第二次自我革命：遵义会议</a></li>
-        <li><a href="#13-第三次自我革命延安整风">1.3 第三次自我革命：延安整风</a>
+        <li><a href="#向量线性组合">向量线性组合</a></li>
+        <li><a href="#矩阵的基本空间">矩阵的基本空间</a>
           <ul>
-            <li><a href="#黄克功杀女友案是延安时期我们党的自我革命的典型案例">–黄克功杀女友案是延安时期我们党的自我革命的典型案例–</a></li>
-            <li><a href="#张灵甫杀妻案是国民党从宽治党的反面典型">–张灵甫杀妻案是国民党从宽治党的反面典型–</a></li>
+            <li></li>
           </ul>
         </li>
-        <li><a href="#14-第四次自我革命两个务必">1.4 第四次自我革命：“两个务必”</a></li>
-        <li><a href="#15-第五次自我革命拨乱反正">1.5 第五次自我革命：拨乱反正</a></li>
-        <li><a href="#16-第六次自我革命全面从严治党新征程">1.6 第六次自我革命：全面从严治党新征程</a></li>
+        <li><a href="#什么是秩">什么是秩</a></li>
+        <li><a href="#列满秩和零空间的关系">列满秩和零空间的关系</a></li>
+        <li><a href="#秩-零化度定理">秩-零化度定理</a></li>
+        <li><a href="#奇异性和可逆性">奇异性和可逆性</a></li>
+        <li><a href="#为什么有零特征值就不可逆">为什么有零特征值就不可逆</a></li>
+        <li><a href="#为什么--特别重要">为什么  特别重要</a></li>
+        <li><a href="#为什么--一定半正定">为什么  一定半正定</a></li>
+        <li><a href="#正定与半正定">正定与半正定</a></li>
+        <li><a href="#半正定正定和特征值">半正定、正定和特征值</a></li>
+        <li><a href="#为什么正定矩阵一定可逆">为什么正定矩阵一定可逆</a></li>
+        <li><a href="#满列秩与--正定等价"> 满列秩与  正定等价</a></li>
+        <li><a href="#不满列秩与--奇异等价"> 不满列秩与  奇异等价</a></li>
+        <li><a href="#相关性质的充分必要和条件范围">相关性质的充分、必要和条件范围</a></li>
+        <li><a href="#moore-penrose-伪逆">Moore-Penrose 伪逆</a></li>
+        <li><a href="#伪逆和零空间的关系">伪逆和零空间的关系</a></li>
+        <li><a href="#普通最小二乘的解性质">普通最小二乘的解性质</a></li>
+        <li><a href="#普通最小二乘在不同秩条件下的结果">普通最小二乘在不同秩条件下的结果</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#一个具体例子串起来">一个具体例子串起来</a></li>
       </ul>
     </li>
-    <li><a href="#2-党推进伟大自我革命的宝贵经验">2. 党推进伟大自我革命的宝贵经验</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
-        <li><a href="#21-必须坚决维护党中央权威和集中统一领导确保全党步调一致行动统一">2.1 必须坚决维护党中央权威和集中统一领导，确保全党步调一致、行动统一</a></li>
-        <li><a href="#22-必须坚持治国必先治党治党务必从严确保党成为中国特色社会主义事业的中流砥柱">2.2 必须坚持治国必先治党、治党务必从严，确保党成为中国特色社会主义事业的中流砥柱</a></li>
-        <li><a href="#23-必须坚持以人民为中心确保立党为公执政为民">2.3 必须坚持以人民为中心，确保立党为公、执政为民</a></li>
-        <li><a href="#24-必须坚持改革创新艰苦奋斗作风确保党始终走在时代前列">2.4 必须坚持改革创新、艰苦奋斗作风，确保党始终走在时代前列</a></li>
-        <li><a href="#25-必须坚决同消极腐败现象作斗争确保党永葆清正廉洁的政治本色">2.5 必须坚决同消极腐败现象作斗争，确保党永葆清正廉洁的政治本色</a></li>
+        <li><a href="#加上-tikhonov-正则化之后">加上 Tikhonov 正则化之后</a></li>
       </ul>
     </li>
-    <li><a href="#3-新时代党推进伟大自我革命的实践成效">3. 新时代党推进伟大自我革命的实践成效</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#各性质关系图">各性质关系图</a></li>
+        <li><a href="#方阵性质关系图">方阵性质关系图</a></li>
+        <li><a href="#正定半正定特征值关系图">正定、半正定、特征值关系图</a></li>
+        <li><a href="#最小二乘之间的关系表">、、最小二乘之间的关系表</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
             </div>
@@ -1929,6 +2939,93 @@
       
 
 
+  <style>
+     
+    svg[id^="mermaid-"] {
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+    
+    function getCurrentTheme() {
+      const isDark = document.documentElement.classList.contains("dark");
+      return isDark ? "dark" : "default";
+    }
+
+    
+    const theme = getCurrentTheme();
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: theme,
+      look: "classic",
+      securityLevel: "loose",
+      themeCSS: `
+        [data-look="neo"].node rect,
+        [data-look="neo"].cluster rect,
+        [data-look="neo"].node polygon,
+        [data-look="neo"].node .outer-path,
+        [data-look="neo"].node circle,
+        [data-look="neo"].icon-shape .icon,
+        [data-look="neo"].icon-shape .icon-neo path {
+          filter: none !important;
+        }
+      `,
+    });
+
+    
+    document.querySelectorAll(".mermaid").forEach((element) => {
+      if (!element.getAttribute("data-original-code")) {
+        
+        const originalCode = element.textContent.trim();
+        element.setAttribute("data-original-code", originalCode);
+      }
+    });
+
+    
+    window.addEventListener("themeChanged", async () => {
+      const newTheme = getCurrentTheme();
+
+      try {
+        
+        document.querySelectorAll(".mermaid").forEach((element) => {
+          const originalCode = element.getAttribute("data-original-code");
+          if (originalCode) {
+            
+            element.removeAttribute("data-processed");
+            
+            element.textContent = originalCode;
+          }
+        });
+
+        
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: newTheme,
+          look: "classic",
+          securityLevel: "loose",
+          themeCSS: `
+            [data-look="neo"].node rect,
+            [data-look="neo"].cluster rect,
+            [data-look="neo"].node polygon,
+            [data-look="neo"].node .outer-path,
+            [data-look="neo"].node circle,
+            [data-look="neo"].icon-shape .icon,
+            [data-look="neo"].icon-shape .icon-neo path {
+              filter: none !important;
+            }
+          `,
+        });
+
+        
+        await mermaid.run();
+      } catch (error) {
+        console.error("Mermaid 主题更新失败:", error);
+      }
+    });
+  </script>
     </main>
   </body>
 </html>
