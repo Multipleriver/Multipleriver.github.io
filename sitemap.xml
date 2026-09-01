@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://multipleriver.github.io/categories/article/</loc>
+    <loc>http://localhost:1313/categories/article/</loc>
     <lastmod>2026-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2026-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/investment/</loc>
+    <loc>http://localhost:1313/tags/investment/</loc>
     <lastmod>2026-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E7%BE%8E%E8%82%A1%E6%A0%B8%E7%94%B5%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
+    <loc>http://localhost:1313/posts/%E7%BE%8E%E8%82%A1%E6%A0%B8%E7%94%B5%E7%A0%94%E7%A9%B6%E6%8A%A5%E5%91%8A/</loc>
     <lastmod>2026-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-09-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</loc>
+    <loc>http://localhost:1313/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</loc>
     <lastmod>2026-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/matrix/</loc>
+    <loc>http://localhost:1313/tags/matrix/</loc>
     <lastmod>2026-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/neural-network/</loc>
+    <loc>http://localhost:1313/tags/neural-network/</loc>
     <lastmod>2026-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/</loc>
+    <loc>http://localhost:1313/posts/%E4%BB%8E%E5%88%97%E6%BB%A1%E7%A7%A9%E5%88%B0%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E7%9F%A9%E9%98%B5%E6%80%A7%E8%B4%A8%E4%B8%B2%E7%83%A7/</loc>
     <lastmod>2026-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/signal-fitting/</loc>
+    <loc>http://localhost:1313/tags/signal-fitting/</loc>
     <lastmod>2026-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E9%82%BB%E5%80%BC%E5%B9%B3%E5%9D%87-%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D-%E7%89%B9%E5%BE%81%E5%88%86%E8%A7%A3-%E5%82%85%E9%87%8C%E5%8F%B6%E5%9F%BA%E5%92%8C%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2/</loc>
+    <loc>http://localhost:1313/posts/%E9%82%BB%E5%80%BC%E5%B9%B3%E5%9D%87-%E5%BE%AA%E7%8E%AF%E7%A7%BB%E4%BD%8D-%E7%89%B9%E5%BE%81%E5%88%86%E8%A7%A3-%E5%82%85%E9%87%8C%E5%8F%B6%E5%9F%BA%E5%92%8C%E4%BD%8E%E9%80%9A%E6%BB%A4%E6%B3%A2/</loc>
     <lastmod>2026-04-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E6%B5%85%E8%AF%81%E6%96%B9%E6%B3%A2%E6%8B%9F%E5%90%88%E4%B8%AD%E7%9A%84%E6%8C%AF%E9%93%83/</loc>
+    <loc>http://localhost:1313/posts/%E6%B5%85%E8%AF%81%E6%96%B9%E6%B3%A2%E6%8B%9F%E5%90%88%E4%B8%AD%E7%9A%84%E6%8C%AF%E9%93%83/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/hsbc/</loc>
+    <loc>http://localhost:1313/tags/hsbc/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E6%B1%87%E4%B8%B0trade25%E8%AE%A1%E5%88%92%E5%86%85%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E7%9A%84%E6%9D%82%E8%B4%B9%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://localhost:1313/posts/%E6%B1%87%E4%B8%B0trade25%E8%AE%A1%E5%88%92%E5%86%85%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E7%9A%84%E6%9D%82%E8%B4%B9%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2026-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/2026%E5%AF%92%E5%81%87%E6%97%B6%E9%97%B4%E6%B5%81%E5%90%91/</loc>
+    <loc>http://localhost:1313/posts/2026%E5%AF%92%E5%81%87%E6%97%B6%E9%97%B4%E6%B5%81%E5%90%91/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/thoughts/</loc>
+    <loc>http://localhost:1313/tags/thoughts/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/habits/</loc>
+    <loc>http://localhost:1313/tags/habits/</loc>
     <lastmod>2026-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E5%85%B3%E4%BA%8Eworkflow%E6%9E%84%E5%BB%BA%E7%9A%84%E5%AE%8F%E8%A7%82tips/</loc>
+    <loc>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eworkflow%E6%9E%84%E5%BB%BA%E7%9A%84%E5%AE%8F%E8%A7%82tips/</loc>
     <lastmod>2026-02-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/categories/academic-report/</loc>
+    <loc>http://localhost:1313/categories/academic-report/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/ic-paper-reading/</loc>
+    <loc>http://localhost:1313/tags/ic-paper-reading/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/learning-note-of-ns-sar-adc/</loc>
+    <loc>http://localhost:1313/posts/learning-note-of-ns-sar-adc/</loc>
     <lastmod>2025-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2024-02-20T14:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/hugo/</loc>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2024-02-20T14:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/projects/hugo-framework/</loc>
+    <loc>http://localhost:1313/projects/hugo-framework/</loc>
     <lastmod>2024-02-20T14:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/categories/projects/</loc>
+    <loc>http://localhost:1313/categories/projects/</loc>
     <lastmod>2024-02-20T14:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2024-02-20T14:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/tags/political-education/</loc>
+    <loc>http://localhost:1313/tags/political-education/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/posts/%E5%85%9A%E7%9A%84%E8%87%AA%E6%88%91%E9%9D%A9%E5%91%BD/</loc>
+    <loc>http://localhost:1313/posts/%E5%85%9A%E7%9A%84%E8%87%AA%E6%88%91%E9%9D%A9%E5%91%BD/</loc>
     <lastmod>2023-11-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://multipleriver.github.io/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
   </url><url>
-    <loc>https://multipleriver.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://multipleriver.github.io/archives/</loc>
+    <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>https://multipleriver.github.io/timeline/</loc>
+    <loc>http://localhost:1313/timeline/</loc>
   </url>
 </urlset>

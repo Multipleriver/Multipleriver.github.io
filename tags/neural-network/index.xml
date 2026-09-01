@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Neural Network on River&#39;s Blog</title>
-    <link>https://multipleriver.github.io/tags/neural-network/</link>
+    <link>http://localhost:1313/tags/neural-network/</link>
     <description>Recent content in Neural Network on River&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://multipleriver.github.io/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/neural-network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bias，激活函数的偏置与 Tikhonov 正则化</title>
-      <link>https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</link>
+      <link>http://localhost:1313/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</link>
       <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://multipleriver.github.io/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</guid>
+      <guid>http://localhost:1313/posts/bias%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%81%8F%E7%BD%AE%E4%B8%8E-tikhonov-%E6%AD%A3%E5%88%99%E5%8C%96/</guid>
       <description>&lt;p&gt;在神经网络和矩阵分析中，经常会看到一种表面相似的操作：给某个表达式加一个小量。&lt;/p&gt;&#xA;&lt;p&gt;在线性最小二乘的 Tikhonov 正则化中，我们把&lt;/p&gt;&#xA;$$&#xD;&#xA;\min_x \|Ax-b\|_2^2&#xD;&#xA;$$&lt;p&gt;改成&lt;/p&gt;&#xA;$$&#xD;&#xA;\min_x \|Ax-b\|_2^2+\lambda\|x\|_2^2&#xD;&#xA;$$&lt;p&gt;求导后，法方程从&lt;/p&gt;</description>
     </item>
   </channel>
