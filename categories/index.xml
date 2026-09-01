@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on River&#39;s Blog</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://multipleriver.github.io/categories/</link>
     <description>Recent content in Categories on River&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 01 Sep 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://multipleriver.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Article</title>
-      <link>http://localhost:1313/categories/article/</link>
+      <link>https://multipleriver.github.io/categories/article/</link>
       <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/article/</guid>
+      <guid>https://multipleriver.github.io/categories/article/</guid>
       <description></description>
     </item>
     <item>
       <title>Academic Report</title>
-      <link>http://localhost:1313/categories/academic-report/</link>
+      <link>https://multipleriver.github.io/categories/academic-report/</link>
       <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/academic-report/</guid>
+      <guid>https://multipleriver.github.io/categories/academic-report/</guid>
       <description></description>
     </item>
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/categories/projects/</link>
+      <link>https://multipleriver.github.io/categories/projects/</link>
       <pubDate>Tue, 20 Feb 2024 14:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/categories/projects/</guid>
+      <guid>https://multipleriver.github.io/categories/projects/</guid>
       <description></description>
     </item>
   </channel>

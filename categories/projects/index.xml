@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on River&#39;s Blog</title>
-    <link>http://localhost:1313/categories/projects/</link>
+    <link>https://multipleriver.github.io/categories/projects/</link>
     <description>Recent content in Projects on River&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 20 Feb 2024 14:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://multipleriver.github.io/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo - 世界上最快的网站构建框架</title>
-      <link>http://localhost:1313/projects/hugo-framework/</link>
+      <link>https://multipleriver.github.io/projects/hugo-framework/</link>
       <pubDate>Tue, 20 Feb 2024 14:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/projects/hugo-framework/</guid>
+      <guid>https://multipleriver.github.io/projects/hugo-framework/</guid>
       <description>使用 Go 构建的快速灵活的静态站点生成器，为全球数千个网站提供支持。</description>
     </item>
   </channel>

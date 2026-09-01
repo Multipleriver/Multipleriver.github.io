@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HSBC on River&#39;s Blog</title>
-    <link>http://localhost:1313/tags/hsbc/</link>
+    <link>https://multipleriver.github.io/tags/hsbc/</link>
     <description>Recent content in HSBC on River&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 08 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hsbc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://multipleriver.github.io/tags/hsbc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>汇丰Trade25计划内投资美股的杂费结构</title>
-      <link>http://localhost:1313/posts/%E6%B1%87%E4%B8%B0trade25%E8%AE%A1%E5%88%92%E5%86%85%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E7%9A%84%E6%9D%82%E8%B4%B9%E7%BB%93%E6%9E%84/</link>
+      <link>https://multipleriver.github.io/posts/%E6%B1%87%E4%B8%B0trade25%E8%AE%A1%E5%88%92%E5%86%85%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E7%9A%84%E6%9D%82%E8%B4%B9%E7%BB%93%E6%9E%84/</link>
       <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%B1%87%E4%B8%B0trade25%E8%AE%A1%E5%88%92%E5%86%85%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E7%9A%84%E6%9D%82%E8%B4%B9%E7%BB%93%E6%9E%84/</guid>
+      <guid>https://multipleriver.github.io/posts/%E6%B1%87%E4%B8%B0trade25%E8%AE%A1%E5%88%92%E5%86%85%E6%8A%95%E8%B5%84%E7%BE%8E%E8%82%A1%E7%9A%84%E6%9D%82%E8%B4%B9%E7%BB%93%E6%9E%84/</guid>
       <description>&lt;p&gt;本文整理了本人在小红书关于 Trade25 计划内美股投资收费的评论与问答的部分内容。收到多位读者的建议，本人重新开一份单独讲费率的帖子。&lt;/p&gt;&#xA;&lt;p&gt;Trade25是汇丰针对 18-25 岁客户的交易计划，加入后可获得每月累计交易额首 250000 HKD范围内豁免经纪佣金（限指定电子渠道），超出后按标准经纪佣金计费的权利。&lt;/p&gt;</description>
     </item>
   </channel>
